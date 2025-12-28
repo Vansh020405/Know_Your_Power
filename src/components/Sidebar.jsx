@@ -7,7 +7,8 @@ import {
     Heart,
     Info,
     X,
-    Home
+    Home,
+    Phone
 } from 'lucide-react';
 
 const Sidebar = ({ isOpen, close }) => {
@@ -74,6 +75,18 @@ const Sidebar = ({ isOpen, close }) => {
                         <div style={{ display: 'flex', flexDirection: 'column' }}>
                             <span style={{ fontWeight: 500 }}>Check My Document</span>
                             <span style={{ fontSize: '0.75rem', opacity: 0.7 }}>Contract Decoder</span>
+                        </div>
+                    </NavLink>
+
+                    <NavLink
+                        to="/contacts"
+                        className={({ isActive }) => `nav-link ${isActive ? 'active' : ''}`}
+                        onClick={close}
+                    >
+                        <Phone size={20} className="nav-link-icon" />
+                        <div style={{ display: 'flex', flexDirection: 'column' }}>
+                            <span style={{ fontWeight: 500 }}>Important Contacts</span>
+                            <span style={{ fontSize: '0.75rem', opacity: 0.7 }}>Helplines & Official Aid</span>
                         </div>
                     </NavLink>
 

@@ -1,0 +1,68 @@
+{
+    "contacts": [
+        {
+            "id": "em_1",
+            "category": "Emergency",
+            "name": "National Emergency Number",
+            "description": "For immediate police, fire, or ambulance assistance.",
+            "phone": "112",
+            "website": null
+        },
+        {
+            "id": "em_2",
+            "category": "Emergency",
+            "name": "Women's Helpline",
+            "description": "24/7 support for women in distress.",
+            "phone": "1091",
+            "website": "http://ncw.nic.in"
+        },
+        {
+            "id": "em_3",
+            "category": "Emergency",
+            "name": "Cyber Crime Helpline",
+            "description": "Report financial fraud and cyber harassment immediately.",
+            "phone": "1930",
+            "website": "https://cybercrime.gov.in"
+        },
+        {
+            "id": "lg_1",
+            "category": "Legal Help",
+            "name": "NALSA Legal Aid",
+            "description": "Free legal services and advice for eligible citizens.",
+            "phone": "15100",
+            "website": "https://nalsa.gov.in"
+        },
+        {
+            "id": "lg_2",
+            "category": "Legal Help",
+            "name": "Nyaya Bandhu",
+            "description": "Pro bono legal services.",
+            "phone": null,
+            "website": "https://probono-doj.in"
+        },
+        {
+            "id": "gv_1",
+            "category": "Government",
+            "name": "National Consumer Helpline",
+            "description": "For consumer grievances and complaints.",
+            "phone": "1915",
+            "website": "https://consumerhelpline.gov.in"
+        },
+        {
+            "id": "gv_2",
+            "category": "Government",
+            "name": "Labour Helpline",
+            "description": "Support for workers regarding wages and employment.",
+            "phone": "155214",
+            "website": "https://labour.gov.in"
+        },
+        {
+            "id": "gv_3",
+            "category": "Government",
+            "name": "UGC Anti-Ragging Helpline",
+            "description": "Report ragging in colleges/universities.",
+            "phone": "1800-180-5522",
+            "website": "https://www.antiragging.in"
+        }
+    ]
+}

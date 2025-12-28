@@ -89,6 +89,27 @@
             "source_category": "Indian Contract Act, 1872"
         },
         {
+            "rule_id": "hr_experience_letter",
+            "domain": "Workplace",
+            "topic": "Termination",
+            "summary": "Employer cannot withhold your Experience Letter.",
+            "verdict": "CANNOT",
+            "conditions": [
+                "You have served the notice period or paid in lieu of it.",
+                "No pending dues from your side."
+            ],
+            "exceptions": [
+                "If you absconded without notice."
+            ],
+            "simple_explanation": "If you have resigned properly and served your notice, the company must provide an Experience/Relieving letter. They cannot hold it hostage.",
+            "detailed_explanation": "Withholding service certificates restricts an employee's right to profession (Article 19(1)(g)). Courts have ruled that employers are duty-bound to issue these.",
+            "examples": [
+                "HR says they won't give relieving letter until you sign a non-compete."
+            ],
+            "what_to_say": "I have completed my exit formalities. Withholding my experience letter is legally untenable. Please release it immediately.",
+            "source_category": "Industrial Disputes Act / Shops Act"
+        },
+        {
             "rule_id": "college_original_docs",
             "domain": "College",
             "topic": "Documents",
@@ -130,6 +151,27 @@
             ],
             "what_to_say": "I have valid medical reasons for my absence and can submit the necessary certificates for condonation of shortage.",
             "source_category": "University Ordinances"
+        },
+        {
+            "rule_id": "college_fee_refund",
+            "domain": "College",
+            "topic": "Refunds",
+            "summary": "Colleges must refund fees upon withdrawal.",
+            "verdict": "CONDITIONAL",
+            "conditions": [
+                "Within 15 days of last admission date: 100% refund (minus small processing fee).",
+                "After 30 days: No refund usually mandated."
+            ],
+            "exceptions": [
+                "Hostel fees might have different deduction rules."
+            ],
+            "simple_explanation": "If you withdraw your admission before the session starts or within a specific period, the college MUST refund your fees. They cannot keep the entire amount.",
+            "detailed_explanation": "UGC Fee Refund Guidelines mandate a tiered refund system (100%, 90%, 80%, etc.) based on when the withdrawal is made relative to the cutoff date.",
+            "examples": [
+                "College says 'fees once paid is non-refundable' even if you leave in 2 days."
+            ],
+            "what_to_say": "As per UGC Fee Refund Guidelines, I am entitled to a refund since I am withdrawing within the stipulated permissible period.",
+            "source_category": "UGC Fee Refund Policy"
         },
         {
             "rule_id": "police_phone_search",
@@ -196,6 +238,45 @@
             "source_category": "CrPC Section 46(4)"
         },
         {
+            "rule_id": "police_traffic_docs",
+            "domain": "Police",
+            "topic": "Traffic",
+            "summary": "You must show traffic documents to uniformed officers.",
+            "verdict": "CAN",
+            "conditions": [
+                "Officer must be in uniform.",
+                "You can show digital docs via DigiLocker (valid)."
+            ],
+            "exceptions": [
+                "If you do not have docs, you may be fined."
+            ],
+            "simple_explanation": "You are legally required to show your License, RC, and Insurance if a uniformed police officer asks. However, you can show them on the DigiLocker app instead of physical papers.",
+            "detailed_explanation": "Under the Motor Vehicles Act, a driver must produce documents upon demand by any police officer in uniform. Digital versions are valid under IT Act/MoRTH rules.",
+            "examples": [
+                "Cop asks for license at a checkpost."
+            ],
+            "what_to_say": "I have my documents here (or on DigiLocker). I am happy to show them to you.",
+            "source_category": "Motor Vehicles Act"
+        },
+        {
+            "rule_id": "police_seize_keys",
+            "domain": "Police",
+            "topic": "Seizure",
+            "summary": "Traffic police cannot seize your vehicle keys.",
+            "verdict": "CANNOT",
+            "conditions": [],
+            "exceptions": [
+                "If you are trying to flee or the vehicle is being impounded for a crime."
+            ],
+            "simple_explanation": "A traffic policeman does not have the right to forcefully take your car or bike keys to stop you. This is illegal.",
+            "detailed_explanation": "No provision in the Motor Vehicles Act authorizes the seizure of keys. It is often considered harassment.",
+            "examples": [
+                "Cop snatches bike keys at a signal."
+            ],
+            "what_to_say": "Please do not remove my keys. I am cooperating and not fleeing. You can note my details.",
+            "source_category": "Motor Vehicles Act Implementation"
+        },
+        {
             "rule_id": "doc_contract_lockin",
             "domain": "Documents",
             "topic": "Contract",
@@ -236,6 +317,27 @@
             ],
             "what_to_say": "Please provide the bills for the damages you are claiming. Normal wear and tear is not valid for deduction.",
             "source_category": "Model Tenancy Act / Contract"
+        },
+        {
+            "rule_id": "rent_eviction_notice",
+            "domain": "Documents",
+            "topic": "Rent",
+            "summary": "Landlord cannot evict you without notice.",
+            "verdict": "CANNOT",
+            "conditions": [
+                "Usually requires 1 month notice (or as per agreement).",
+                "Cannot forcefully throw your things out."
+            ],
+            "exceptions": [
+                "Court order for eviction."
+            ],
+            "simple_explanation": "Your landlord cannot tell you to leave 'today' or throw your belongings out. They must follow the legal process and give proper notice.",
+            "detailed_explanation": "Rent control laws and the Transfer of Property Act require valid notice for termination of tenancy. Forced eviction without due process is illegal.",
+            "examples": [
+                "Landlord asks you to vacate in 24 hours."
+            ],
+            "what_to_say": "I am entitled to proper legal notice as per our agreement/law. Immediate eviction is illegal.",
+            "source_category": "Rent Control Act / Transfer of Property Act"
         },
         {
             "rule_id": "consumer_no_refund",

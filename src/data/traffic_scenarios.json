@@ -1,0 +1,108 @@
+{
+    "scenarios": [
+        {
+            "scenario_id": "TRAFFIC_LICENSE_CHECK",
+            "title": "Police asking for license / papers",
+            "police_says": [
+                "License dikhao",
+                "DL hai?",
+                "Gaadi side lagao",
+                "Papers dikhao"
+            ],
+            "what_this_means": "The officer is conducting a routine document check to verify your eligibility to drive.",
+            "authority_level": "CONDITIONAL",
+            "verdict": "CAN_ASK",
+            "when_it_is_valid": [
+                "If you are driving a vehicle on a public road.",
+                "Uniformed officer (constable or above) can ask."
+            ],
+            "what_you_can_say": [
+                "Here is my driving license/RC.",
+                "I have them on DigiLocker, let me show you."
+            ],
+            "what_not_to_say": [
+                "Why are you stopping me? (Avoid starting with aggression)",
+                "I know my rights, you can't check me."
+            ],
+            "what_happens_next": "They will verify the validity. If everything is clear, you will be allowed to proceed immediately.",
+            "common_misconception": "People think they can refuse to show ID without a reason. Under MV Act, you MUST show documents on demand.",
+            "source_category": "Motor Vehicles Act, Section 130",
+            "keywords": [
+                "license",
+                "dl",
+                "papers",
+                "id",
+                "rc",
+                "insurance",
+                "dikhao"
+            ]
+        },
+        {
+            "scenario_id": "TRAFFIC_KEY_SEIZURE",
+            "title": "Police taking your keys",
+            "police_says": [
+                "Chabi do",
+                "Key nikaal",
+                "Snatching keys instantly"
+            ],
+            "what_this_means": "The officer is trying to immobilize your vehicle, possibly to prevent you from fleeing.",
+            "authority_level": "ILLEGAL",
+            "verdict": "CANNOT_DO",
+            "when_it_is_valid": [
+                "Rarely valid. Usually considered harassment."
+            ],
+            "what_you_can_say": [
+                "Sir, I am not running away. Please do not take my keys.",
+                "I am cooperating with the check, removing keys is unnecessary."
+            ],
+            "what_not_to_say": [
+                "How dare you touch my bike!",
+                "I will record you (Saying it aggressively escalates)."
+            ],
+            "what_happens_next": "If you stay calm, they usually return keys once you start showing documents. If they persist, you can file a complaint later.",
+            "common_misconception": "Police have a right to seize keys to stop traffic offenders. (They do not).",
+            "source_category": "police conduct / No provision in MV Act",
+            "keywords": [
+                "key",
+                "chabi",
+                "seize",
+                "take",
+                "snatch"
+            ]
+        },
+        {
+            "scenario_id": "TRAFFIC_RED_LIGHT",
+            "title": "Jumping a Red Light",
+            "police_says": [
+                "Signal toda hai",
+                "Red light jump kiya",
+                "Challan katega"
+            ],
+            "what_this_means": "You are being accused of a traffic violation (Signal Jump).",
+            "authority_level": "VALID",
+            "verdict": "CAN_FINE",
+            "when_it_is_valid": [
+                "If you crossed the stop line after the signal turned red."
+            ],
+            "what_you_can_say": [
+                "I apologize if I made a mistake.",
+                "Please issue the official challan, I will pay it."
+            ],
+            "what_not_to_say": [
+                "Everyone else was going!",
+                "Tu jaanta nahi mera baap kaun hai."
+            ],
+            "what_happens_next": "They will ask for your License to issue a Challan. You can pay online or in court.",
+            "common_misconception": "You can 'settle' it on the spot with cash. (This is bribery).",
+            "source_category": "Motor Vehicles Act, Section 184",
+            "keywords": [
+                "signal",
+                "red light",
+                "jump",
+                "tosa",
+                "light",
+                "challan"
+            ]
+        }
+    ]
+}

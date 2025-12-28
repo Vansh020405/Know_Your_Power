@@ -7,6 +7,7 @@ import EligibilityChecker from './components/EligibilityChecker';
 import ContractDecoder from './components/ContractDecoder';
 import About from './components/About';
 import Support from './components/Support';
+import Contacts from './components/Contacts.jsx';
 import Login from './components/Login';
 import Signup from './components/Signup';
 import Profile from './components/Profile';
@@ -26,6 +27,7 @@ function App() {
               <Route path="decoder" element={<ContractDecoder />} />
               <Route path="about" element={<About />} />
               <Route path="support" element={<Support />} />
+              <Route path="contacts" element={<Contacts />} />
 
               {/* Auth Routes */}
               <Route path="login" element={<Login />} />

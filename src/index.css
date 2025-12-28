@@ -290,7 +290,7 @@ body {
   left: 0;
   z-index: 100;
   transform: translateX(-100%);
-  transition: transform 0.4s var(--ease-elastic);
+  transition: transform 0.3s ease-out;
   display: flex;
   flex-direction: column;
   box-shadow: 4px 0 20px rgba(0, 0, 0, 0.5);

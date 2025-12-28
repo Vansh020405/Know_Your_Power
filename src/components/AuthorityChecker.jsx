@@ -266,21 +266,62 @@ const AuthorityChecker = () => {
                 <h2 style={{ fontSize: '1.4rem', lineHeight: 1.3 }}>{selectedRule.summary}</h2>
             </div>
 
-            {/* VERDICT BOX */}
-            <div className="result-box" style={{
-                display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '0.5rem', padding: '2rem 1rem',
-                border: `1px solid ${verdictColor}`, borderColor: verdictColor, background: `linear-gradient(180deg, ${verdictColor}11 0%, transparent 100%)`
-            }}>
-                {verdictIcon}
-                <h2 style={{ fontSize: '1.75rem', marginBottom: '0rem', color: verdictColor }}>
-                    {verdictText}
-                </h2>
-                <div style={{ display: 'flex', gap: '0.5rem', flexWrap: 'wrap', justifyContent: 'center' }}>
-                    {selectedRule.conditions && selectedRule.conditions.map((c, i) => (
-                        <p key={i} style={{ fontWeight: 500, opacity: 0.9, textAlign: 'center' }}>{c}</p>
-                    ))}
+            {/* VERDICT BOX (OR CLARIFICATION OPTIONS) */}
+            {selectedRule.options ? (
+                <div style={{ marginTop: '1rem', marginBottom: '2rem' }}>
+                    <p style={{ fontSize: '1.1rem', color: '#eee', marginBottom: '1.5rem', lineHeight: 1.6 }}>
+                        {selectedRule.simple_explanation}
+                    </p>
+                    <div style={{ display: 'grid', gap: '1rem' }}>
+                        {selectedRule.options.map((opt, idx) => (
+                            <button
+                                key={idx}
+                                onClick={() => {
+                                    // Find and set the rule
+                                    const linkedRule = rulesData.rules.find(r => r.rule_id === opt.rule_id);
+                                    if (linkedRule) {
+                                        setSelectedRule(linkedRule);
+                                        setSelectedDomain(linkedRule.domain);
+                                        setSelectedTopic(linkedRule.topic);
+                                    }
+                                }}
+                                className="card"
+                                style={{
+                                    padding: '1.25rem',
+                                    textAlign: 'left',
+                                    background: 'rgba(255, 255, 255, 0.05)',
+                                    border: '1px solid #444',
+                                    cursor: 'pointer',
+                                    display: 'flex',
+                                    justifyContent: 'space-between',
+                                    alignItems: 'center',
+                                    transition: 'all 0.2s',
+                                    fontSize: '1rem',
+                                    fontWeight: 500
+                                }}
+                            >
+                                {opt.label}
+                                <ChevronRight size={20} color="var(--primary)" />
+                            </button>
+                        ))}
+                    </div>
                 </div>
-            </div>
+            ) : (
+                <div className="result-box" style={{
+                    display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '0.5rem', padding: '2rem 1rem',
+                    border: `1px solid ${verdictColor}`, borderColor: verdictColor, background: `linear-gradient(180deg, ${verdictColor}11 0%, transparent 100%)`
+                }}>
+                    {verdictIcon}
+                    <h2 style={{ fontSize: '1.75rem', marginBottom: '0rem', color: verdictColor }}>
+                        {verdictText}
+                    </h2>
+                    <div style={{ display: 'flex', gap: '0.5rem', flexWrap: 'wrap', justifyContent: 'center' }}>
+                        {selectedRule.conditions && selectedRule.conditions.map((c, i) => (
+                            <p key={i} style={{ fontWeight: 500, opacity: 0.9, textAlign: 'center' }}>{c}</p>
+                        ))}
+                    </div>
+                </div>
+            )}
 
             <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem', marginTop: '1.5rem' }}>
 
