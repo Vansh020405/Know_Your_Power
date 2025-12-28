@@ -1,0 +1,262 @@
+{
+    "rules": [
+        {
+            "rule_id": "hr_salary_delay",
+            "domain": "Workplace",
+            "topic": "Salary",
+            "summary": "Employer cannot delay salary without notice.",
+            "verdict": "CANNOT",
+            "conditions": [
+                "Wages must be paid by the 7th-10th of the following month (Payment of Wages Act)."
+            ],
+            "exceptions": [
+                "Companies with < 1,000 employees can pay by the 7th; others by the 10th.",
+                "Written agreement for different cycle (rare exceptions)."
+            ],
+            "simple_explanation": "Your employer must pay your salary on time, usually by the 7th or 10th of the month. They cannot simply delay it without a valid reason and prior notice.",
+            "detailed_explanation": "Under the Payment of Wages Act, 1936, employers are legally bound to pay wages on time. Deductions or delays are only permitted for specific reasons like authorized absence, and must be communicated.",
+            "examples": [
+                "Boss says 'money is tight' and holds salary for 2 months.",
+                "Salary is consistently paid on the 20th without agreement."
+            ],
+            "what_to_say": "I understand the situation, but my financial commitments rely on my salary being paid by the 7th as per the Payment of Wages Act. Please confirm when it will be credited.",
+            "source_category": "Payment of Wages Act, 1936"
+        },
+        {
+            "rule_id": "hr_unpaid_overtime",
+            "domain": "Workplace",
+            "topic": "Overtime",
+            "summary": "Unpaid overtime is generally not allowed for eligible employees.",
+            "verdict": "CANNOT",
+            "conditions": [
+                "Work beyond 9 hours/day or 48 hours/week usually requires 2x pay (Factories Act/Shops Act).",
+                "Applies to 'workmen' or non-managerial roles mostly."
+            ],
+            "exceptions": [
+                "Managerial or Administrative roles often have different contracts.",
+                "Startups with specific employment agreements (though laws still apply)."
+            ],
+            "simple_explanation": "If you are working beyond your shift hours, you are generally entitled to overtime pay or compensatory off, unless your contract specifically excludes it for your role.",
+            "detailed_explanation": "The Minimum Wages Act and Shops & Establishments Act mandate overtime payment at double the normal rate for work exceeding standard hours. 'Managerial' exemptions are often misused.",
+            "examples": [
+                "Boss asks you to stay late every day without extra pay.",
+                "Working weekends typically requires a 'Comp-off' or overtime pay."
+            ],
+            "what_to_say": "I am happy to support the team, but these extra hours are significant. Can we discuss overtime pay or compensatory off for this time?",
+            "source_category": "Minimum Wages Act, 1948"
+        },
+        {
+            "rule_id": "hr_forced_resignation",
+            "domain": "Workplace",
+            "topic": "Termination",
+            "summary": "Employers cannot force you to resign.",
+            "verdict": "CANNOT",
+            "conditions": [
+                "Forced resignation is legally treated as illegal termination.",
+                "You have the right to refuse to sign."
+            ],
+            "exceptions": [
+                "If you are being terminated for proven gross misconduct (with inquiry)."
+            ],
+            "simple_explanation": "Your boss cannot force you to write a resignation letter. If they want to fire you, they must give you a termination letter, which usually requires severance or notice pay.",
+            "detailed_explanation": "Companies often force resignation to avoid paying retrenchment compensation or to hide firing statistics. This is illegal under the Industrial Disputes Act.",
+            "examples": [
+                "HR calls you into a room and demands you sign a resignation letter immediately."
+            ],
+            "what_to_say": "I am not resigning. If the company wishes to terminate my employment, please provide a formal termination letter stating the reasons.",
+            "source_category": "Industrial Disputes Act, 1947"
+        },
+        {
+            "rule_id": "hr_bond_enforcement",
+            "domain": "Workplace",
+            "topic": "Bond",
+            "summary": "Employment bonds are only valid for training costs.",
+            "verdict": "CONDITIONAL",
+            "conditions": [
+                "Employer must prove they spent money on your specific training.",
+                "Bond amount must be reasonable and proportionate to the loss."
+            ],
+            "exceptions": [
+                "Generic 'onboarding' costs do not count.",
+                "Bonds cannot be used to force you to stay against your will (forced labor)."
+            ],
+            "simple_explanation": "A bond is only valid if the company spent actual money on your specialized training. They cannot demand a huge random amount just for leaving.",
+            "detailed_explanation": "Section 27 of the Indian Contract Act voids agreements in restraint of trade. Courts only allow recovery of 'actual training expenses', not penalties.",
+            "examples": [
+                "Company asks for ₹2 Lakhs for leaving, but gave no training."
+            ],
+            "what_to_say": "I am willing to reimburse the actual cost of training provided to me. Please share the breakdown of these specific expenses.",
+            "source_category": "Indian Contract Act, 1872"
+        },
+        {
+            "rule_id": "college_original_docs",
+            "domain": "College",
+            "topic": "Documents",
+            "summary": "Colleges cannot keep your original certificates.",
+            "verdict": "CANNOT",
+            "conditions": [
+                "UGC guidelines strictly prohibit withholding certificates.",
+                "Cannot be held as 'security' for fees."
+            ],
+            "exceptions": [
+                "Brief verification during admission (must be returned immediately)."
+            ],
+            "simple_explanation": "No college or university has the right to keep your original marksheets or degree certificates. They can only verify them and return them.",
+            "detailed_explanation": "The UGC Notification on Student Entitlements states that institutions cannot rob students of their credentials to force fee payment or prevent transfer.",
+            "examples": [
+                "College refuses to return 10th/12th marksheets until full 4-year fee is paid."
+            ],
+            "what_to_say": "As per UGC guidelines, retaining original certificates is not permitted. Please verify them and return them to me today.",
+            "source_category": "UGC Guidelines"
+        },
+        {
+            "rule_id": "college_attendance_exam",
+            "domain": "College",
+            "topic": "Exam",
+            "summary": "Colleges can bar you from exams for low attendance.",
+            "verdict": "CAN",
+            "conditions": [
+                "Attendance is below the mandatory limit (usually 75%).",
+                "University ordinances typically support this rule."
+            ],
+            "exceptions": [
+                "Medical grounds usually allow for 10-15% relaxation.",
+                "Participation in sports/NCC/NSS."
+            ],
+            "simple_explanation": "Yes, colleges generally have the right to stop you from writing exams if your attendance is below 75%, unless you have a valid medical reason.",
+            "detailed_explanation": "Attendance rules are set by the University's statutory ordinances. Courts usually do not interfere unless the action is arbitrary or rules weren't published.",
+            "examples": [
+                "You have 50% attendance and no medical certificate."
+            ],
+            "what_to_say": "I have valid medical reasons for my absence and can submit the necessary certificates for condonation of shortage.",
+            "source_category": "University Ordinances"
+        },
+        {
+            "rule_id": "police_phone_search",
+            "domain": "Police",
+            "topic": "Search",
+            "summary": "Police cannot check your phone without a warrant.",
+            "verdict": "CANNOT",
+            "conditions": [
+                "Generally requires a warrant.",
+                "You are not under arrest for a serious crime."
+            ],
+            "exceptions": [
+                "If you are arrested, they may seize it as evidence (procedure applies).",
+                "Emergency situations (rare)."
+            ],
+            "simple_explanation": "Police cannot simply stop you and demand to see your WhatsApp or photos. That is a violation of privacy unless they have a warrant or you are being arrested.",
+            "detailed_explanation": "Privacy is a fundamental right. Random roadside checks of personal devices are not authorized under the CrPC without specific suspicion or orders.",
+            "examples": [
+                "Traffic police asks to see your gallery or chats."
+            ],
+            "what_to_say": "I do not consent to a search of my private device without a warrant or legal notice.",
+            "source_category": "Right to Privacy / CrPC"
+        },
+        {
+            "rule_id": "police_detention_reason",
+            "domain": "Police",
+            "topic": "Detention",
+            "summary": "Police must tell you the reason for detention.",
+            "verdict": "CAN",
+            "conditions": [
+                "They CAN detain you, but MUST inform you of the grounds immediately.",
+                "Must be produced before a magistrate within 24 hours."
+            ],
+            "exceptions": [
+                "Preventive detention laws (strict procedures apply)."
+            ],
+            "simple_explanation": "Police can detain you if they suspect a crime, BUT they must immediately tell you why. You have the right to ask 'Am I under arrest?'.",
+            "detailed_explanation": "Article 22 of the Constitution guarantees that no person shall be detained without being informed of the grounds for arrest.",
+            "examples": [
+                "Police ask you to come to the station without saying why."
+            ],
+            "what_to_say": "Am I under arrest? If so, please inform me of the grounds. If not, am I free to go?",
+            "source_category": "Constitution of India, Article 22"
+        },
+        {
+            "rule_id": "police_female_arrest",
+            "domain": "Police",
+            "topic": "Arrest",
+            "summary": "Women generally cannot be arrested after sunset.",
+            "verdict": "CANNOT",
+            "conditions": [
+                "Between 6 PM and 6 AM.",
+                "Unless there is a special order from a Magistrate."
+            ],
+            "exceptions": [
+                "Serious crimes with Magistrate's permission (must be by female officer)."
+            ],
+            "simple_explanation": "Women cannot be arrested or called to the police station between 6 PM and 6 AM. Questioning should technically happen at their residence.",
+            "detailed_explanation": "Section 46(4) of the CrPC provides special protection to women, prohibiting night arrest except in exceptional circumstances with judicial permission.",
+            "examples": [
+                "Police try to take a woman to the station at 8 PM for questioning."
+            ],
+            "what_to_say": "As per the CrPC, women cannot be called to the station or arrested after sunset. Please come back with a female officer during the day.",
+            "source_category": "CrPC Section 46(4)"
+        },
+        {
+            "rule_id": "doc_contract_lockin",
+            "domain": "Documents",
+            "topic": "Contract",
+            "summary": "Lock-in periods must be reasonable.",
+            "verdict": "CONDITIONAL",
+            "conditions": [
+                "Lock-in clauses must not be 'one-sided' or 'unconscionable'.",
+                "Penalty should reflect actual loss."
+            ],
+            "exceptions": [
+                "Commercial leases often have stricter valid lock-ins."
+            ],
+            "simple_explanation": "If a contract says you cannot leave for 3 years or must pay a huge fine, it might be unfair. Courts often strike down penalties that are not genuine estimates of loss.",
+            "detailed_explanation": "One-sided clauses where only the employee/tenant is bound are often considered 'unfair trade practices' or void under Contract Act principles.",
+            "examples": [
+                "Gym membership says no refund and 1 year lock-in even if you move cities."
+            ],
+            "what_to_say": "This lock-in clause seems one-sided. I am willing to give reasonable notice, but a huge penalty is likely not enforceable.",
+            "source_category": "Indian Contract Act / Consumer Protection"
+        },
+        {
+            "rule_id": "landlord_deposit_refund",
+            "domain": "Documents",
+            "topic": "Rent",
+            "summary": "Landlord must refund deposit within reasonable time.",
+            "verdict": "CANNOT",
+            "conditions": [
+                "Deductions must be for actual damage, not 'wear and tear'.",
+                "Refund usually due upon handing over keys."
+            ],
+            "exceptions": [
+                "Unpaid rent can be deducted."
+            ],
+            "simple_explanation": "A landlord cannot keep your security deposit without a valid reason. They can deduct for broken items but not for painting or normal usage marks.",
+            "detailed_explanation": "Tenancy agreements and Model Tenancy guidelines allow deduction only for 'damages' beyond normal wear and tear. Painting charges are usually landlord's responsibility unless agreed otherwise.",
+            "examples": [
+                "Landlord deducts full deposit for 'painting' after you leave."
+            ],
+            "what_to_say": "Please provide the bills for the damages you are claiming. Normal wear and tear is not valid for deduction.",
+            "source_category": "Model Tenancy Act / Contract"
+        },
+        {
+            "rule_id": "consumer_no_refund",
+            "domain": "Workplace",
+            "topic": "Refunds",
+            "summary": "No Refund policies are often illegal.",
+            "verdict": "CANNOT",
+            "conditions": [
+                "If service was deficient or product defective.",
+                " Absolute 'No Refund' boards are void."
+            ],
+            "exceptions": [
+                "Perishable goods or custom-made items."
+            ],
+            "simple_explanation": "Shops cannot simply say 'No Exchange/No Refund'. If the product is defective, they MUST repair, replace, or refund it.",
+            "detailed_explanation": "Consumer Protection Act classes absolute restrictive trade practices as illegal. Consumers have a right to redressal for defective goods.",
+            "examples": [
+                "Bought a shirt, zipper is broken, shop says 'No Refund'."
+            ],
+            "what_to_say": "As a consumer, I am entitled to a replacement or refund for a defective product. 'No Refund' policies do not override the law.",
+            "source_category": "Consumer Protection Act, 2019"
+        }
+    ]
+}

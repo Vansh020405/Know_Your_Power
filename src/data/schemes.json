@@ -1,0 +1,191 @@
+[
+    {
+        "id": "rte_waiver",
+        "name": "Right to Education (RTE) Fee Waiver",
+        "description": "Exempts tuition fees for disadvantaged students in private schools.",
+        "benefit_type": "Fee Waiver",
+        "benefits": [
+            "25% reservation in private schools",
+            "Full tuition fee waiver up to Class 8",
+            "No donation or capitation fees"
+        ],
+        "eligibility_reason": "You qualify because your income is below ₹1 Lakh or you belong to SC/ST/Disadvantaged group.",
+        "documents": [
+            "Income Certificate",
+            "Caste Certificate",
+            "Birth Certificate",
+            "Residence Proof"
+        ],
+        "how_to_apply": "Apply online via your state's RTE portal (usually open in March-April).",
+        "link": "https://rte.gov.in",
+        "criteria": {
+            "age_max": 14,
+            "age_min": 6,
+            "income_max": 100000,
+            "situation": [
+                "student",
+                "parent"
+            ],
+            "category": [
+                "SC",
+                "ST",
+                "OBC",
+                "EWS"
+            ]
+        }
+    },
+    {
+        "id": "post_matric",
+        "name": "Post-Matric Scholarship",
+        "description": "Financial support for SC/ST/OBC students studying after Class 10.",
+        "benefit_type": "Scholarship",
+        "benefits": [
+            "Tuition fee reimbursement",
+            "Maintenance allowance (monthly stipend)",
+            "Book allowance"
+        ],
+        "eligibility_reason": "Based on your student status, category (SC/ST/OBC), and income limits.",
+        "documents": [
+            "Caste Certificate",
+            "Income Certificate",
+            "Marksheets",
+            "Bank Passbook"
+        ],
+        "how_to_apply": "Apply via National Scholarship Portal (NSP) or State Scholarship Portal.",
+        "link": "https://scholarships.gov.in",
+        "criteria": {
+            "situation": [
+                "student"
+            ],
+            "income_max": 250000,
+            "category": [
+                "SC",
+                "ST",
+                "OBC"
+            ]
+        }
+    },
+    {
+        "id": "ayushman_bharat",
+        "name": "Ayushman Bharat (PM-JAY)",
+        "description": "Government-sponsored health insurance scheme.",
+        "benefit_type": "Health",
+        "benefits": [
+            "Cashless treatment up to ₹5 Lakh/year",
+            "Covers secondary and tertiary care",
+            "Valid at empaneled public & private hospitals"
+        ],
+        "eligibility_reason": "Eligibility based on low income status or SECC 2011 data.",
+        "documents": [
+            "Aadhaar Card",
+            "Ration Card",
+            "PM-JAY Family ID"
+        ],
+        "how_to_apply": "Check eligibility online at pmjay.gov.in or visit a CSC center.",
+        "link": "https://pmjay.gov.in",
+        "criteria": {
+            "income_max": 250000,
+            "category": [
+                "EWS",
+                "SC",
+                "ST",
+                "OBC",
+                "General"
+            ]
+        }
+    },
+    {
+        "id": "pm_kisan",
+        "name": "PM Kisan Samman Nidhi",
+        "description": "Income support for landholding farmers.",
+        "benefit_type": "Financial Aid",
+        "benefits": [
+            "₹6,000 per year in 3 installments",
+            "Direct Bank Transfer (DBT)",
+            "Pension support (PM-KMY) option available"
+        ],
+        "eligibility_reason": "You are a landholding farmer family with valid land records.",
+        "documents": [
+            "Land Records (Khatauni)",
+            "Aadhaar",
+            "Bank Account linked with Aadhaar"
+        ],
+        "how_to_apply": "Register on PM Kisan Portal or visit local Patwari/CSC.",
+        "link": "https://pmkisan.gov.in",
+        "criteria": {
+            "situation": [
+                "farmer"
+            ]
+        }
+    },
+    {
+        "id": "maternity_benefit",
+        "name": "Maternity Benefit Act / PMMVY",
+        "description": "Paid leave and cash incentives for pregnant women.",
+        "benefit_type": "Maternity",
+        "benefits": [
+            "26 weeks paid leave (for employees)",
+            "₹5,000 cash incentive (PMMVY) for first child",
+            "Medical bonus if no prenatal care provided"
+        ],
+        "eligibility_reason": "Available to women employees in organized sector or pregnant women for PMMVY.",
+        "documents": [
+            "MCP Card",
+            "Aadhaar",
+            "Bank Passbook",
+            "Employment Proof (if applicable)"
+        ],
+        "how_to_apply": "Employees: Inform HR. PMMVY: Register at Anganwadi or PMMVY portal.",
+        "link": "https://wcd.nic.in",
+        "criteria": {
+            "gender": "female",
+            "age_min": 19
+        }
+    },
+    {
+        "id": "epf_withdrawal",
+        "name": "EPF Advance / Withdrawal",
+        "description": "Partial withdrawal from Provident Fund for specific needs.",
+        "benefit_type": "Financial Aid",
+        "benefits": [
+            "Withdraw for illness, marriage, housing",
+            "Up to 75% withdrawal if unemployed for 1 month",
+            "Non-refundable advance"
+        ],
+        "eligibility_reason": "You are a salaried employee with an EPF account.",
+        "documents": [
+            "UAN Number",
+            "Bank Account linked to UAN",
+            "KYC Completed"
+        ],
+        "how_to_apply": "Apply online via EPFO Unified Portal.",
+        "link": "https://unifiedportal-mem.epfindia.gov.in/",
+        "criteria": {
+            "situation": [
+                "employee"
+            ]
+        }
+    },
+    {
+        "id": "senior_citizen_savings",
+        "name": "Senior Citizen Savings Scheme (SCSS)",
+        "description": "High interest savings scheme for seniors.",
+        "benefit_type": "Financial Investment",
+        "benefits": [
+            "High interest rate (approx 8.2%)",
+            "Tax benefits under 80C",
+            "Regular quarterly income"
+        ],
+        "eligibility_reason": "Available to individuals aged 60 and above.",
+        "documents": [
+            "Age Proof",
+            "Pan Card",
+            "Aadhaar"
+        ],
+        "how_to_apply": "Visit any Post Office or authorized bank branch.",
+        "link": "https://www.indiapost.gov.in",
+        "criteria": {
+            "age_min": 60
+        }
+    }
+]

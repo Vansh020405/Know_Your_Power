@@ -1,0 +1,82 @@
+[
+    {
+        "id": "deposit_forfeit",
+        "keywords": [
+            "deposit forfeited",
+            "security deposit shall not be refunded",
+            "no refund of deposit"
+        ],
+        "risk_level": "AVOID",
+        "explanation": "Clause states you will lose your money regardless of condition. This is unfair."
+    },
+    {
+        "id": "lock_in",
+        "keywords": [
+            "lock-in period",
+            "lock in period",
+            "cannot terminate for a period"
+        ],
+        "risk_level": "RISKY",
+        "explanation": "You are forced to stay or pay for the full duration. Ensure you can commit."
+    },
+    {
+        "id": "notice_period",
+        "keywords": [
+            "notice period of 3 months",
+            "90 days notice",
+            "pay in lieu of notice"
+        ],
+        "risk_level": "MODERATE",
+        "explanation": "Long notice periods can make switching jobs/houses difficult."
+    },
+    {
+        "id": "heavy_penalty",
+        "keywords": [
+            "penalty of rs",
+            "liquidated damages",
+            "pay a sum of",
+            "indemnify"
+        ],
+        "risk_level": "RISKY",
+        "explanation": "Check if the penalty amount is reasonable. Large fixed sums are often illegal."
+    },
+    {
+        "id": "bond_enforce",
+        "keywords": [
+            "employment bond",
+            "surety bond",
+            "pay training cost"
+        ],
+        "risk_level": "RISKY",
+        "explanation": "Bonds are valid only for training costs. They cannot force you to work."
+    },
+    {
+        "id": "withhold_salary",
+        "keywords": [
+            "withhold salary",
+            "forfeit salary",
+            "hold back dues"
+        ],
+        "risk_level": "AVOID",
+        "explanation": "Employers cannot arbitrarily withhold salary for performance or resignation."
+    },
+    {
+        "id": "auto_renewal",
+        "keywords": [
+            "automatically renew",
+            "auto-renewal",
+            "deemed to be renewed"
+        ],
+        "risk_level": "MODERATE",
+        "explanation": "Contract will extend automatically unless you cancel it in time."
+    },
+    {
+        "id": "cancellation_charges",
+        "keywords": [
+            "cancellation charge",
+            "no refund on cancellation"
+        ],
+        "risk_level": "RISKY",
+        "explanation": "Ensure cancellation terms are fair if the service is not provided."
+    }
+]
