@@ -727,14 +727,13 @@ const Home = () => {
                     background: #000;
                     border: 1px solid rgba(255,255,255,0.08);
                     box-shadow: 0 20px 60px rgba(0,0,0,0.5);
-                    max-height: 600px;
+                    min-height: 500px;
                 }
                 .showcase-video {
                     width: 100%;
-                    height: auto;
-                    max-height: 600px;
+                    height: 500px;
                     display: block;
-                    opacity: 0.75;
+                    opacity: 0.8;
                     transition: opacity 0.3s;
                     object-fit: cover;
                 }
@@ -747,7 +746,15 @@ const Home = () => {
                     left: 0;
                     right: 0;
                     bottom: 0;
-                    background: linear-gradient(to bottom, rgba(0,0,0,0.3) 0%, rgba(0,0,0,0.7) 100%);
+                    background: linear-gradient(
+                        to bottom, 
+                        rgba(10,10,10,1) 0%, 
+                        rgba(10,10,10,0.8) 5%,
+                        transparent 20%,
+                        transparent 60%,
+                        rgba(0,0,0,0.6) 80%,
+                        rgba(0,0,0,0.95) 100%
+                    );
                     pointer-events: none;
                     z-index: 1;
                 }
@@ -793,10 +800,10 @@ const Home = () => {
                 @media (max-width: 768px) {
                     .video-container {
                         border-radius: 16px;
-                        max-height: 400px;
+                        min-height: 350px;
                     }
                     .showcase-video {
-                        max-height: 400px;
+                        height: 350px;
                     }
                     .video-caption {
                         padding: 1.25rem 1rem;
