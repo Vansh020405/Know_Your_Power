@@ -727,13 +727,16 @@ const Home = () => {
                     background: #000;
                     border: 1px solid rgba(255,255,255,0.08);
                     box-shadow: 0 20px 60px rgba(0,0,0,0.5);
+                    max-height: 600px;
                 }
                 .showcase-video {
                     width: 100%;
                     height: auto;
+                    max-height: 600px;
                     display: block;
                     opacity: 0.75;
                     transition: opacity 0.3s;
+                    object-fit: cover;
                 }
                 .video-container:hover .showcase-video {
                     opacity: 0.9;
@@ -784,6 +787,34 @@ const Home = () => {
                     color: rgba(255,255,255,0.7);
                     max-width: 500px;
                     margin: 0 auto;
+                }
+
+                /* MOBILE RESPONSIVE */
+                @media (max-width: 768px) {
+                    .video-container {
+                        border-radius: 16px;
+                        max-height: 400px;
+                    }
+                    .showcase-video {
+                        max-height: 400px;
+                    }
+                    .video-caption {
+                        padding: 1.25rem 1rem;
+                    }
+                    .video-caption h3 {
+                        font-size: 1.1rem;
+                    }
+                    .video-caption p {
+                        font-size: 0.85rem;
+                    }
+                    .caption-badge {
+                        font-size: 0.65rem;
+                        padding: 4px 10px;
+                    }
+                    .video-showcase-section {
+                        margin-top: 2rem;
+                        margin-bottom: 1.5rem;
+                    }
                 }
             `}</style>
         </div>
