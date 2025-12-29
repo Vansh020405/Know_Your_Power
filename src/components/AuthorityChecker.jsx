@@ -87,8 +87,8 @@ const AuthorityChecker = () => {
     useEffect(() => {
         if (selectedRule) {
             addToHistory({
-                id: selectedRule.rule_id,
-                title: selectedRule.summary,
+                id: selectedRule.rule_id || selectedRule.scenario_id,
+                title: selectedRule.summary || selectedRule.title,
                 type: 'authority',
                 result: selectedRule.verdict
             });
@@ -169,7 +169,7 @@ const AuthorityChecker = () => {
                     />
                     {aiSuggestion && (
                         <div onClick={applyAiSuggestion} style={{ marginTop: '0.75rem', padding: '0.5rem', borderRadius: '4px', background: 'rgba(16, 185, 129, 0.15)', cursor: 'pointer', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-                            <span style={{ fontSize: '0.85rem', color: '#eee' }}>Found rule: <strong>{aiSuggestion.rule.summary}</strong></span>
+                            <span style={{ fontSize: '0.85rem', color: '#eee' }}>Found rule: <strong>{aiSuggestion.rule.summary || aiSuggestion.rule.title}</strong></span>
                             <ChevronRight size={16} color="var(--primary)" />
                         </div>
                     )}
@@ -249,9 +249,18 @@ const AuthorityChecker = () => {
     }
 
     // --- VIEW 3: RULE UNIT DETAIL ---
-    const verdictColor = selectedRule.verdict === 'CANNOT' ? 'var(--success)' : (selectedRule.verdict === 'CAN' ? 'var(--danger)' : '#facc15');
-    const verdictIcon = selectedRule.verdict === 'CANNOT' ? <CheckCircle size={48} color={verdictColor} /> : (selectedRule.verdict === 'CAN' ? <AlertCircle size={48} color={verdictColor} /> : <Zap size={48} color={verdictColor} />);
-    const verdictText = selectedRule.verdict === 'CANNOT' ? 'NO, THEY CANNOT' : (selectedRule.verdict === 'CAN' ? 'YES, THEY CAN' : 'IT DEPENDS');
+    const verdictColor = (selectedRule.verdict === 'CANNOT' || selectedRule.verdict === 'CANNOT_DO' || selectedRule.authority_level === 'ILLEGAL') ? 'var(--success)' :
+        (selectedRule.verdict === 'CAN' || selectedRule.verdict === 'CAN_FINE' || selectedRule.verdict === 'MUST_STOP' || selectedRule.verdict === 'CAN_TEST') ? 'var(--danger)' : '#facc15';
+
+    const verdictIcon = (selectedRule.verdict === 'CANNOT' || selectedRule.verdict === 'CANNOT_DO' || selectedRule.authority_level === 'ILLEGAL') ? <CheckCircle size={48} color={verdictColor} /> :
+        (selectedRule.verdict === 'CAN' || selectedRule.verdict === 'CAN_FINE' || selectedRule.verdict === 'MUST_STOP') ? <AlertCircle size={48} color={verdictColor} /> : <Zap size={48} color={verdictColor} />;
+
+    let verdictText = 'IT DEPENDS';
+    if (selectedRule.verdict === 'CANNOT' || selectedRule.verdict === 'CANNOT_DO') verdictText = 'NO, THEY CANNOT';
+    else if (selectedRule.verdict === 'CAN' || selectedRule.verdict === 'CAN_FINE' || selectedRule.verdict === 'CAN_ASK' || selectedRule.verdict === 'CAN_TEST') verdictText = 'YES, THEY CAN';
+    else if (selectedRule.verdict === 'MUST_STOP') verdictText = 'YOU MUST STOP';
+    else if (selectedRule.authority_level === 'ILLEGAL') verdictText = 'ILLEGAL ACT';
+    else if (selectedRule.verdict) verdictText = selectedRule.verdict.replace(/_/g, ' ');
 
     return (
         <div>
@@ -263,7 +272,7 @@ const AuthorityChecker = () => {
             </div>
 
             <div style={{ margin: '1rem 0' }}>
-                <h2 style={{ fontSize: '1.4rem', lineHeight: 1.3 }}>{selectedRule.summary}</h2>
+                <h2 style={{ fontSize: '1.4rem', lineHeight: 1.3 }}>{selectedRule.summary || selectedRule.title}</h2>
             </div>
 
             {/* VERDICT BOX (OR CLARIFICATION OPTIONS) */}
@@ -312,7 +321,7 @@ const AuthorityChecker = () => {
                     border: `1px solid ${verdictColor}`, borderColor: verdictColor, background: `linear-gradient(180deg, ${verdictColor}11 0%, transparent 100%)`
                 }}>
                     {verdictIcon}
-                    <h2 style={{ fontSize: '1.75rem', marginBottom: '0rem', color: verdictColor }}>
+                    <h2 style={{ fontSize: '1.75rem', marginBottom: '0rem', color: verdictColor, textAlign: 'center' }}>
                         {verdictText}
                     </h2>
                     <div style={{ display: 'flex', gap: '0.5rem', flexWrap: 'wrap', justifyContent: 'center' }}>
@@ -325,28 +334,52 @@ const AuthorityChecker = () => {
 
             <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem', marginTop: '1.5rem' }}>
 
+                {/* SCENARIO: POLICE SAYS */}
+                {selectedRule.police_says && (
+                    <div className="card" style={{ background: 'rgba(255, 255, 255, 0.03)' }}>
+                        <h3 className="label" style={{ color: 'var(--text-muted)' }}>If they say...</h3>
+                        <div style={{ display: 'flex', flexDirection: 'column', gap: '0.4rem', marginTop: '0.5rem' }}>
+                            {selectedRule.police_says.map((phrase, i) => (
+                                <div key={i} style={{ fontSize: '1rem', color: '#fff', fontStyle: 'italic', display: 'flex', alignItems: 'flex-start', gap: '8px' }}>
+                                    <span style={{ opacity: 0.5 }}>"</span>{phrase}<span style={{ opacity: 0.5 }}>"</span>
+                                </div>
+                            ))}
+                        </div>
+                    </div>
+                )}
+
                 {/* SIMPLE EXPLANATION */}
                 <div className="card" style={{ cursor: 'default' }}>
                     <h3 className="label" style={{ color: 'var(--text-muted)' }}>Explanation</h3>
-                    <p style={{ color: 'var(--text)', fontSize: '1.05rem', lineHeight: 1.5 }}>{selectedRule.simple_explanation}</p>
+                    <p style={{ color: 'var(--text)', fontSize: '1.05rem', lineHeight: 1.5 }}>
+                        {selectedRule.simple_explanation || selectedRule.what_this_means}
+                    </p>
 
                     {/* EXPANDABLE DETAIL */}
                     <button
                         onClick={() => setIsDetailedOpen(!isDetailedOpen)}
                         style={{ background: 'none', border: 'none', color: 'var(--primary)', padding: 0, marginTop: '0.5rem', fontSize: '0.9rem', display: 'flex', alignItems: 'center', gap: '0.5rem', cursor: 'pointer' }}
                     >
-                        {isDetailedOpen ? "Show Less" : "Read Detailed Law"} {isDetailedOpen ? <ChevronUp size={14} /> : <ChevronDown size={14} />}
+                        {isDetailedOpen ? "Show Less" : "Read More Info"} {isDetailedOpen ? <ChevronUp size={14} /> : <ChevronDown size={14} />}
                     </button>
 
                     {isDetailedOpen && (
                         <div style={{ marginTop: '0.75rem', padding: '0.75rem', background: 'rgba(255,255,255,0.03)', borderRadius: '6px' }}>
-                            <p style={{ fontSize: '0.95rem', color: '#ccc', lineHeight: 1.5 }}>{selectedRule.detailed_explanation}</p>
+                            <p style={{ fontSize: '0.95rem', color: '#ccc', lineHeight: 1.5 }}>
+                                {selectedRule.detailed_explanation || selectedRule.what_happens_next || "No additional details available."}
+                            </p>
                             {selectedRule.exceptions && selectedRule.exceptions.length > 0 && (
                                 <div style={{ marginTop: '0.75rem' }}>
                                     <strong style={{ fontSize: '0.85rem', color: '#facc15' }}>Exceptions:</strong>
                                     <ul style={{ paddingLeft: '1.2rem', marginTop: '0.25rem', color: '#ccc', fontSize: '0.9rem' }}>
                                         {selectedRule.exceptions.map((ex, i) => <li key={i}>{ex}</li>)}
                                     </ul>
+                                </div>
+                            )}
+                            {selectedRule.common_misconception && (
+                                <div style={{ marginTop: '0.75rem' }}>
+                                    <strong style={{ fontSize: '0.85rem', color: '#f87171' }}>Common Myth:</strong>
+                                    <p style={{ color: '#ccc', fontSize: '0.9rem', marginTop: '0.25rem' }}>{selectedRule.common_misconception}</p>
                                 </div>
                             )}
                         </div>
@@ -361,10 +394,35 @@ const AuthorityChecker = () => {
                             {copied ? <CheckCircle size={14} /> : <Copy size={14} />} {copied ? "Copied" : "Copy"}
                         </button>
                     </div>
-                    <p style={{ color: 'var(--text)', fontStyle: 'italic', fontSize: '1.1rem', fontWeight: 500, lineHeight: '1.5' }}>
-                        "{selectedRule.what_to_say}"
-                    </p>
+
+                    {selectedRule.what_you_can_say && Array.isArray(selectedRule.what_you_can_say) ? (
+                        <div style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
+                            {selectedRule.what_you_can_say.map((line, i) => (
+                                <p key={i} style={{ color: 'var(--text)', fontStyle: 'italic', fontSize: '1.1rem', fontWeight: 500, lineHeight: '1.5' }}>
+                                    "{line}"
+                                </p>
+                            ))}
+                        </div>
+                    ) : (
+                        <p style={{ color: 'var(--text)', fontStyle: 'italic', fontSize: '1.1rem', fontWeight: 500, lineHeight: '1.5' }}>
+                            "{selectedRule.what_to_say}"
+                        </p>
+                    )}
                 </div>
+
+                {/* WHAT NOT TO SAY (BAD IDEA) */}
+                {selectedRule.what_not_to_say && (
+                    <div className="card" style={{ cursor: 'default', background: 'rgba(239, 68, 68, 0.05)', borderColor: 'var(--danger)' }}>
+                        <h3 className="label" style={{ color: 'var(--danger)', margin: 0 }}>Never Say This</h3>
+                        <div style={{ display: 'flex', flexDirection: 'column', gap: '0.4rem', marginTop: '0.5rem' }}>
+                            {selectedRule.what_not_to_say.map((line, i) => (
+                                <p key={i} style={{ color: 'var(--text)', fontSize: '1rem', textDecoration: 'line-through', opacity: 0.8 }}>
+                                    {line}
+                                </p>
+                            ))}
+                        </div>
+                    </div>
+                )}
 
                 {/* SOURCE */}
                 {selectedRule.source_category && (

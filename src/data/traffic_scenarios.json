@@ -1,107 +1,433 @@
 {
     "scenarios": [
         {
-            "scenario_id": "TRAFFIC_LICENSE_CHECK",
-            "title": "Police asking for license / papers",
+            "scenario_id": "TRAFFIC_ROUTINE_STOP",
+            "domain": "Police",
+            "topic": "Traffic",
+            "title": "Routine Stop",
+            "summary": "Routine Traffic Stop",
+            "police_says": [
+                "Ruko",
+                "Side mein lagao",
+                "Gaadi side karo",
+                "Waving hand to stop"
+            ],
+            "what_this_means": "The officer is signaling you to pull over for a routine check or traffic management.",
+            "simple_explanation": "The officer is signaling you to pull over for a routine check or traffic management.",
+            "authority_level": "VALID",
+            "verdict": "MUST_STOP",
+            "when_it_is_valid": [
+                "Any uniformed officer can signal you to stop.",
+                "MV Act Section 132 requires you to stop when signaled."
+            ],
+            "what_you_can_say": [
+                "Yes officer?",
+                "Is there a problem?",
+                "I have pulled over as requested."
+            ],
+            "what_to_say": "Yes officer? Is there a problem?",
+            "what_not_to_say": [
+                "Why did you stop me? (Aggressively)",
+                "I am in a hurry, let me go."
+            ],
+            "what_happens_next": "They will usually ask for your documents (License/RC) or check for violations.",
+            "common_misconception": "You can ignore them if you didn't break a rule. (False, you must stop).",
+            "source_category": "MV Act Section 132",
+            "keywords": [
+                "stop",
+                "ruko",
+                "side",
+                "wave",
+                "signal"
+            ]
+        },
+        {
+            "scenario_id": "TRAFFIC_DOCUMENTS_CHECK",
+            "domain": "Police",
+            "topic": "Traffic",
+            "title": "License & RC Check",
+            "summary": "License & RC Check",
             "police_says": [
                 "License dikhao",
                 "DL hai?",
-                "Gaadi side lagao",
-                "Papers dikhao"
+                "Papers dikhao",
+                "RC kahan hai",
+                "Insurance expired hai kya"
             ],
-            "what_this_means": "The officer is conducting a routine document check to verify your eligibility to drive.",
-            "authority_level": "CONDITIONAL",
+            "what_this_means": "The officer is verifying your eligibility to drive and vehicle ownership.",
+            "simple_explanation": "The officer is verifying your eligibility to drive and vehicle ownership.",
+            "authority_level": "VALID",
             "verdict": "CAN_ASK",
             "when_it_is_valid": [
-                "If you are driving a vehicle on a public road.",
-                "Uniformed officer (constable or above) can ask."
+                "Uniformed officer can ask for documents anytime.",
+                "You can show digital versions (DigiLocker/mParivahan)."
             ],
             "what_you_can_say": [
-                "Here is my driving license/RC.",
-                "I have them on DigiLocker, let me show you."
+                "Here is my original License/RC.",
+                "I have the documents on DigiLocker, showing you now."
             ],
+            "what_to_say": "Here is my original License/RC. I have the documents on DigiLocker.",
             "what_not_to_say": [
-                "Why are you stopping me? (Avoid starting with aggression)",
-                "I know my rights, you can't check me."
+                "You can't check me without a reason.",
+                "I forgot them at home (Instant challan)."
             ],
-            "what_happens_next": "They will verify the validity. If everything is clear, you will be allowed to proceed immediately.",
-            "common_misconception": "People think they can refuse to show ID without a reason. Under MV Act, you MUST show documents on demand.",
-            "source_category": "Motor Vehicles Act, Section 130",
+            "what_happens_next": "They verify validity. If valid, you go. If not, a challan is issued.",
+            "common_misconception": "Police can snatch your license. (They can only seize it for specific offenses like drunk driving).",
+            "source_category": "MV Act Section 130",
             "keywords": [
                 "license",
                 "dl",
-                "papers",
-                "id",
                 "rc",
+                "papers",
                 "insurance",
-                "dikhao"
+                "pollution",
+                "puc",
+                "check"
             ]
         },
         {
-            "scenario_id": "TRAFFIC_KEY_SEIZURE",
-            "title": "Police taking your keys",
+            "scenario_id": "TRAFFIC_SAFETY_VIOLATION",
+            "domain": "Police",
+            "topic": "Traffic",
+            "title": "Helmet / Seatbelt Fine",
+            "summary": "Helmet / Seatbelt Fine",
             "police_says": [
-                "Chabi do",
-                "Key nikaal",
-                "Snatching keys instantly"
-            ],
-            "what_this_means": "The officer is trying to immobilize your vehicle, possibly to prevent you from fleeing.",
-            "authority_level": "ILLEGAL",
-            "verdict": "CANNOT_DO",
-            "when_it_is_valid": [
-                "Rarely valid. Usually considered harassment."
-            ],
-            "what_you_can_say": [
-                "Sir, I am not running away. Please do not take my keys.",
-                "I am cooperating with the check, removing keys is unnecessary."
-            ],
-            "what_not_to_say": [
-                "How dare you touch my bike!",
-                "I will record you (Saying it aggressively escalates)."
-            ],
-            "what_happens_next": "If you stay calm, they usually return keys once you start showing documents. If they persist, you can file a complaint later.",
-            "common_misconception": "Police have a right to seize keys to stop traffic offenders. (They do not).",
-            "source_category": "police conduct / No provision in MV Act",
-            "keywords": [
-                "key",
-                "chabi",
-                "seize",
-                "take",
-                "snatch"
-            ]
-        },
-        {
-            "scenario_id": "TRAFFIC_RED_LIGHT",
-            "title": "Jumping a Red Light",
-            "police_says": [
-                "Signal toda hai",
-                "Red light jump kiya",
+                "Helmet kahan hai?",
+                "Belt nahi lagayi",
+                "Piche wale ka helmet kahan hai?",
                 "Challan katega"
             ],
-            "what_this_means": "You are being accused of a traffic violation (Signal Jump).",
+            "what_this_means": "You have been stopped for a visible safety violation.",
+            "simple_explanation": "You have been stopped for a visible safety violation.",
             "authority_level": "VALID",
             "verdict": "CAN_FINE",
             "when_it_is_valid": [
-                "If you crossed the stop line after the signal turned red."
+                "If you or pillion rider are not wearing a helmet.",
+                "If driver or co-passengers are not wearing seatbelts."
             ],
             "what_you_can_say": [
-                "I apologize if I made a mistake.",
-                "Please issue the official challan, I will pay it."
+                "I apologize, I made a mistake.",
+                "Please issue the challan.",
+                "For medical reasons I removed it (if true)."
             ],
+            "what_to_say": "I apologize, I made a mistake. Please issue the challan.",
             "what_not_to_say": [
-                "Everyone else was going!",
-                "Tu jaanta nahi mera baap kaun hai."
+                "Just going nearby.",
+                "It's too hot for a helmet.",
+                "Let it go this time."
             ],
-            "what_happens_next": "They will ask for your License to issue a Challan. You can pay online or in court.",
-            "common_misconception": "You can 'settle' it on the spot with cash. (This is bribery).",
-            "source_category": "Motor Vehicles Act, Section 184",
+            "what_happens_next": "Officer will issue a challan (fine).",
+            "common_misconception": "Pillion riders don't need helmets. (Most states mandate it).",
+            "source_category": "MV Act Section 129 / 194B",
             "keywords": [
+                "helmet",
+                "seatbelt",
+                "belt",
+                "safety",
+                "head",
+                "wear"
+            ]
+        },
+        {
+            "scenario_id": "TRAFFIC_MOVING_VIOLATION",
+            "domain": "Police",
+            "topic": "Traffic",
+            "title": "Wrong-side / Signal Jump",
+            "summary": "Wrong-side / Signal Jump",
+            "police_says": [
+                "Wrong side aa rahe ho",
+                "Signal toda",
+                "Red light jump kiya",
+                "One way hai"
+            ],
+            "what_this_means": "You are accused of driving in a prohibited direction or disobeying traffic signals.",
+            "simple_explanation": "You are accused of driving in a prohibited direction or disobeying traffic signals.",
+            "authority_level": "VALID",
+            "verdict": "CAN_FINE",
+            "when_it_is_valid": [
+                "If you crossed stop line at red light.",
+                "If you drove against traffic flow."
+            ],
+            "what_you_can_say": [
+                "I apologize.",
+                "Please show me the camera proof if available (calmly).",
+                "Please issue the challan."
+            ],
+            "what_to_say": "I apologize. Please issue the challan.",
+            "what_not_to_say": [
+                "Everyone looks doing it.",
+                "Signal was yellow/green (unless sure)."
+            ],
+            "what_happens_next": "Challan issuance. For dangerous driving, license seizure is possible.",
+            "common_misconception": "You can turn left on red always. (Only if 'Free Left' sign exists).",
+            "source_category": "MV Act Section 184",
+            "keywords": [
+                "wrong side",
                 "signal",
                 "red light",
                 "jump",
-                "tosa",
-                "light",
-                "challan"
+                "one way",
+                "toda"
+            ]
+        },
+        {
+            "scenario_id": "TRAFFIC_DUI_SUSPICION",
+            "domain": "Police",
+            "topic": "Traffic",
+            "title": "Drunk Driving Suspicion",
+            "summary": "Drunk Driving Suspicion",
+            "police_says": [
+                "Pee rakhi hai?",
+                "Muh sunghao",
+                "Breathalyzer mein phook maaro",
+                "Alcohol smell aa rahi hai"
+            ],
+            "what_this_means": "Officer suspects you are driving under the influence of alcohol/drugs.",
+            "simple_explanation": "Officer suspects you are driving under the influence of alcohol/drugs. They can demand a breath test.",
+            "authority_level": "VALID",
+            "verdict": "CAN_TEST",
+            "when_it_is_valid": [
+                "Officer can demand a breath test using a breathalyzer.",
+                "Refusal can lead to arrest/hospital test."
+            ],
+            "what_you_can_say": [
+                "I have not consumed alcohol.",
+                "I am ready to take the breathalyzer test.",
+                "Please use a fresh nozzle."
+            ],
+            "what_to_say": "I have not consumed alcohol. I am ready to take the breathalyzer test.",
+            "what_not_to_say": [
+                "I only had one beer.",
+                "No, I won't create a scene."
+            ],
+            "what_happens_next": "If reading > 30mg/100ml, you are booked. Vehicle seized. Challan sent to court.",
+            "common_misconception": "Police can fine you on the spot/cash for drunk driving. (Never. It is always a Court Challan).",
+            "source_category": "MV Act Section 185, 203",
+            "keywords": [
+                "drunk",
+                "alcohol",
+                "sharab",
+                "pee",
+                "breathalyzer",
+                "smell"
+            ]
+        },
+        {
+            "scenario_id": "TRAFFIC_PHONE_CHECK",
+            "domain": "Police",
+            "topic": "Traffic",
+            "title": "Phone Checking Demand",
+            "summary": "Phone Checking Demand",
+            "police_says": [
+                "Phone dikhao",
+                "Gallery kholo",
+                "Chat dikhao",
+                "Recording band karo"
+            ],
+            "what_this_means": "Officer is attempting to access your private data or stop you from recording.",
+            "simple_explanation": "Officer is attempting to access your private data. This is generally illegal without a warrant.",
+            "authority_level": "ILLEGAL",
+            "verdict": "CANNOT_DO",
+            "when_it_is_valid": [
+                "Generally illegal without a warrant.",
+                "Exception: Checking digital documents if you claim to have them."
+            ],
+            "what_you_can_say": [
+                "Officer, my phone is my private property.",
+                "I can show you my documents, but I cannot unlock my gallery.",
+                "There is no law that requires me to show my chats."
+            ],
+            "what_to_say": "Officer, my phone is private. I can show documents, but cannot unlock my gallery.",
+            "what_not_to_say": [
+                "Get lost, I won't show.",
+                "Fighting physically."
+            ],
+            "what_happens_next": "Politely refuse. You have a right to record police in public duties.",
+            "common_misconception": "Police can check your phone for 'security'. (False).",
+            "source_category": "Right to Privacy",
+            "keywords": [
+                "phone",
+                "mobile",
+                "gallery",
+                "chat",
+                "recording",
+                "video",
+                "camera"
+            ]
+        },
+        {
+            "scenario_id": "TRAFFIC_STATION_THREAT",
+            "domain": "Police",
+            "topic": "Traffic",
+            "title": "“Come to station” Threat",
+            "summary": "Threat to take to Police Station",
+            "police_says": [
+                "Thane chalo",
+                "Gaadi thane jayegi",
+                "Lockup mein daal dunga",
+                "Sahab se baat karna wahan"
+            ],
+            "what_this_means": "Intimidation tactic to get compliance or a bribe, OR serious detention.",
+            "simple_explanation": "Intimidation tactic. Police cannot arrest you for minor traffic violations.",
+            "authority_level": "CONDITIONAL",
+            "verdict": "CHECK_GROUNDS",
+            "when_it_is_valid": [
+                "Valid only if arrested for a cognizable offense (Drunk driving, rash driving affecting safety).",
+                "Invalid for minor traffic violations."
+            ],
+            "what_you_can_say": [
+                "Am I under arrest? For what offense?",
+                "For a traffic challan, I am ready to accept the fine here or digitally.",
+                "I will call my lawyer/family if you are detaining me."
+            ],
+            "what_to_say": "Am I under arrest? For a traffic challan, I am ready to accept the fine here.",
+            "what_not_to_say": [
+                "Chalo thane, dekhte hain.",
+                "Resisting clearly lawful arrest."
+            ],
+            "what_happens_next": "If minor offense, they usually back down if you stand firm on 'Issue Challan'.",
+            "common_misconception": "Police can take you to station for not having license. (They can fine you, maybe seize vehicle, but arrest is extreme).",
+            "source_category": "CrPC / MV Act Arrest Rules",
+            "keywords": [
+                "station",
+                "thane",
+                "lockup",
+                "jail",
+                "arrest",
+                "chalo"
+            ]
+        },
+        {
+            "scenario_id": "TRAFFIC_SPOT_FINE",
+            "domain": "Police",
+            "topic": "Traffic",
+            "title": "Spot Fine vs Challan",
+            "summary": "Spot Fine vs Challan",
+            "police_says": [
+                "Yahin bhar do",
+                "Court ke chakkar mein padoge",
+                "Machine kharab hai, cash de do",
+                "Compounding fee"
+            ],
+            "what_this_means": "Officer is offering an on-spot settlement. Could be legal compounding OR a bribe.",
+            "simple_explanation": "Officer is offering an on-spot settlement. Beware of bribes masquerading as fines.",
+            "authority_level": "CONDITIONAL",
+            "verdict": "VERIFY_RECEIPT",
+            "when_it_is_valid": [
+                "Only ASI (1 star) or above can collect spot fines.",
+                "MUST provide a receipt (e-challan printout or receipt book).",
+                "Constables cannot take money."
+            ],
+            "what_you_can_say": [
+                "I want an official receipt/challan.",
+                "I will pay online via e-Challan.",
+                "I don't have cash, please issue challan."
+            ],
+            "what_to_say": "I want an official receipt. I will pay online via e-Challan.",
+            "what_not_to_say": [
+                "Take 500 and let me go.",
+                "Giving cash without receipt."
+            ],
+            "what_happens_next": "If valid, they give receipt. If bribe attempt, they might issue actual challan.",
+            "common_misconception": "You must pay cash on the spot. (You almost always have option to pay later online or in court).",
+            "source_category": "MV Act Compounding Rules",
+            "keywords": [
+                "cash",
+                "fine",
+                "spot",
+                "receipt",
+                "pay",
+                "bhar do",
+                "online"
+            ]
+        },
+        {
+            "scenario_id": "TRAFFIC_VEHICLE_SEIZURE",
+            "domain": "Police",
+            "topic": "Traffic",
+            "title": "Vehicle Seizure Threat",
+            "summary": "Vehicle Seizure Threat",
+            "police_says": [
+                "Gaadi jabt hogi",
+                "Bike uthwa lenge",
+                "Chabi do",
+                "Snatching keys"
+            ],
+            "what_this_means": "Threat to impound vehicle. Often used to pressure; or valid for serious lack of documents.",
+            "simple_explanation": "Threat to impound vehicle. Valid only for serious offenses like no RC or Drunk Driving.",
+            "authority_level": "CONDITIONAL",
+            "verdict": "CHECK_VALIDITY",
+            "when_it_is_valid": [
+                "No valid Registration (RC).",
+                "No Permit (commercial).",
+                "Drunk driving.",
+                "Vehicle involved in crime."
+            ],
+            "what_you_can_say": [
+                "On what grounds are you seizing my vehicle?",
+                "I have my RC and license, you cannot seize for minor violations.",
+                "Please give me a 'Seizure Memo' if you take it.",
+                "Do not snatch my keys, I am cooperating."
+            ],
+            "what_to_say": "On what grounds are you seizing? I have documents. Please give a Seizure Memo.",
+            "what_not_to_say": [
+                "You can't take it! (Screaming)",
+                "Physical resistance."
+            ],
+            "what_happens_next": "If seizing, they MUST give a seizure list (Panchnama).",
+            "common_misconception": "Police can seize bike for no insurance. (Usually just a fine).",
+            "source_category": "MV Act Section 207",
+            "keywords": [
+                "seize",
+                "jabt",
+                "impound",
+                "key",
+                "chabi",
+                "uthwa",
+                "tow"
+            ]
+        },
+        {
+            "scenario_id": "TRAFFIC_BRIBE_HINT",
+            "domain": "Police",
+            "topic": "Traffic",
+            "title": "Bribe Hint (“Adjust kar lo”)",
+            "summary": "Bribe Hint / Settlement Offer",
+            "police_says": [
+                "Kuch le de ke khatam karo",
+                "Chay paani ka dekh lo",
+                "Adjust kar lo",
+                "Settle kar lete hain",
+                "Itna fine kyu bharna?"
+            ],
+            "what_this_means": "The officer is indirectly soliciting a bribe.",
+            "simple_explanation": "The officer is asking for a bribe to avoid issuing a formal fine.",
+            "authority_level": "ILLEGAL",
+            "verdict": "REFUSE_POLITELY",
+            "when_it_is_valid": [
+                "Never legal."
+            ],
+            "what_you_can_say": [
+                "I would prefer the official challan.",
+                "I don't have cash.",
+                "Please just issue the fine, I will handle it."
+            ],
+            "what_to_say": "I would prefer the official challan. Please issue the fine.",
+            "what_not_to_say": [
+                "How much do you want?",
+                "Identifying yourself as a bribe giver."
+            ],
+            "what_happens_next": "If you refuse to bribe, they will issue the actual challan.",
+            "common_misconception": "Paying bribe is cheaper. (It encourages corruption and offers no legal clearance).",
+            "source_category": "Anti-Corruption",
+            "keywords": [
+                "adjust",
+                "setting",
+                "chay",
+                "paani",
+                "le de ke",
+                "khatam",
+                "settle"
             ]
         }
     ]
