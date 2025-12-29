@@ -110,6 +110,97 @@
             "source_category": "Industrial Disputes Act / Shops Act"
         },
         {
+            "rule_id": "hr_maternity_leave",
+            "domain": "Workplace",
+            "topic": "Maternity",
+            "summary": "Female employees are entitled to 26 weeks of maternity leave.",
+            "verdict": "CAN",
+            "conditions": [
+                "For first two children: 26 weeks (8 weeks can be before delivery).",
+                "For third child onwards: 12 weeks.",
+                "Applies to establishments with 10+ employees."
+            ],
+            "exceptions": [
+                "Employers can ask for proof of pregnancy.",
+                "Work-from-home option can be offered after initial leave."
+            ],
+            "simple_explanation": "You have the legal right to take paid maternity leave for 26 weeks. Your employer cannot fire you or deny this benefit.",
+            "detailed_explanation": "The Maternity Benefit Act, 1961 (amended 2017) mandates paid leave. Employers who deny this face penalties and compensation orders.",
+            "examples": [
+                "Boss says 'We can only give you one month off'.",
+                "Company threatens to terminate during pregnancy."
+            ],
+            "what_to_say": "As per the Maternity Benefit Act, I am entitled to 26 weeks of paid leave. Please confirm the process for formally applying.",
+            "source_category": "Maternity Benefit Act, 1961"
+        },
+        {
+            "rule_id": "hr_sexual_harassment",
+            "domain": "Workplace",
+            "topic": "Harassment",
+            "summary": "Employers must have a POSH committee and cannot ignore complaints.",
+            "verdict": "CANNOT",
+            "conditions": [
+                "All workplaces with 10+ employees must have Internal Complaints Committee.",
+                "Complaints must be investigated within 90 days."
+            ],
+            "exceptions": [
+                "False/malicious complaints can lead to action against complainant."
+            ],
+            "simple_explanation": "If you face sexual harassment at work, your company is legally required to investigate. They cannot dismiss your complaint or retaliate against you.",
+            "detailed_explanation": "The POSH Act (Sexual Harassment of Women at Workplace Act, 2013) mandates strict procedures. Retaliation is a criminal offense.",
+            "examples": [
+                "Manager makes inappropriate comments, HR ignores complaint.",
+                "Company says 'just ignore him' without inquiry."
+            ],
+            "what_to_say": "I would like to file a formal complaint under the POSH Act. Please direct me to the Internal Complaints Committee.",
+            "source_category": "POSH Act, 2013"
+        },
+        {
+            "rule_id": "hr_pf_mandatory",
+            "domain": "Workplace",
+            "topic": "Gratuity",
+            "summary": "PF and Gratuity are mandatory for eligible employees.",
+            "verdict": "CANNOT",
+            "conditions": [
+                "PF is mandatory for organizations with 20+ employees.",
+                "Gratuity is due after 5 years of service.",
+                "Both employee and employer contribute to PF (12% each)."
+            ],
+            "exceptions": [
+                "Some government exemptions exist for certain sectors."
+            ],
+            "simple_explanation": "Your employer cannot refuse to enroll you in PF or deny gratuity after 5 years. These are statutory benefits.",
+            "detailed_explanation": "The Employees' Provident Fund Act and Payment of Gratuity Act make these benefits mandatory. Non-compliance invites legal action.",
+            "examples": [
+                "Company says 'We don't provide PF for contract workers'.",
+                "Employer refuses gratuity saying you resigned."
+            ],
+            "what_to_say": "PF enrollment is mandatory under the EPF Act. Please initiate my registration immediately.",
+            "source_category": "EPF Act / Payment of Gratuity Act"
+        },
+        {
+            "rule_id": "hr_notice_period",
+            "domain": "Workplace",
+            "topic": "Resignation",
+            "summary": "Notice period must be mutual and reasonable.",
+            "verdict": "CONDITIONAL",
+            "conditions": [
+                "Standard notice is 1-3 months as per contract.",
+                "Employer cannot have different notice periods for employee vs company."
+            ],
+            "exceptions": [
+                "You can negotiate buyout of notice period.",
+                "Summary dismissal for gross misconduct doesn't require notice."
+            ],
+            "simple_explanation": "You must serve the notice period mentioned in your contract, but it should be fair. A 3-month notice when employer can fire you in 1 week is unfair.",
+            "detailed_explanation": "Courts have struck down one-sided notice clauses. The principle of 'mutuality' applies - both parties should have similar obligations.",
+            "examples": [
+                "Contract says 'Employee: 3 months, Employer: 1 week'."
+            ],
+            "what_to_say": "I am willing to serve a reasonable notice period. However, the current clause seems one-sided and may not be enforceable.",
+            "source_category": "Industrial Employment Act / Contract Law"
+        },
+        {
             "rule_id": "college_original_docs",
             "domain": "College",
             "topic": "Documents",
@@ -133,7 +224,7 @@
         {
             "rule_id": "college_attendance_exam",
             "domain": "College",
-            "topic": "Exam",
+            "topic": "Attendance",
             "summary": "Colleges can bar you from exams for low attendance.",
             "verdict": "CAN",
             "conditions": [
@@ -155,7 +246,7 @@
         {
             "rule_id": "college_fee_refund",
             "domain": "College",
-            "topic": "Refunds",
+            "topic": "Fees",
             "summary": "Colleges must refund fees upon withdrawal.",
             "verdict": "CONDITIONAL",
             "conditions": [
@@ -172,6 +263,28 @@
             ],
             "what_to_say": "As per UGC Fee Refund Guidelines, I am entitled to a refund since I am withdrawing within the stipulated permissible period.",
             "source_category": "UGC Fee Refund Policy"
+        },
+        {
+            "rule_id": "college_ragging",
+            "domain": "College",
+            "topic": "Ragging",
+            "summary": "Ragging is a criminal offense with severe penalties.",
+            "verdict": "CANNOT",
+            "conditions": [
+                "Any form of ragging is banned by UGC/AICTE/Supreme Court.",
+                "Colleges must have anti-ragging committees."
+            ],
+            "exceptions": [
+                "None. Even 'mild' ragging is illegal."
+            ],
+            "simple_explanation": "Ragging is completely illegal. Seniors cannot force you to do anything. You have the right to report it anonymously.",
+            "detailed_explanation": "UGC Regulations on Curbing Ragging (2009) make it a cognizable offense. Students involved can be expelled and jailed.",
+            "examples": [
+                "Seniors forcing you to dance, sing, or perform tasks.",
+                "Being asked personal questions or abused."
+            ],
+            "what_to_say": "I do not consent to this. Ragging is illegal and I will report this to the anti-ragging committee if it continues.",
+            "source_category": "UGC Anti-Ragging Regulations, 2009"
         },
         {
             "rule_id": "police_phone_search",
@@ -198,7 +311,7 @@
         {
             "rule_id": "police_detention_reason",
             "domain": "Police",
-            "topic": "Detention",
+            "topic": "Arrest",
             "summary": "Police must tell you the reason for detention.",
             "verdict": "CAN",
             "conditions": [
@@ -261,7 +374,7 @@
         {
             "rule_id": "police_seize_keys",
             "domain": "Police",
-            "topic": "Seizure",
+            "topic": "Traffic",
             "summary": "Traffic police cannot seize your vehicle keys.",
             "verdict": "CANNOT",
             "conditions": [],
@@ -275,6 +388,95 @@
             ],
             "what_to_say": "Please do not remove my keys. I am cooperating and not fleeing. You can note my details.",
             "source_category": "Motor Vehicles Act Implementation"
+        },
+        {
+            "rule_id": "police_lawyer_right",
+            "domain": "Police",
+            "topic": "Arrest",
+            "summary": "You have the right to a lawyer immediately upon arrest.",
+            "verdict": "CAN",
+            "conditions": [
+                "Must be allowed to contact a lawyer of your choice.",
+                "If you cannot afford one, state must provide legal aid."
+            ],
+            "exceptions": [
+                "None. This is a fundamental right under Article 22."
+            ],
+            "simple_explanation": "The moment you are arrested, you have the right to call a lawyer. Police cannot deny this or interrogate you without legal counsel if you request it.",
+            "detailed_explanation": "Article 22(1) guarantees the right to consult and be defended by a legal practitioner of your choice. D.K. Basu guidelines reinforce this.",
+            "examples": [
+                "Police say 'No lawyer until tomorrow'.",
+                "Interrogation starts before lawyer arrives."
+            ],
+            "what_to_say": "I wish to exercise my right to legal counsel. I will not answer questions until my lawyer is present.",
+            "source_category": "Constitution Article 22 / CrPC"
+        },
+        {
+            "rule_id": "police_fir_mandatory",
+            "domain": "Police",
+            "topic": "FIR",
+            "summary": "Police cannot refuse to register an FIR for cognizable offenses.",
+            "verdict": "CANNOT",
+            "conditions": [
+                "For cognizable offenses (murder, theft, rape, etc.), FIR is mandatory.",
+                "Must be registered at any police station (jurisdiction doesn't matter initially)."
+            ],
+            "exceptions": [
+                "Non-cognizable offenses require magistrate permission.",
+                "Clearly false/frivolous complaints can be rejected."
+            ],
+            "simple_explanation": "If a serious crime has occurred, police MUST register your FIR. They cannot send you away saying 'not our jurisdiction' or 'come tomorrow'.",
+            "detailed_explanation": "Section 154 CrPC makes it mandatory for police to register FIR for cognizable offenses. Refusal is a punishable offense for the officer.",
+            "examples": [
+                "Police say 'This happened in another area, go there'.",
+                "Officer says 'Settle it among yourselves'."
+            ],
+            "what_to_say": "As per Section 154 CrPC, you are legally bound to register my complaint. Please do so immediately or I will escalate this.",
+            "source_category": "CrPC Section 154"
+        },
+        {
+            "rule_id": "police_bribe_illegal",
+            "domain": "Police",
+            "topic": "Traffic",
+            "summary": "Offering or accepting bribes is illegal for both parties.",
+            "verdict": "CANNOT",
+            "conditions": [
+                "Police cannot demand bribe.",
+                "You should not offer bribe either (you become complicit)."
+            ],
+            "exceptions": [
+                "If you record the bribe demand, you can report it."
+            ],
+            "simple_explanation": "If a cop asks for money to let you go, that's illegal. But if you willingly pay, you are also breaking the law. Better to take the challan.",
+            "detailed_explanation": "Prevention of Corruption Act makes bribery by public servants a crime. Citizens offering bribes can also be prosecuted unless they report it.",
+            "examples": [
+                "Traffic cop says 'Give ₹500 or I'll seize your vehicle'."
+            ],
+            "what_to_say": "I would prefer to pay the official fine through proper channels. Please issue me a challan.",
+            "source_category": "Prevention of Corruption Act"
+        },
+        {
+            "rule_id": "police_body_search",
+            "domain": "Police",
+            "topic": "Search",
+            "summary": "Body searches must follow strict procedures.",
+            "verdict": "CAN",
+            "conditions": [
+                "Female suspects can only be searched by female officers.",
+                "Must be done in presence of a female family member or respectable woman.",
+                "Dignity must be maintained."
+            ],
+            "exceptions": [
+                "Emergency situations with senior officer approval."
+            ],
+            "simple_explanation": "Police can conduct body searches, but for women, it MUST be done by a female officer in a private place with another woman present.",
+            "detailed_explanation": "Section 51 CrPC mandates strict procedures for body searches to prevent harassment and maintain decency.",
+            "examples": [
+                "Male officer attempts to search a woman.",
+                "Search done in public view."
+            ],
+            "what_to_say": "As per the CrPC, a female officer must conduct this search in a private place. Please arrange for that.",
+            "source_category": "CrPC Section 51"
         },
         {
             "rule_id": "doc_contract_lockin",
@@ -340,14 +542,36 @@
             "source_category": "Rent Control Act / Transfer of Property Act"
         },
         {
+            "rule_id": "landlord_entry_permission",
+            "domain": "Documents",
+            "topic": "Privacy",
+            "summary": "Landlord cannot enter rented property without permission.",
+            "verdict": "CANNOT",
+            "conditions": [
+                "Must give reasonable notice (24-48 hours).",
+                "Can only enter for repairs/inspection with consent."
+            ],
+            "exceptions": [
+                "Emergency situations (fire, flood, etc.)."
+            ],
+            "simple_explanation": "Once you rent a place, it's your home. The landlord cannot just walk in whenever they want. They need your permission except in emergencies.",
+            "detailed_explanation": "The tenant has exclusive possession rights. Unauthorized entry violates privacy and can be considered trespass.",
+            "examples": [
+                "Landlord uses spare key to enter when you're not home.",
+                "Shows up unannounced for 'inspection'."
+            ],
+            "what_to_say": "As per our rental agreement, you need to inform me 24 hours in advance before entering. Please respect my privacy.",
+            "source_category": "Transfer of Property Act / Trespass Law"
+        },
+        {
             "rule_id": "consumer_no_refund",
-            "domain": "Workplace",
-            "topic": "Refunds",
+            "domain": "Documents",
+            "topic": "Consumer",
             "summary": "No Refund policies are often illegal.",
             "verdict": "CANNOT",
             "conditions": [
                 "If service was deficient or product defective.",
-                " Absolute 'No Refund' boards are void."
+                "Absolute 'No Refund' boards are void."
             ],
             "exceptions": [
                 "Perishable goods or custom-made items."
@@ -359,6 +583,157 @@
             ],
             "what_to_say": "As a consumer, I am entitled to a replacement or refund for a defective product. 'No Refund' policies do not override the law.",
             "source_category": "Consumer Protection Act, 2019"
+        },
+        {
+            "rule_id": "consumer_mrp_violation",
+            "domain": "Documents",
+            "topic": "Shopping",
+            "summary": "Shops cannot sell above MRP.",
+            "verdict": "CANNOT",
+            "conditions": [
+                "MRP is the maximum retail price.",
+                "Includes all taxes."
+            ],
+            "exceptions": [
+                "Hotels/restaurants can charge above MRP (service tax applies)."
+            ],
+            "simple_explanation": "If a product has MRP printed on it, the shop cannot charge more than that amount. Charging above MRP is illegal.",
+            "detailed_explanation": "Legal Metrology Act makes it mandatory to sell at or below MRP. Violations can be penalized heavily.",
+            "examples": [
+                "Shop charges ₹120 for item with MRP ₹100.",
+                "Cinema charges extra for water bottle."
+            ],
+            "what_to_say": "The MRP printed on this product is ₹X. You cannot charge more than that. Please adjust the bill.",
+            "source_category": "Legal Metrology Act, 2009"
+        },
+        {
+            "rule_id": "flight_cancellation",
+            "domain": "Documents",
+            "topic": "Flight",
+            "summary": "Airlines must compensate for flight delays and cancellations.",
+            "verdict": "CAN",
+            "conditions": [
+                "Domestic: ₹5000 for delays > 3 hours, ₹10000 for cancellations.",
+                "Must be informed 2 weeks in advance to avoid compensation."
+            ],
+            "exceptions": [
+                "Extraordinary circumstances (weather, security) exempt airlines.",
+                "If alternate flight is arranged within 1 hour."
+            ],
+            "simple_explanation": "If your flight is delayed or cancelled without proper notice, the airline owes you compensation plus hotel/meals if needed.",
+            "detailed_explanation": "DGCA Civil Aviation Requirements mandate compensation for delays, cancellations, and denied boarding due to overbooking.",
+            "examples": [
+                "Flight cancelled 2 hours before departure with no reason."
+            ],
+            "what_to_say": "As per DGCA regulations, I am entitled to compensation for this delay/cancellation. Please issue it immediately or provide written reasons.",
+            "source_category": "DGCA CAR, Section 3"
+        },
+        {
+            "rule_id": "cybercrime_reporting",
+            "domain": "Police",
+            "topic": "Cybercrime",
+            "summary": "You can report cybercrimes online and to local police.",
+            "verdict": "CAN",
+            "conditions": [
+                "Report to cybercrime.gov.in or local cyber cell.",
+                "FIR mandatory for serious crimes like hacking, fraud."
+            ],
+            "exceptions": [
+                "Minor issues can be flagged to platform (Twitter, Instagram)."
+            ],
+            "simple_explanation": "If someone hacks your account, leaks your photos, or scams you online, you can file a complaint with the cyber cell. It's a legal offense.",
+            "detailed_explanation": "IT Act, 2000 covers cybercrimes like hacking, identity theft, and online harassment. Penalties include jail time.",
+            "examples": [
+                "Someone creates fake profile using your photos.",
+                "Online shopping fraud."
+            ],
+            "what_to_say": "I want to file a cybercrime complaint. Here are the screenshots and evidence.",
+            "source_category": "IT Act, 2000"
+        },
+        {
+            "rule_id": "drunk_driving",
+            "domain": "Police",
+            "topic": "Alcohol",
+            "summary": "Drunk driving is illegal and police can conduct breathalyzer tests.",
+            "verdict": "CAN",
+            "conditions": [
+                "Blood alcohol limit: 30 mg per 100 ml.",
+                "Police can test if they suspect drunk driving."
+            ],
+            "exceptions": [
+                "You can request a blood test if you dispute breathalyzer."
+            ],
+            "simple_explanation": "Driving under the influence is illegal. If caught, you can face heavy fines, license suspension, and even jail time.",
+            "detailed_explanation": "Motor Vehicles Act Section 185 criminalizes drunk driving with penalties up to ₹10,000 and 6 months jail for first offense.",
+            "examples": [
+                "Stopped at checkpoint and breathalyzer shows positive."
+            ],
+            "what_to_say": "I understand the law. If I test positive, please follow due process and I'd like to see the calibration certificate of the device.",
+            "source_category": "Motor Vehicles Act, Section 185"
+        },
+        {
+            "rule_id": "minor_detention",
+            "domain": "Police",
+            "topic": "Arrest",
+            "summary": "Juveniles (under 18) have special protections.",
+            "verdict": "CANNOT",
+            "conditions": [
+                "Cannot be kept in police lockup with adults.",
+                "Must be sent to Juvenile Justice Board within 24 hours.",
+                "Parents/guardians must be informed immediately."
+            ],
+            "exceptions": [
+                "Heinous crimes may have different procedures (tried as adult in some cases)."
+            ],
+            "simple_explanation": "If you are under 18, police cannot treat you like an adult offender. You must be kept separate and produced before a special board, not a regular court.",
+            "detailed_explanation": "Juvenile Justice Act, 2015 provides special treatment, rehabilitation focus, and strict procedural safeguards for minors.",
+            "examples": [
+                "17-year-old kept in adult lockup overnight."
+            ],
+            "what_to_say": "I am a minor. As per the JJ Act, I must be produced before the Juvenile Justice Board and my parents must be informed.",
+            "source_category": "Juvenile Justice Act, 2015"
+        },
+        {
+            "rule_id": "online_fraud",
+            "domain": "Police",
+            "topic": "Cybercrime",
+            "summary": "Online fraud victims can report and potentially recover money.",
+            "verdict": "CAN",
+            "conditions": [
+                "Report within 24 hours for best chance of recovery.",
+                "File complaint at cybercrime.gov.in and local police."
+            ],
+            "exceptions": [
+                "If money transferred outside India, recovery is harder."
+            ],
+            "simple_explanation": "If you fall victim to UPI fraud, fake shopping sites, or phishing, report immediately. Police can freeze the fraudster's account if you act fast.",
+            "detailed_explanation": "National Cyber Crime Reporting Portal connects to banks and can freeze suspicious accounts within hours if reported quickly.",
+            "examples": [
+                "Clicked phishing link, ₹50,000 debited from account."
+            ],
+            "what_to_say": "I've been defrauded online. Here's the transaction ID and fraudster's account details. Please freeze the account immediately.",
+            "source_category": "IT Act / IPC Sections 419, 420"
+        },
+        {
+            "rule_id": "illegal_towing",
+            "domain": "Police",
+            "topic": "Towing",
+            "summary": "Vehicle can only be towed for specific violations with proper procedure.",
+            "verdict": "CAN",
+            "conditions": [
+                "Must be in no-parking zone or obstructing traffic.",
+                "Receipt must be issued with recovery location."
+            ],
+            "exceptions": [
+                "Emergency clearance for ambulance/fire brigade path."
+            ],
+            "simple_explanation": "Police or traffic authorities can tow your vehicle if it's illegally parked, but they must give you a proper receipt and tell you where to collect it.",
+            "detailed_explanation": "Motor Vehicles Act allows towing but mandates documentation. Arbitrary towing or extortion for release is illegal.",
+            "examples": [
+                "Car towed from regular parking spot without notice."
+            ],
+            "what_to_say": "Why was my vehicle towed? Please provide the official receipt and penalty details as per the MV Act.",
+            "source_category": "Motor Vehicles Act"
         }
     ]
 }
