@@ -274,6 +274,30 @@ const Home = () => {
                 </div>
             </section>
 
+            {/* VIDEO SHOWCASE SECTION */}
+            <section className="video-showcase-section">
+                <div className="video-container">
+                    <div className="video-overlay"></div>
+                    <video
+                        className="showcase-video"
+                        autoPlay
+                        loop
+                        muted
+                        playsInline
+                    >
+                        <source src="/traffic_animation.mp4" type="video/mp4" />
+                        Your browser does not support the video tag.
+                    </video>
+                    <div className="video-caption">
+                        <div className="caption-badge">
+                            <Shield size={16} /> REAL SCENARIOS
+                        </div>
+                        <h3>Know Your Rights in Every Situation</h3>
+                        <p>From traffic stops to workplace conflicts, we've got you covered.</p>
+                    </div>
+                </div>
+            </section>
+
             {/* MINIMAL FOOTER */}
             <footer className="minimal-footer">
                 <div className="footer-content">
@@ -689,6 +713,77 @@ const Home = () => {
                 .footer-copy {
                     font-size: 0.8rem;
                     color: #555;
+                }
+
+                /* VIDEO SHOWCASE */
+                .video-showcase-section {
+                    margin-top: 3rem;
+                    margin-bottom: 2rem;
+                }
+                .video-container {
+                    position: relative;
+                    border-radius: 24px;
+                    overflow: hidden;
+                    background: #000;
+                    border: 1px solid rgba(255,255,255,0.08);
+                    box-shadow: 0 20px 60px rgba(0,0,0,0.5);
+                }
+                .showcase-video {
+                    width: 100%;
+                    height: auto;
+                    display: block;
+                    opacity: 0.75;
+                    transition: opacity 0.3s;
+                }
+                .video-container:hover .showcase-video {
+                    opacity: 0.9;
+                }
+                .video-overlay {
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    right: 0;
+                    bottom: 0;
+                    background: linear-gradient(to bottom, rgba(0,0,0,0.3) 0%, rgba(0,0,0,0.7) 100%);
+                    pointer-events: none;
+                    z-index: 1;
+                }
+                .video-caption {
+                    position: absolute;
+                    bottom: 0;
+                    left: 0;
+                    right: 0;
+                    padding: 2rem;
+                    z-index: 2;
+                    background: linear-gradient(to top, rgba(0,0,0,0.9) 0%, transparent 100%);
+                    text-align: center;
+                }
+                .caption-badge {
+                    display: inline-flex;
+                    align-items: center;
+                    gap: 6px;
+                    padding: 6px 14px;
+                    border-radius: 20px;
+                    background: rgba(16, 185, 129, 0.15);
+                    border: 1px solid rgba(16, 185, 129, 0.3);
+                    color: var(--primary);
+                    font-size: 0.75rem;
+                    font-weight: 700;
+                    letter-spacing: 1px;
+                    text-transform: uppercase;
+                    margin-bottom: 0.75rem;
+                }
+                .video-caption h3 {
+                    font-size: 1.5rem;
+                    font-weight: 700;
+                    margin-bottom: 0.5rem;
+                    color: #fff;
+                }
+                .video-caption p {
+                    font-size: 0.95rem;
+                    color: rgba(255,255,255,0.7);
+                    max-width: 500px;
+                    margin: 0 auto;
                 }
             `}</style>
         </div>
