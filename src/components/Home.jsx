@@ -14,7 +14,9 @@ import {
     Gavel,
     Scale,
     Phone,
-    MoveRight
+    MoveRight,
+    MessageCircle,
+    Heart
 } from 'lucide-react';
 import { analyzeSituation } from '../utils/aiLogic';
 import rulesData from '../data/rules.json';
@@ -91,7 +93,7 @@ const Home = () => {
     };
 
     return (
-        <div className="home fade-in-stagger" style={{ display: 'flex', flexDirection: 'column', gap: '2.5rem', paddingBottom: '3rem' }}>
+        <div className="home fade-in-stagger" style={{ display: 'flex', flexDirection: 'column', gap: '2.5rem', paddingBottom: '0rem' }}>
 
             {/* HERO SECTION */}
             <section className="hero-section">
@@ -242,6 +244,53 @@ const Home = () => {
                     </div>
                 </div>
             </section>
+
+            {/* EXAMPLE CHATS SECTION */}
+            <section className="examples-section">
+                <div className="section-label">
+                    <MessageCircle size={16} /> RECENTLY CLARIFIED
+                </div>
+
+                <div className="chat-examples-grid">
+                    {/* Ex 1 */}
+                    <div className="imessage-container left-slanted">
+                        <div className="imessage-bubble from-me">
+                            Can police check my phone without a warrant?
+                        </div>
+                        <div className="imessage-bubble from-them">
+                            No. Your privacy is protected. They need a warrant or your explicit consent.
+                        </div>
+                    </div>
+
+                    {/* Ex 2 */}
+                    <div className="imessage-container right-slanted">
+                        <div className="imessage-bubble from-me">
+                            My landlord won't return my security deposit.
+                        </div>
+                        <div className="imessage-bubble from-them">
+                            They must provide a valid reason for deductions within 30 days, or refund it in full.
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            {/* MINIMAL FOOTER */}
+            <footer className="minimal-footer">
+                <div className="footer-content">
+                    <div className="footer-brand">
+                        <Shield size={20} className="text-primary" />
+                        <span>Know Your Power</span>
+                    </div>
+                    <div className="footer-links">
+                        <button onClick={() => navigate('/about')} className="footer-link">About</button>
+                        <button onClick={() => navigate('/support')} className="footer-link">Support</button>
+                        <button onClick={() => navigate('/contacts')} className="footer-link">Emergency</button>
+                    </div>
+                    <div className="footer-copy">
+                        &copy; {new Date().getFullYear()} KnowYourPower. Informational use only.
+                    </div>
+                </div>
+            </footer>
 
             {/* STYLES */}
             <style>{`
@@ -555,6 +604,92 @@ const Home = () => {
                 
                 @keyframes bounce { 0%, 80%, 100% { transform: scale(0); } 40% { transform: scale(1); } }
                 @keyframes slideUp { from { transform: translateY(10px); opacity: 0; } to { transform: translateY(0); opacity: 1; } }
+
+                /* EXAMPLES SECTION */
+                .examples-section { margin-top: 2rem; }
+                .section-label {
+                    display: flex; align-items: center; gap: 8px;
+                    font-size: 0.8rem; font-weight: 700; letter-spacing: 1px;
+                    color: var(--text-muted); margin-bottom: 1.5rem;
+                    text-transform: uppercase; padding-left: 0.5rem;
+                }
+                .chat-examples-grid {
+                    display: grid;
+                    gap: 1.5rem;
+                    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+                }
+                .imessage-container {
+                    background: rgba(255,255,255,0.02);
+                    border: 1px solid var(--border);
+                    border-radius: 20px;
+                    padding: 1.5rem;
+                    display: flex;
+                    flex-direction: column;
+                    gap: 0.75rem;
+                    position: relative;
+                }
+                
+                .imessage-bubble {
+                    padding: 0.75rem 1rem;
+                    border-radius: 18px;
+                    font-size: 0.9rem;
+                    line-height: 1.4;
+                    max-width: 85%;
+                }
+                .from-me {
+                    align-self: flex-end;
+                    background: #007AFF;
+                    color: white;
+                    border-bottom-right-radius: 4px;
+                }
+                .from-them {
+                    align-self: flex-start;
+                    background: #333;
+                    color: #fff;
+                    border-bottom-left-radius: 4px;
+                }
+
+                /* FOOTER */
+                .minimal-footer {
+                    margin-top: 2rem;
+                    border-top: 1px solid rgba(255,255,255,0.05);
+                    padding: 2rem 0;
+                    opacity: 0.7;
+                    transition: opacity 0.3s;
+                }
+                .minimal-footer:hover { opacity: 1; }
+                .footer-content {
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    gap: 1.5rem;
+                    text-align: center;
+                }
+                .footer-brand {
+                    display: flex;
+                    align-items: center;
+                    gap: 8px;
+                    font-weight: 600;
+                    color: var(--text);
+                }
+                .text-primary { color: var(--primary); }
+                .footer-links {
+                    display: flex;
+                    gap: 1.5rem;
+                }
+                .footer-link {
+                    background: none;
+                    border: none;
+                    color: var(--text-muted);
+                    font-size: 0.9rem;
+                    cursor: pointer;
+                    transition: color 0.2s;
+                }
+                .footer-link:hover { color: var(--primary); }
+                .footer-copy {
+                    font-size: 0.8rem;
+                    color: #555;
+                }
             `}</style>
         </div>
     );
