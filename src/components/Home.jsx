@@ -97,6 +97,16 @@ const Home = () => {
 
             {/* HERO SECTION */}
             <section className="hero-section">
+                <video
+                    className="hero-video-bg"
+                    autoPlay
+                    loop
+                    muted
+                    playsInline
+                >
+                    <source src="/hero_background.mp4" type="video/mp4" />
+                </video>
+                <div className="hero-video-overlay"></div>
                 <div className="hero-glow"></div>
                 <div className="hero-content">
                     <div className="hero-badge">
@@ -326,7 +336,42 @@ const Home = () => {
                     border-radius: 24px;
                     border: 1px solid rgba(255,255,255,0.05);
                     overflow: hidden;
-                    background: radial-gradient(circle at 50% 0%, rgba(20,20,20,1) 0%, rgba(10,10,10,1) 100%);
+                    background: #000;
+                    min-height: 500px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                }
+                .hero-video-bg {
+                    position: absolute;
+                    top: 50%;
+                    left: 50%;
+                    transform: translate(-50%, -50%);
+                    min-width: 100%;
+                    min-height: 100%;
+                    width: auto;
+                    height: auto;
+                    object-fit: cover;
+                    opacity: 0.4;
+                    z-index: 0;
+                }
+                .hero-video-overlay {
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    right: 0;
+                    bottom: 0;
+                    background: linear-gradient(
+                        to bottom,
+                        rgba(10,10,10,0.95) 0%,
+                        rgba(10,10,10,0.7) 10%,
+                        rgba(10,10,10,0.5) 40%,
+                        rgba(10,10,10,0.5) 60%,
+                        rgba(10,10,10,0.7) 90%,
+                        rgba(10,10,10,0.95) 100%
+                    );
+                    z-index: 1;
+                    pointer-events: none;
                 }
                 .hero-glow {
                     position: absolute;
@@ -337,9 +382,10 @@ const Home = () => {
                     height: 200px;
                     background: var(--primary);
                     filter: blur(120px);
-                    opacity: 0.2;
+                    opacity: 0.15;
                     border-radius: 50%;
                     pointer-events: none;
+                    z-index: 1;
                 }
                 .hero-content { position: relative; z-index: 2; }
                 .hero-badge {
