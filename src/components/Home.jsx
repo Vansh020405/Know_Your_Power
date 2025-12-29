@@ -103,6 +103,7 @@ const Home = () => {
                     loop
                     muted
                     playsInline
+                
                 >
                     <source src="/hero_background.mp4" type="video/mp4" />
                 </video>

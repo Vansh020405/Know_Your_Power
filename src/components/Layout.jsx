@@ -17,7 +17,7 @@ const Layout = () => {
   // Mapping paths to titles for header
   const getTitle = () => {
     switch (location.pathname) {
-      case '/': return 'Dashboard';
+      case '/': return '';
       case '/authority': return 'Authority Check';
       case '/eligibility': return 'Eligibility';
       case '/decoder': return 'Contract Decoder';
