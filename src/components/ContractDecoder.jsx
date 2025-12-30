@@ -212,7 +212,9 @@ const ContractDecoder = () => {
         const govKeywords = [
             'ministry', 'department', 'municipal corporation', 'government',
             'sanctioned by', 'competent authority', 'issuing authority',
-            'official stamp', 'seal', 'certified copy', 'notarized'
+            'official stamp', 'seal', 'certified copy', 'notarized',
+            'notary', 'notary engineer', 'chartered engineer', 'technical clearance',
+            'appendix', 'ner/', 'noc'  // Common in govt documents
         ];
         const govScore = govKeywords.filter(kw => lowerText.includes(kw)).length;
 
@@ -276,6 +278,24 @@ const ContractDecoder = () => {
                 risk_level: 'RISKY',
                 trigger: 'Approval authority unclear',
                 explanation: '⚠️ The issuing or approving authority is not clearly mentioned.'
+            });
+        }
+
+        // 4. Date Validation
+        const datePatterns = [
+            /\b\d{1,2}[\/\-\.]\d{1,2}[\/\-\.]\d{2,4}\b/,  // DD/MM/YYYY or MM/DD/YYYY
+            /\b\d{4}[\/\-\.]\d{1,2}[\/\-\.]\d{1,2}\b/,    // YYYY/MM/DD
+            /\b(?:jan|feb|mar|apr|may|jun|jul|aug|sep|oct|nov|dec)[a-z]*\s+\d{1,2},?\s+\d{4}\b/i
+        ];
+        const hasDate = datePatterns.some(pattern => pattern.test(txt));
+        const hasIssuedDate = lowerText.includes('issued on') || lowerText.includes('date of issue') ||
+            lowerText.includes('dated') || lowerText.includes('date:');
+
+        if (!hasDate) {
+            foundRisks.push({
+                risk_level: 'RISKY',
+                trigger: 'No date found',
+                explanation: '⚠️ Government documents should include a clear issue or approval date.'
             });
         }
     };
