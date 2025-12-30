@@ -156,7 +156,52 @@ export const analyzeSituation = (text) => {
         }
     }
 
+    // EXPLICIT QUERY MATCHERS - Bypass clarification for specific well-defined queries
+    const explicitMatchers = [
+        { patterns: ['phone search', 'phone check', 'check phone', 'check my phone', 'show phone', 'see phone'], topic: 'Search' },
+        { patterns: ['rc check', 'rc', 'registration certificate', 'show rc', 'rc paper'], topic: 'Traffic' },
+        { patterns: ['license check', 'dl check', 'driving license', 'show license', 'driving licence'], topic: 'Traffic' },
+        { patterns: ['insurance check', 'show insurance', 'vehicle insurance'], topic: 'Traffic' },
+        { patterns: ['salary delay', 'salary late', 'unpaid salary', 'salary not paid'], topic: 'Salary' },
+        { patterns: ['forced resign', 'force resign', 'forced resignation'], topic: 'Termination' },
+        { patterns: ['experience letter', 'relieving letter', 'service certificate'], topic: 'Termination' },
+        { patterns: ['maternity leave', 'pregnancy leave'], topic: 'Maternity' },
+        { patterns: ['ragging', 'senior ragging', 'torture'], topic: 'Ragging' },
+        { patterns: ['fir', 'file fir', 'register fir', 'complaint'], topic: 'FIR' },
+        { patterns: ['arrest', 'arrested', 'detention', 'detain'], topic: 'Arrest' },
+        { patterns: ['bond break', 'training bond', 'employment bond'], topic: 'Bond' }
+    ];
+
+    for (const matcher of explicitMatchers) {
+        for (const pattern of matcher.patterns) {
+            if (rawLower.includes(pattern)) {
+                if (!analysis.detectedTopics.includes(matcher.topic)) {
+                    analysis.detectedTopics.push(matcher.topic);
+                }
+                // Also infer domain from topic if not set
+                if (!analysis.detectedDomain) {
+                    if (['Search', 'Traffic', 'FIR', 'Arrest', 'Alcohol', 'Towing', 'Cybercrime'].includes(matcher.topic)) {
+                        analysis.detectedDomain = 'Police';
+                    } else if (['Salary', 'Overtime', 'Resignation', 'Termination', 'Bond', 'Maternity', 'Harassment', 'Gratuity', 'Leave'].includes(matcher.topic)) {
+                        analysis.detectedDomain = 'Workplace';
+                    } else if (['Fees', 'Attendance', 'Ragging', 'Documents'].includes(matcher.topic)) {
+                        analysis.detectedDomain = 'College';
+                    }
+                }
+                break;
+            }
+        }
+    }
+
+    // Debug logging
+    console.log('AI Analysis:', {
+        input: text.substring(0, 50),
+        detectedDomain: analysis.detectedDomain,
+        detectedTopics: analysis.detectedTopics
+    });
+
     // CLARITY GATE: Domain without Topic = Ask for clarification
+    // BUT: Skip if we just added a topic via explicit matchers
     if (analysis.detectedDomain && analysis.detectedTopics.length === 0) {
         if (analysis.detectedDomain === 'Police') {
             return { ...analysis, confidence: 0.9, rule: CLARIFICATION_RULE_POLICE, verdict: 'DEPENDS' };
@@ -205,6 +250,12 @@ export const analyzeSituation = (text) => {
             // Topic Match (+20) - Very high weight
             if (analysis.detectedTopics.includes(rule.topic)) {
                 score += 20;
+
+                // CRITICAL: If BOTH domain AND topic match (from explicit matchers), 
+                // give MASSIVE bonus to ensure this rule wins
+                if (analysis.detectedDomain && rule.domain === analysis.detectedDomain) {
+                    score += 50; // This ensures exact matches always win
+                }
             }
 
             // Keyword overlap in rule text

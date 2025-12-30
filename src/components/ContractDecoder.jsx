@@ -178,6 +178,7 @@ const ContractDecoder = () => {
         const lowerText = txt.toLowerCase();
         const foundRisks = [];
 
+        // Check contract-specific risky clauses
         contractKeywords.forEach(item => {
             for (let kw of item.keywords) {
                 if (lowerText.includes(kw)) {
@@ -186,6 +187,134 @@ const ContractDecoder = () => {
                 }
             }
         });
+
+        // ===== OFFICIAL DOCUMENT VALIDATION CHECKS =====
+
+        // 1. Check for Official Seal / Authentication Mark
+        const sealKeywords = ['seal', 'stamp', 'authenticated', 'certified', 'official stamp', 'embossed'];
+        const hasSealMention = sealKeywords.some(keyword => lowerText.includes(keyword));
+        if (!hasSealMention) {
+            foundRisks.push({
+                risk_level: 'RISKY',
+                trigger: 'Missing seal/stamp mention',
+                explanation: '⚠️ Missing or unclear official seal/authentication mark. Official documents typically require visible seals or stamps for authenticity.'
+            });
+        }
+
+        // 2. Issuer Designation Validation (Notary/Engineer/Architect)
+        const issuerDesignations = ['notary', 'engineer', 'architect', 'chartered engineer', 'licensed architect', 'registered engineer'];
+        const hasIssuerDesignation = issuerDesignations.some(designation => lowerText.includes(designation));
+        const hasIssuerValidation = lowerText.includes('license') || lowerText.includes('registration') || lowerText.includes('certified');
+
+        if (hasIssuerDesignation && !hasIssuerValidation) {
+            foundRisks.push({
+                risk_level: 'RISKY',
+                trigger: 'Issuer designation unclear',
+                explanation: '⚠️ Issuer designation mismatch. The document mentions a professional designation (Notary/Engineer/Architect) but lacks clear validation credentials or license information.'
+            });
+        }
+
+        // 3. Reference Number Format Consistency
+        const referencePatterns = [
+            /ref[\s\.:-]*no[\s\.:-]*[a-z0-9\/\-]+/i,
+            /reference[\s\.:-]*[a-z0-9\/\-]+/i,
+            /reg[\s\.:-]*no[\s\.:-]*[a-z0-9\/\-]+/i,
+            /file[\s\.:-]*no[\s\.:-]*[a-z0-9\/\-]+/i
+        ];
+
+        const referenceMatches = referencePatterns.filter(pattern => pattern.test(txt));
+        if (referenceMatches.length === 0) {
+            foundRisks.push({
+                risk_level: 'RISKY',
+                trigger: 'No reference number found',
+                explanation: '⚠️ Reference number format inconsistency. Official documents should contain a clear reference/registration number for tracking and verification purposes.'
+            });
+        }
+
+        // 4. Approval Authority Check
+        const authorityKeywords = [
+            'approved by',
+            'sanctioned by',
+            'authorized by',
+            'ministry',
+            'department',
+            'municipal corporation',
+            'competent authority',
+            'issuing authority'
+        ];
+        const hasApprovalAuthority = authorityKeywords.some(keyword => lowerText.includes(keyword));
+        if (!hasApprovalAuthority) {
+            foundRisks.push({
+                risk_level: 'RISKY',
+                trigger: 'Approval authority not stated',
+                explanation: '⚠️ Approval authority not explicitly stated. The document does not clearly mention the issuing or approving authority, which is crucial for verification.'
+            });
+        }
+
+        // 5. Signature Verification
+        const signatureKeywords = ['signature', 'signed by', 'digitally signed', 'countersigned', 'authorized signatory'];
+        const hasSignatureMention = signatureKeywords.some(keyword => lowerText.includes(keyword));
+
+        if (!hasSignatureMention) {
+            foundRisks.push({
+                risk_level: 'RISKY',
+                trigger: 'No signature verification',
+                explanation: '⚠️ Absence of signature verification. The document does not contain clear mention of signatures or authorized signatories, which raises authenticity concerns.'
+            });
+        }
+
+        // 6. Date and Approval Linkage Validation
+        const datePatterns = [
+            /\b\d{1,2}[\/\-\.]\d{1,2}[\/\-\.]\d{2,4}\b/,  // DD/MM/YYYY or MM/DD/YYYY
+            /\b\d{4}[\/\-\.]\d{1,2}[\/\-\.]\d{1,2}\b/,    // YYYY/MM/DD
+            /\b(?:jan|feb|mar|apr|may|jun|jul|aug|sep|oct|nov|dec)[a-z]*\s+\d{1,2},?\s+\d{4}\b/i
+        ];
+
+        const dateMatches = datePatterns.filter(pattern => pattern.test(txt));
+        const hasIssuedDate = lowerText.includes('issued on') || lowerText.includes('date of issue') || lowerText.includes('dated');
+        const hasApprovalDate = lowerText.includes('approved on') || lowerText.includes('date of approval');
+
+        if (dateMatches.length === 0 || (!hasIssuedDate && !hasApprovalDate)) {
+            foundRisks.push({
+                risk_level: 'RISKY',
+                trigger: 'Date verification issue',
+                explanation: '⚠️ Date and approval linkage could not be cross-validated. The document lacks clear date references or the relationship between issue date and approval date is unclear.'
+            });
+        }
+
+        // 7. Check for Annexures / Supporting Documents
+        const annexureKeywords = [
+            'annexure',
+            'attachment',
+            'enclosure',
+            'appendix',
+            'schedule',
+            'see attached',
+            'as per annexure'
+        ];
+        const mentionsAnnexures = annexureKeywords.some(keyword => lowerText.includes(keyword));
+        const hasAnnexureList = lowerText.includes('annexure a') || lowerText.includes('attachment 1') || /annexure\s*[a-z0-9]/i.test(lowerText);
+
+        if (mentionsAnnexures && !hasAnnexureList) {
+            foundRisks.push({
+                risk_level: 'RISKY',
+                trigger: 'Missing annexures',
+                explanation: '⚠️ Document appears to be conditionally valid and may require additional annexures. References to attachments/annexures found but specific documents not clearly listed.'
+            });
+        }
+
+        // 8. General Validity Check - If multiple issues found
+        if (foundRisks.filter(r => r.risk_level === 'RISKY' && r.trigger.includes('approval')).length >= 3) {
+            const criticalIndex = foundRisks.findIndex(r => r.risk_level === 'RISKY');
+            if (criticalIndex >= 0) {
+                foundRisks[criticalIndex] = {
+                    ...foundRisks[criticalIndex],
+                    risk_level: 'AVOID',
+                    explanation: '🚨 CRITICAL: Multiple validation failures detected. ' + foundRisks[criticalIndex].explanation
+                };
+            }
+        }
+
         setAnalysis(foundRisks);
     };
 
@@ -210,7 +339,7 @@ const ContractDecoder = () => {
                         <Shield size={24} className="text-gradient" />
                         Document Shield
                     </h1>
-                    <p style={{ fontSize: '0.9rem', color: 'var(--text-muted)' }}>AI-powered Contract & Document Analysis</p>
+                    <p style={{ fontSize: '0.9rem', color: 'var(--text-muted)' }}>AI-powered Contract Analysis & Document Authenticity Validation</p>
                 </div>
             </div>
 
@@ -328,11 +457,11 @@ const ContractDecoder = () => {
                                             {riskLevel === 'AVOID' && <XCircle size={32} />}
                                         </div>
                                         <div className="status-text">
-                                            <h2>{riskLevel === 'SAFE' ? 'Looks Safe' : riskLevel === 'AVOID' ? 'Critical Risks' : 'Proceed with Caution'}</h2>
+                                            <h2>{riskLevel === 'SAFE' ? 'Document Verified' : riskLevel === 'AVOID' ? 'Critical Issues Found' : 'Validation Warnings'}</h2>
                                             <p>
-                                                {riskLevel === 'SAFE' ? 'No common risky clauses detected.' :
-                                                    riskLevel === 'AVOID' ? 'Severe red flags found in this document.' :
-                                                        'Potential issues found that need your attention.'}
+                                                {riskLevel === 'SAFE' ? 'All standard validation checks passed. No risky clauses or authenticity issues detected.' :
+                                                    riskLevel === 'AVOID' ? 'Multiple critical validation failures detected. This document may not be authentic or complete.' :
+                                                        'Document validation identified several authenticity concerns that require your attention.'}
                                             </p>
                                         </div>
                                     </div>
@@ -341,7 +470,7 @@ const ContractDecoder = () => {
                                         {analysis.length === 0 ? (
                                             <div className="clean-scan-card">
                                                 <CheckCircle size={24} color="var(--success)" />
-                                                <p>No standard risky keywords were found in the extracted text.</p>
+                                                <p>✓ All validation checks passed successfully. Document appears authentic with proper seals, signatures, references, and authority markings.</p>
                                             </div>
                                         ) : (
                                             analysis.map((item, idx) => (
@@ -357,7 +486,7 @@ const ContractDecoder = () => {
                                     </div>
 
                                     <div className="disclaimer-box">
-                                        <strong>AI Disclaimer:</strong> This tool uses OCR and keyword matching. It is not a substitute for legal advice. Always read documents carefully.
+                                        <strong>⚖️ AI Disclaimer:</strong> This tool performs OCR text extraction and validates documents for authenticity markers (seals, signatures, reference numbers, approval authorities, dates, and annexures). It is not a substitute for legal advice or professional document verification. Always consult qualified professionals for official validation.
                                     </div>
                                 </div>
                             ) : (
