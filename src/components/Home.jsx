@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { useAuth } from '../context/AuthContext';
 import {
     Shield,
     CheckCircle,
@@ -16,13 +17,15 @@ import {
     Phone,
     MoveRight,
     MessageCircle,
-    Heart
+    Heart,
+    Bookmark
 } from 'lucide-react';
 import { analyzeSituation } from '../utils/aiLogic';
 import rulesData from '../data/rules.json';
 
 const Home = () => {
     const navigate = useNavigate();
+    const { user } = useAuth();
     const [quickSearch, setQuickSearch] = useState('');
     const [chatHistory, setChatHistory] = useState([]);
     const chatContainerRef = useRef(null);
@@ -34,6 +37,46 @@ const Home = () => {
             chatContainerRef.current.scrollTop = chatContainerRef.current.scrollHeight;
         }
     }, [chatHistory, isTyping]);
+
+    const handleSaveSituation = async (rule) => {
+        if (!user) {
+            if (window.confirm("Login to save this situation for later?")) {
+                navigate('/login');
+            }
+            return;
+        }
+
+        try {
+            const token = localStorage.getItem('token');
+            const res = await fetch('/api/auth/saved-situations', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'x-auth-token': token
+                },
+                body: JSON.stringify({
+                    ruleId: rule.rule_id,
+                    title: rule.topic || "Legal Situation",
+                    verdict: rule.verdict,
+                    summary: rule.summary
+                })
+            });
+
+            if (res.ok) {
+                const btn = document.getElementById(`save-btn-${rule.rule_id}`);
+                if (btn) {
+                    // Fill the bookmark icon to show it's saved
+                    btn.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-bookmark"><path d="m19 21-7-4-7 4V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v16z"/></svg>';
+                    btn.style.color = 'var(--primary)';
+                }
+            } else {
+                const data = await res.json();
+                alert(data.msg || "Could not save.");
+            }
+        } catch (err) {
+            console.error(err);
+        }
+    };
 
     const handleSearch = (e, overrideQuery = null) => {
         const query = overrideQuery || quickSearch;
@@ -257,9 +300,25 @@ const Home = () => {
                                             {/* RICH CARDS */}
                                             {msg.sender === 'ai' && msg.data?.rule && (
                                                 <div className="rich-card fade-in">
-                                                    <div className={`verdict-badge verdict-${msg.data.rule.verdict.toLowerCase()}`}>
-                                                        {msg.data.rule.verdict === 'CANNOT' ? <CheckCircle size={16} /> : <AlertCircle size={16} />}
-                                                        {msg.data.rule.verdict}
+                                                    <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start' }}>
+                                                        <div className={`verdict-badge verdict-${msg.data.rule.verdict.toLowerCase()}`}>
+                                                            {msg.data.rule.verdict === 'CANNOT' ? <CheckCircle size={16} /> : <AlertCircle size={16} />}
+                                                            {msg.data.rule.verdict}
+                                                        </div>
+                                                        <button
+                                                            id={`save-btn-${msg.data.rule.rule_id}`}
+                                                            onClick={() => handleSaveSituation(msg.data.rule)}
+                                                            style={{
+                                                                background: 'transparent',
+                                                                border: 'none',
+                                                                color: 'var(--text-muted)',
+                                                                cursor: 'pointer',
+                                                                padding: '4px'
+                                                            }}
+                                                            title="Save Situation"
+                                                        >
+                                                            <Bookmark size={18} />
+                                                        </button>
                                                     </div>
                                                     <p className="rich-summary">{msg.data.rule.summary}</p>
 

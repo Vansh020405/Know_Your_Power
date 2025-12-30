@@ -506,3 +506,27 @@ h3 {
     display: none !important;
   }
 }
+
+/* Utilities Added */
+.fade-in {
+  animation: fadeIn 0.5s ease-out;
+}
+
+.hover-bg:hover {
+  background: rgba(255, 255, 255, 0.1) !important;
+}
+
+.spinner {
+  width: 24px;
+  height: 24px;
+  border: 3px solid rgba(255, 255, 255, 0.1);
+  border-radius: 50%;
+  border-top-color: var(--primary);
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}

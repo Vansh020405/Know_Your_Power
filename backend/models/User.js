@@ -20,7 +20,14 @@ const UserSchema = new mongoose.Schema({
     },
     lastLoginAt: {
         type: Date
-    }
+    },
+    savedSituations: [{
+        ruleId: { type: String, required: true },
+        title: { type: String, required: true },
+        verdict: { type: String, required: true }, // CAN, CANNOT, DEPENDS
+        date: { type: Date, default: Date.now },
+        summary: String // Optional: brief summary for display
+    }]
 });
 
 export default mongoose.model('User', UserSchema);

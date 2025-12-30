@@ -11,6 +11,7 @@ import Contacts from './components/Contacts.jsx';
 import Login from './components/Login';
 import Signup from './components/Signup';
 import Profile from './components/Profile';
+import SavedSituations from './components/SavedSituations';
 import { AuthProvider } from './context/AuthContext';
 import { PreferencesProvider } from './context/PreferencesContext';
 
@@ -33,6 +34,7 @@ function App() {
               <Route path="login" element={<Login />} />
               <Route path="signup" element={<Signup />} />
               <Route path="profile" element={<Profile />} />
+              <Route path="saved" element={<SavedSituations />} />
             </Route>
           </Routes>
         </BrowserRouter>

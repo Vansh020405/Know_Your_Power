@@ -120,4 +120,56 @@ router.get('/user', auth, async (req, res) => {
     }
 });
 
+// @route   GET api/auth/saved-situations
+// @desc    Get all saved situations
+// @access  Private
+router.get('/saved-situations', auth, async (req, res) => {
+    try {
+        const user = await User.findById(req.user.id).select('savedSituations');
+        res.json(user.savedSituations);
+    } catch (err) {
+        console.error(err.message);
+        res.status(500).send('Server error');
+    }
+});
+
+// @route   POST api/auth/saved-situations
+// @desc    Save a situation
+// @access  Private
+router.post('/saved-situations', auth, async (req, res) => {
+    try {
+        const { ruleId, title, verdict, summary } = req.body;
+        const user = await User.findById(req.user.id);
+
+        // Check if already saved
+        if (user.savedSituations.some(s => s.ruleId === ruleId)) {
+            return res.status(400).json({ msg: 'Situation already saved' });
+        }
+
+        user.savedSituations.unshift({ ruleId, title, verdict, summary });
+        await user.save();
+        res.json(user.savedSituations);
+    } catch (err) {
+        console.error(err.message);
+        res.status(500).send('Server error');
+    }
+});
+
+// @route   DELETE api/auth/saved-situations/:ruleId
+// @desc    Remove a saved situation
+// @access  Private
+router.delete('/saved-situations/:ruleId', auth, async (req, res) => {
+    try {
+        const user = await User.findById(req.user.id);
+        user.savedSituations = user.savedSituations.filter(
+            s => s.ruleId !== req.params.ruleId
+        );
+        await user.save();
+        res.json(user.savedSituations);
+    } catch (err) {
+        console.error(err.message);
+        res.status(500).send('Server error');
+    }
+});
+
 export default router;

@@ -1,5 +1,6 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
+import { useAuth } from '../context/AuthContext';
 import {
     Shield,
     CheckCircle,
@@ -8,10 +9,12 @@ import {
     Info,
     X,
     Home,
-    Phone
+    Phone,
+    Bookmark
 } from 'lucide-react';
 
 const Sidebar = ({ isOpen, close }) => {
+    const { user } = useAuth();
     return (
         <>
             {/* Overlay */}
@@ -41,6 +44,20 @@ const Sidebar = ({ isOpen, close }) => {
                         <Home size={20} className="nav-link-icon" />
                         <span style={{ fontWeight: 500 }}>Home</span>
                     </NavLink>
+
+                    {user && (
+                        <NavLink
+                            to="/saved"
+                            className={({ isActive }) => `nav-link ${isActive ? 'active' : ''}`}
+                            onClick={close}
+                        >
+                            <Bookmark size={20} className="nav-link-icon" />
+                            <div style={{ display: 'flex', flexDirection: 'column' }}>
+                                <span style={{ fontWeight: 500 }}>Saved Situations</span>
+                                <span style={{ fontSize: '0.75rem', opacity: 0.7 }}>My Personal History</span>
+                            </div>
+                        </NavLink>
+                    )}
 
                     <NavLink
                         to="/authority"
