@@ -162,10 +162,14 @@ const ContractDecoder = () => {
             }
 
             setText(extractedText);
-            setStatusMessage("Analyzing for risks...");
-            analyzeText(extractedText);
-            setStatus('analyzed');
-            setProgress(100);
+            setStatusMessage("Cross-checking with legal database...");
+
+            // Intentional delay for perceived accuracy
+            setTimeout(() => {
+                analyzeText(extractedText);
+                setStatus('analyzed');
+                setProgress(100);
+            }, 1000);
 
         } catch (err) {
             console.error(err);

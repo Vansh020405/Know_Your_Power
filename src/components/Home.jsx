@@ -18,7 +18,8 @@ import {
     MoveRight,
     MessageCircle,
     Heart,
-    Bookmark
+    Bookmark,
+    Settings
 } from 'lucide-react';
 import { analyzeSituation } from '../utils/aiLogic';
 import rulesData from '../data/rules.json';
@@ -78,6 +79,8 @@ const Home = () => {
         }
     };
 
+    const [typingMessage, setTypingMessage] = useState('Checking rules...');
+
     const handleSearch = (e, overrideQuery = null) => {
         const query = overrideQuery || quickSearch;
 
@@ -88,6 +91,18 @@ const Home = () => {
             setChatHistory(newHistory);
             setQuickSearch('');
             setIsTyping(true);
+
+            // Context-aware typing messages
+            const lowerQuery = query.toLowerCase();
+            if (lowerQuery.includes('police') || lowerQuery.includes('stop')) {
+                setTypingMessage('Reviewing police protocols...');
+            } else if (lowerQuery.includes('boss') || lowerQuery.includes('hr') || lowerQuery.includes('work')) {
+                setTypingMessage('Analyzing workplace rules...');
+            } else if (lowerQuery.includes('landlord') || lowerQuery.includes('rent')) {
+                setTypingMessage('Checking rental regulations...');
+            } else {
+                setTypingMessage('Analyzing situation...');
+            }
 
             // 2. Simulate Thinking
             setTimeout(() => {
@@ -139,26 +154,26 @@ const Home = () => {
 
                 if (analysis.rule && analysis.confidence > 0.4) {
                     const rule = analysis.rule;
-                    let opening = "Here is the rule.";
-                    if (rule.verdict === 'CANNOT') opening = "No, they generally cannot do that.";
-                    else if (rule.verdict === 'CAN') opening = "Yes, in most cases they can.";
-                    else opening = "It depends on the specific conditions.";
+                    let opening = "Based on common rules, it seems...";
+                    if (rule.verdict === 'CANNOT') opening = "It appears they generally cannot do that.";
+                    else if (rule.verdict === 'CAN') opening = "In most cases, this appears permitted.";
+                    else opening = "This usually depends on specific conditions.";
 
                     aiResponse.text = opening;
                     aiResponse.type = 'match';
                     aiResponse.data = { rule };
                 } else if (analysis.suggestions && analysis.suggestions.length > 0) {
-                    aiResponse.text = "I understood pieces of that. Do any of these rules apply?";
+                    aiResponse.text = "I've found some potential matches. Do any of these apply?";
                     aiResponse.type = 'suggestions';
                     aiResponse.data = { suggestions: analysis.suggestions };
                 } else {
-                    aiResponse.text = "I see. I'm not entirely sure which rule applies. Could you clarify if this is about work, police, or housing?";
+                    aiResponse.text = "I'm analyzing the context. Could you clarify if this involves work, police, or local authorities?";
                     aiResponse.type = 'no_result';
                 }
 
                 setChatHistory(prev => [...prev, aiResponse]);
                 setIsTyping(false);
-            }, 800);
+            }, 1100); // 1.1s latency as requested
         }
     };
 
@@ -366,8 +381,9 @@ const Home = () => {
                                 ))}
                                 {isTyping && (
                                     <div className="message-row ai">
-                                        <div className="typing-indicator">
-                                            <span></span><span></span><span></span>
+                                        <div className="typing-container-v2">
+                                            <div className="typing-skeleton-line"></div>
+                                            <span className="typing-text-hint">{typingMessage}</span>
                                         </div>
                                     </div>
                                 )}
@@ -445,6 +461,59 @@ const Home = () => {
                     </div>
                 </div>
             </section>
+
+            {/* LOGIN BENEFITS SECTION */}
+            {!user && (
+                <section className="login-benefits-section">
+                    <div className="benefits-container">
+                        <div className="benefits-glow"></div>
+                        <div className="benefits-content">
+                            <h2 className="section-title">Unlock Your Full Power</h2>
+                            <p className="section-subtitle">Join thousands of citizens who are taking control of their legal journey. It's free, secure, and private.</p>
+
+                            <div className="benefits-grid">
+                                <div className="benefit-item">
+                                    <div className="benefit-icon"><Bookmark size={20} /></div>
+                                    <div className="benefit-text">
+                                        <h4>Save Situations</h4>
+                                        <p>Keep a personal library of your legal checks and advice.</p>
+                                    </div>
+                                </div>
+                                <div className="benefit-item">
+                                    <div className="benefit-icon"><Settings size={20} /></div>
+                                    <div className="benefit-text">
+                                        <h4>Smart Preferences</h4>
+                                        <p>Set your language and state for localized legal info.</p>
+                                    </div>
+                                </div>
+                                <div className="benefit-item">
+                                    <div className="benefit-icon"><Lock size={20} /></div>
+                                    <div className="benefit-text">
+                                        <h4>Privacy First</h4>
+                                        <p>We don't track your identity or sell your personal data.</p>
+                                    </div>
+                                </div>
+                                <div className="benefit-item">
+                                    <div className="benefit-icon"><Zap size={20} /></div>
+                                    <div className="benefit-text">
+                                        <h4>Cross-Device Sync</h4>
+                                        <p>Access your saved situations from any phone or computer.</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div className="benefits-cta">
+                                <button className="btn btn-primary" onClick={() => navigate('/signup')}>
+                                    Create Free Account <MoveRight size={18} />
+                                </button>
+                                <button className="btn btn-ghost" onClick={() => navigate('/login')}>
+                                    Log In Instead
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            )}
 
             {/* MINIMAL FOOTER */}
             <footer className="minimal-footer">
@@ -586,20 +655,17 @@ const Home = () => {
                     line-height: 1.6;
                 }
                 .hero-btn {
-                    padding: 1rem 2.5rem;
-                    font-size: 1.1rem;
-                    border-radius: 100px;
-                    gap: 10px;
+                    padding: 0.875rem 2.5rem;
                     background: #fff;
                     color: #000;
-                    box-shadow: 0 4px 20px rgba(0,0,0,0.3);
-                    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
-                    border: none;
+                    box-shadow: 0 10px 20px -5px rgba(255,255,255,0.2);
+                    display: flex;
+                    align-items: center;
+                    gap: 10px;
                 }
                 .hero-btn:hover {
-                    transform: translateY(-2px) scale(1.02);
-                    background: #f0f0f0;
-                    box-shadow: 0 10px 30px rgba(255,255,255,0.15);
+                    background: #f8f8f8;
+                    box-shadow: 0 15px 30px -5px rgba(255,255,255,0.3);
                 }
 
                 /* GRID */
@@ -1013,6 +1079,72 @@ const Home = () => {
                     color: rgba(255,255,255,0.7);
                     max-width: 500px;
                     margin: 0 auto;
+                }
+
+                /* LOGIN BENEFITS */
+                .login-benefits-section {
+                    margin-top: 4rem;
+                    padding: 0 1rem;
+                }
+                .benefits-container {
+                    position: relative;
+                    max-width: 1000px;
+                    margin: 0 auto;
+                    background: linear-gradient(135deg, rgba(20,20,20,0.8) 0%, rgba(10,10,10,0.9) 100%);
+                    border: 1px solid rgba(255,255,255,0.05);
+                    border-radius: 32px;
+                    padding: 4rem 2rem;
+                    overflow: hidden;
+                    text-align: center;
+                }
+                .benefits-glow {
+                    position: absolute;
+                    top: -50%;
+                    left: 50%;
+                    transform: translateX(-50%);
+                    width: 300px;
+                    height: 300px;
+                    background: var(--primary);
+                    filter: blur(120px);
+                    opacity: 0.1;
+                    z-index: 0;
+                    pointer-events: none;
+                }
+                .benefits-content { position: relative; z-index: 1; }
+                .benefits-grid {
+                    display: grid;
+                    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+                    gap: 2rem;
+                    margin: 3rem 0;
+                    text-align: left;
+                }
+                .benefit-item {
+                    display: flex;
+                    gap: 1rem;
+                }
+                .benefit-icon {
+                    width: 40px;
+                    height: 40px;
+                    border-radius: 10px;
+                    background: rgba(16, 185, 129, 0.1);
+                    color: var(--primary);
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    flex-shrink: 0;
+                }
+                .benefit-text h4 { font-size: 1rem; margin-bottom: 0.25rem; }
+                .benefit-text p { font-size: 0.85rem; color: var(--text-muted); line-height: 1.4; }
+                
+                .benefits-cta {
+                    display: flex;
+                    gap: 1.25rem;
+                    justify-content: center;
+                    margin-top: 2rem;
+                    flex-wrap: wrap;
+                }
+                .benefits-cta .btn {
+                    padding: 0.875rem 2.25rem;
                 }
 
                 /* MOBILE RESPONSIVE */

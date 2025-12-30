@@ -25,6 +25,7 @@ const ConversationScripts = () => {
     const [expandedStep, setExpandedStep] = useState(null);
     const [searchTerm, setSearchTerm] = useState('');
     const [activeCategory, setActiveCategory] = useState('All');
+    const [isDetailLoading, setIsDetailLoading] = useState(false);
 
     const iconMap = {
         AlertCircle,
@@ -49,6 +50,15 @@ const ConversationScripts = () => {
 
     const categories = ['All', ...new Set(scriptsData.scripts.map(s => s.category))];
 
+    const handleScriptSelect = (id) => {
+        setIsDetailLoading(true);
+        setTimeout(() => {
+            setSelectedScript(id);
+            setIsDetailLoading(false);
+            window.scrollTo(0, 0);
+        }, 450); // Intentional delay for perceived depth
+    };
+
     const filteredScripts = useMemo(() => {
         return scriptsData.scripts.filter(script => {
             const matchesCategory = activeCategory === 'All' || script.category === activeCategory;
@@ -57,6 +67,16 @@ const ConversationScripts = () => {
             return matchesCategory && matchesSearch;
         });
     }, [searchTerm, activeCategory]);
+
+    if (isDetailLoading) {
+        return (
+            <div className="page-loading-overlay">
+                <div className="skeleton-card shimmer" style={{ height: '80px' }}></div>
+                <div className="skeleton-card shimmer" style={{ height: '400px' }}></div>
+                <p style={{ textAlign: 'center', color: 'var(--text-muted)' }}>Preparing conversation flow...</p>
+            </div>
+        );
+    }
 
     if (selectedScript) {
         const script = scriptsData.scripts.find(s => s.id === selectedScript);
@@ -217,7 +237,7 @@ const ConversationScripts = () => {
                                 <div
                                     key={script.id}
                                     className="modern-script-card"
-                                    onClick={() => setSelectedScript(script.id)}
+                                    onClick={() => handleScriptSelect(script.id)}
                                 >
                                     <div className="card-edge" style={{ backgroundColor: catColor }}></div>
                                     <div className="card-main-content">

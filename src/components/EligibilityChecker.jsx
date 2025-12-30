@@ -123,7 +123,7 @@ const EligibilityChecker = () => {
         setTimeout(() => {
             setDiscoveredSchemes(relevant);
             setLoadingDiscovery(false);
-        }, 1500); // Fake delay for "Searching..." effect
+        }, 1200); // 1.2s delay for "Checking..." effect
     };
 
     useEffect(() => {
@@ -378,9 +378,10 @@ const EligibilityChecker = () => {
                 </div>
 
                 {loadingDiscovery ? (
-                    <div style={{ padding: '2rem', textAlign: 'center', color: 'var(--text-muted)' }}>
-                        <div className="spinner" style={{ margin: '0 auto 1rem auto' }}></div>
-                        <p>Searching internet sources...</p>
+                    <div className="discovery-skeleton-grid">
+                        <div className="skeleton-card shimmer" style={{ height: '100px' }}></div>
+                        <div className="skeleton-card shimmer" style={{ height: '100px' }}></div>
+                        <p style={{ textAlign: 'center', color: 'var(--text-muted)', fontSize: '0.9rem' }}>Reviewing eligibility criteria...</p>
                     </div>
                 ) : discoveredSchemes.length === 0 ? (
                     <div style={{ padding: '1rem', color: 'var(--text-muted)', textAlign: 'center', fontStyle: 'italic' }}>

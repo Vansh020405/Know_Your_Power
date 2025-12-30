@@ -16,6 +16,31 @@ import SavedSituations from './components/SavedSituations';
 import Settings from './components/Settings';
 import { AuthProvider } from './context/AuthContext';
 import { PreferencesProvider } from './context/PreferencesContext';
+import { useState, useEffect } from 'react';
+
+const PageWrapper = ({ children }) => {
+  const [isPageReady, setIsPageReady] = useState(false);
+
+  useEffect(() => {
+    setIsPageReady(false);
+    const timer = setTimeout(() => {
+      setIsPageReady(true);
+    }, 450); // Mandatory 300-500ms delay
+    return () => clearTimeout(timer);
+  }, [window.location.pathname]); // Re-run on route change
+
+  if (!isPageReady) {
+    return (
+      <div className="page-loading-overlay">
+        <div className="skeleton-card shimmer"></div>
+        <div className="skeleton-text shimmer"></div>
+        <div className="skeleton-text short shimmer"></div>
+      </div>
+    );
+  }
+
+  return <div className="fade-in-content">{children}</div>;
+};
 
 function App() {
   return (
@@ -24,21 +49,21 @@ function App() {
         <BrowserRouter>
           <Routes>
             <Route path="/" element={<Layout />}>
-              <Route index element={<Home />} />
-              <Route path="authority" element={<AuthorityChecker />} />
-              <Route path="eligibility" element={<EligibilityChecker />} />
-              <Route path="decoder" element={<ContractDecoder />} />
-              <Route path="scripts" element={<ConversationScripts />} />
-              <Route path="about" element={<About />} />
-              <Route path="privacy" element={<Privacy />} />
-              <Route path="contacts" element={<Contacts />} />
+              <Route index element={<PageWrapper><Home /></PageWrapper>} />
+              <Route path="authority" element={<PageWrapper><AuthorityChecker /></PageWrapper>} />
+              <Route path="eligibility" element={<PageWrapper><EligibilityChecker /></PageWrapper>} />
+              <Route path="decoder" element={<PageWrapper><ContractDecoder /></PageWrapper>} />
+              <Route path="scripts" element={<PageWrapper><ConversationScripts /></PageWrapper>} />
+              <Route path="about" element={<PageWrapper><About /></PageWrapper>} />
+              <Route path="privacy" element={<PageWrapper><Privacy /></PageWrapper>} />
+              <Route path="contacts" element={<PageWrapper><Contacts /></PageWrapper>} />
 
               {/* Auth Routes */}
-              <Route path="login" element={<Login />} />
-              <Route path="signup" element={<Signup />} />
-              <Route path="profile" element={<Profile />} />
-              <Route path="saved" element={<SavedSituations />} />
-              <Route path="settings" element={<Settings />} />
+              <Route path="login" element={<PageWrapper><Login /></PageWrapper>} />
+              <Route path="signup" element={<PageWrapper><Signup /></PageWrapper>} />
+              <Route path="profile" element={<PageWrapper><Profile /></PageWrapper>} />
+              <Route path="saved" element={<PageWrapper><SavedSituations /></PageWrapper>} />
+              <Route path="settings" element={<PageWrapper><Settings /></PageWrapper>} />
             </Route>
           </Routes>
         </BrowserRouter>
