@@ -15,7 +15,7 @@ const EligibilityChecker = () => {
         category: 'General',
         situation: 'student',
         state: 'Delhi',
-        gender: 'male' // Hidden internal logic, kept default
+        gender: 'male'
     });
 
     const handleChange = (e) => {
@@ -118,7 +118,17 @@ const EligibilityChecker = () => {
                             </select>
                         </div>
 
-                        {/* 4. State */}
+                        {/* 4. Gender */}
+                        <div>
+                            <label className="label">Gender</label>
+                            <select className="select" name="gender" value={formData.gender} onChange={handleChange}>
+                                <option value="male">Male</option>
+                                <option value="female">Female</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+
+                        {/* 5. State */}
                         <div>
                             <label className="label">State</label>
                             <select className="select" name="state" value={formData.state} onChange={handleChange}>
@@ -126,7 +136,7 @@ const EligibilityChecker = () => {
                             </select>
                         </div>
 
-                        {/* 5. Situation */}
+                        {/* 6. Situation */}
                         <div>
                             <label className="label">Current Situation</label>
                             <select className="select" name="situation" value={formData.situation} onChange={handleChange}>
