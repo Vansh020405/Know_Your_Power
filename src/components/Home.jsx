@@ -144,8 +144,15 @@ const Home = () => {
                     <source src="/hero_background.mp4" type="video/mp4" />
                 </video>
                 <div className="hero-video-overlay"></div>
-                <div className="hero-glow"></div>
+                <div className="hero-video-overlay"></div>
+                {/* <div className="hero-glow"></div> */}
                 <div className="hero-content">
+                    <div className="legal-symbols-row">
+                        <div className="symbol-box"><Scale size={18} /></div>
+                        <div className="symbol-box"><Gavel size={18} /></div>
+                        <div className="symbol-box"><Shield size={18} /></div>
+                        <div className="symbol-box"><FileText size={18} /></div>
+                    </div>
                     <div className="hero-badge">
                         <Scale size={16} /> <span>Always Know Your Rights</span>
                     </div>
@@ -159,7 +166,7 @@ const Home = () => {
 
                     <div className="hero-actions">
                         <button
-                            className="btn btn-primary hero-btn"
+                            className="btn hero-btn"
                             onClick={() => document.getElementById('ai-assistant').scrollIntoView({ behavior: 'smooth' })}
                         >
                             Ask AI Assistant <ArrowRight size={18} />
@@ -459,7 +466,32 @@ const Home = () => {
                     pointer-events: none;
                     z-index: 1;
                 }
-                .hero-content { position: relative; z-index: 2; }
+                .hero-content { position: relative; z-index: 2; display: flex; flex-direction: column; align-items: center; }
+                
+                .legal-symbols-row {
+                    display: flex;
+                    gap: 1rem;
+                    margin-bottom: 2rem;
+                }
+                .symbol-box {
+                    width: 48px;
+                    height: 48px;
+                    background: rgba(255,255,255,0.05);
+                    border: 1px solid rgba(255,255,255,0.1);
+                    border-radius: 12px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    color: var(--text-muted);
+                    transition: all 0.2s ease;
+                }
+                .symbol-box:hover {
+                    background: rgba(255,255,255,0.1);
+                    color: var(--primary);
+                    transform: translateY(-2px);
+                    border-color: var(--primary);
+                }
+
                 .hero-badge {
                     display: inline-flex;
                     align-items: center;
@@ -499,6 +531,16 @@ const Home = () => {
                     font-size: 1.1rem;
                     border-radius: 100px;
                     gap: 10px;
+                    background: #fff;
+                    color: #000;
+                    box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+                    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+                    border: none;
+                }
+                .hero-btn:hover {
+                    transform: translateY(-2px) scale(1.02);
+                    background: #f0f0f0;
+                    box-shadow: 0 10px 30px rgba(255,255,255,0.15);
                 }
 
                 /* GRID */

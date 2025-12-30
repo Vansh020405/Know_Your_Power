@@ -257,6 +257,7 @@ const ContractDecoder = () => {
         // 2. Reference Number
         const referencePatterns = [
             /ref[\s\.:-]*no[\s\.:-]*[a-z0-9\/\-]+/i,
+            /ref[\s\.:-]*[a-z0-9\/\-]+/i,           // Catch "Ref: ABC..." without "No"
             /reference[\s\.:-]*[a-z0-9\/\-]+/i,
             /reg[\s\.:-]*no[\s\.:-]*[a-z0-9\/\-]+/i,
             /file[\s\.:-]*no[\s\.:-]*[a-z0-9\/\-]+/i
@@ -271,7 +272,11 @@ const ContractDecoder = () => {
         }
 
         // 3. Approval Authority
-        const authorityKeywords = ['approved by', 'sanctioned by', 'authorized by', 'competent authority'];
+        const authorityKeywords = [
+            'approved by', 'sanctioned by', 'authorized by', 'competent authority',
+            'issued by', 'government', 'planning authority', 'planning act',
+            'municipality', 'notary', 'town and country'
+        ];
         const hasAuthority = authorityKeywords.some(keyword => lowerText.includes(keyword));
         if (!hasAuthority) {
             foundRisks.push({
@@ -283,15 +288,15 @@ const ContractDecoder = () => {
 
         // 4. Date Validation
         const datePatterns = [
-            /\b\d{1,2}[\/\-\.]\d{1,2}[\/\-\.]\d{2,4}\b/,  // DD/MM/YYYY or MM/DD/YYYY
-            /\b\d{4}[\/\-\.]\d{1,2}[\/\-\.]\d{1,2}\b/,    // YYYY/MM/DD
+            /\b\d{1,2}[\s]*[\/\-\.][\s]*\d{1,2}[\s]*[\/\-\.][\s]*\d{2,4}\b/,  // DD / MM / YYYY
+            /\b\d{4}[\s]*[\/\-\.][\s]*\d{1,2}[\s]*[\/\-\.][\s]*\d{1,2}\b/,    // YYYY / MM / DD
             /\b(?:jan|feb|mar|apr|may|jun|jul|aug|sep|oct|nov|dec)[a-z]*\s+\d{1,2},?\s+\d{4}\b/i
         ];
         const hasDate = datePatterns.some(pattern => pattern.test(txt));
         const hasIssuedDate = lowerText.includes('issued on') || lowerText.includes('date of issue') ||
             lowerText.includes('dated') || lowerText.includes('date:');
 
-        if (!hasDate) {
+        if (!hasDate && !hasIssuedDate) {
             foundRisks.push({
                 risk_level: 'RISKY',
                 trigger: 'No date found',
