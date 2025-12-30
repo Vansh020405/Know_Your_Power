@@ -178,7 +178,10 @@ const ContractDecoder = () => {
         const lowerText = txt.toLowerCase();
         const foundRisks = [];
 
-        // Check contract-specific risky clauses
+        // ===== STEP 1: DETECT DOCUMENT TYPE =====
+        const documentType = detectDocumentType(lowerText);
+
+        // ===== STEP 2: CHECK CONTRACT-SPECIFIC RISKY CLAUSES (ALL TYPES) =====
         contractKeywords.forEach(item => {
             for (let kw of item.keywords) {
                 if (lowerText.includes(kw)) {
@@ -188,134 +191,195 @@ const ContractDecoder = () => {
             }
         });
 
-        // ===== OFFICIAL DOCUMENT VALIDATION CHECKS =====
+        // ===== STEP 3: APPLY DOCUMENT TYPE-SPECIFIC VALIDATION =====
+        if (documentType === 'government') {
+            validateGovernmentDocument(txt, lowerText, foundRisks);
+        } else if (documentType === 'employment') {
+            validateEmploymentDocument(txt, lowerText, foundRisks);
+        } else if (documentType === 'contract') {
+            validateContractDocument(txt, lowerText, foundRisks);
+        } else {
+            // Generic document - minimal validation
+            validateGenericDocument(txt, lowerText, foundRisks);
+        }
 
-        // 1. Check for Official Seal / Authentication Mark
+        setAnalysis(foundRisks);
+    };
+
+    // Detect what type of document this is
+    const detectDocumentType = (lowerText) => {
+        // Government/Official Documents
+        const govKeywords = [
+            'ministry', 'department', 'municipal corporation', 'government',
+            'sanctioned by', 'competent authority', 'issuing authority',
+            'official stamp', 'seal', 'certified copy', 'notarized'
+        ];
+        const govScore = govKeywords.filter(kw => lowerText.includes(kw)).length;
+
+        // Employment Documents
+        const employmentKeywords = [
+            'offer letter', 'appointment letter', 'job offer',
+            'employment', 'position', 'salary', 'compensation',
+            'joining date', 'designation', 'probation', 'notice period'
+        ];
+        const empScore = employmentKeywords.filter(kw => lowerText.includes(kw)).length;
+
+        // Contract Documents
+        const contractKeywords = [
+            'contract', 'agreement', 'party', 'parties',
+            'terms and conditions', 'hereby agree', 'whereas',
+            'consideration', 'obligations', 'termination clause'
+        ];
+        const contractScore = contractKeywords.filter(kw => lowerText.includes(kw)).length;
+
+        // Return the type with highest score
+        if (govScore >= 2) return 'government';
+        if (empScore >= 2) return 'employment';
+        if (contractScore >= 2) return 'contract';
+        return 'generic';
+    };
+
+    // Validation for Government/Official Documents
+    const validateGovernmentDocument = (txt, lowerText, foundRisks) => {
+        // 1. Official Seal / Authentication
         const sealKeywords = ['seal', 'stamp', 'authenticated', 'certified', 'official stamp', 'embossed'];
         const hasSealMention = sealKeywords.some(keyword => lowerText.includes(keyword));
         if (!hasSealMention) {
             foundRisks.push({
                 risk_level: 'RISKY',
                 trigger: 'Missing seal/stamp mention',
-                explanation: '⚠️ Missing or unclear official seal/authentication mark. Official documents typically require visible seals or stamps for authenticity.'
+                explanation: '⚠️ Government documents typically require visible seals or stamps for authenticity.'
             });
         }
 
-        // 2. Issuer Designation Validation (Notary/Engineer/Architect)
-        const issuerDesignations = ['notary', 'engineer', 'architect', 'chartered engineer', 'licensed architect', 'registered engineer'];
-        const hasIssuerDesignation = issuerDesignations.some(designation => lowerText.includes(designation));
-        const hasIssuerValidation = lowerText.includes('license') || lowerText.includes('registration') || lowerText.includes('certified');
-
-        if (hasIssuerDesignation && !hasIssuerValidation) {
-            foundRisks.push({
-                risk_level: 'RISKY',
-                trigger: 'Issuer designation unclear',
-                explanation: '⚠️ Issuer designation mismatch. The document mentions a professional designation (Notary/Engineer/Architect) but lacks clear validation credentials or license information.'
-            });
-        }
-
-        // 3. Reference Number Format Consistency
+        // 2. Reference Number
         const referencePatterns = [
             /ref[\s\.:-]*no[\s\.:-]*[a-z0-9\/\-]+/i,
             /reference[\s\.:-]*[a-z0-9\/\-]+/i,
             /reg[\s\.:-]*no[\s\.:-]*[a-z0-9\/\-]+/i,
             /file[\s\.:-]*no[\s\.:-]*[a-z0-9\/\-]+/i
         ];
-
-        const referenceMatches = referencePatterns.filter(pattern => pattern.test(txt));
-        if (referenceMatches.length === 0) {
+        const hasReference = referencePatterns.some(pattern => pattern.test(txt));
+        if (!hasReference) {
             foundRisks.push({
                 risk_level: 'RISKY',
-                trigger: 'No reference number found',
-                explanation: '⚠️ Reference number format inconsistency. Official documents should contain a clear reference/registration number for tracking and verification purposes.'
+                trigger: 'No reference number',
+                explanation: '⚠️ Official documents should contain a reference/registration number for tracking.'
             });
         }
 
-        // 4. Approval Authority Check
-        const authorityKeywords = [
-            'approved by',
-            'sanctioned by',
-            'authorized by',
-            'ministry',
-            'department',
-            'municipal corporation',
-            'competent authority',
-            'issuing authority'
-        ];
-        const hasApprovalAuthority = authorityKeywords.some(keyword => lowerText.includes(keyword));
-        if (!hasApprovalAuthority) {
+        // 3. Approval Authority
+        const authorityKeywords = ['approved by', 'sanctioned by', 'authorized by', 'competent authority'];
+        const hasAuthority = authorityKeywords.some(keyword => lowerText.includes(keyword));
+        if (!hasAuthority) {
             foundRisks.push({
                 risk_level: 'RISKY',
-                trigger: 'Approval authority not stated',
-                explanation: '⚠️ Approval authority not explicitly stated. The document does not clearly mention the issuing or approving authority, which is crucial for verification.'
+                trigger: 'Approval authority unclear',
+                explanation: '⚠️ The issuing or approving authority is not clearly mentioned.'
             });
         }
+    };
 
-        // 5. Signature Verification
-        const signatureKeywords = ['signature', 'signed by', 'digitally signed', 'countersigned', 'authorized signatory'];
-        const hasSignatureMention = signatureKeywords.some(keyword => lowerText.includes(keyword));
+    // Validation for Employment Documents (Job Letters, Offer Letters)
+    const validateEmploymentDocument = (txt, lowerText, foundRisks) => {
+        // 1. Company Information
+        const hasCompanyInfo = lowerText.includes('company') || lowerText.includes('organization') ||
+            lowerText.includes('ltd') || lowerText.includes('inc') || lowerText.includes('pvt');
 
-        if (!hasSignatureMention) {
-            foundRisks.push({
-                risk_level: 'RISKY',
-                trigger: 'No signature verification',
-                explanation: '⚠️ Absence of signature verification. The document does not contain clear mention of signatures or authorized signatories, which raises authenticity concerns.'
-            });
-        }
+        // 2. Position/Role
+        const hasPosition = lowerText.includes('position') || lowerText.includes('role') ||
+            lowerText.includes('designation') || lowerText.includes('job title');
 
-        // 6. Date and Approval Linkage Validation
+        // 3. Compensation mentioned
+        const hasCompensation = lowerText.includes('salary') || lowerText.includes('compensation') ||
+            lowerText.includes('ctc') || lowerText.includes('per annum') ||
+            /\$\d+|\₹\d+|inr\s*\d+/i.test(lowerText);
+
+        // 4. Date
         const datePatterns = [
-            /\b\d{1,2}[\/\-\.]\d{1,2}[\/\-\.]\d{2,4}\b/,  // DD/MM/YYYY or MM/DD/YYYY
-            /\b\d{4}[\/\-\.]\d{1,2}[\/\-\.]\d{1,2}\b/,    // YYYY/MM/DD
+            /\b\d{1,2}[\/\-\.]\d{1,2}[\/\-\.]\d{2,4}\b/,
+            /\b\d{4}[\/\-\.]\d{1,2}[\/\-\.]\d{1,2}\b/,
             /\b(?:jan|feb|mar|apr|may|jun|jul|aug|sep|oct|nov|dec)[a-z]*\s+\d{1,2},?\s+\d{4}\b/i
         ];
+        const hasDate = datePatterns.some(pattern => pattern.test(txt));
 
-        const dateMatches = datePatterns.filter(pattern => pattern.test(txt));
-        const hasIssuedDate = lowerText.includes('issued on') || lowerText.includes('date of issue') || lowerText.includes('dated');
-        const hasApprovalDate = lowerText.includes('approved on') || lowerText.includes('date of approval');
-
-        if (dateMatches.length === 0 || (!hasIssuedDate && !hasApprovalDate)) {
+        // Only flag if CRITICAL elements are missing
+        if (!hasCompanyInfo && !hasPosition) {
             foundRisks.push({
                 risk_level: 'RISKY',
-                trigger: 'Date verification issue',
-                explanation: '⚠️ Date and approval linkage could not be cross-validated. The document lacks clear date references or the relationship between issue date and approval date is unclear.'
+                trigger: 'Missing essential info',
+                explanation: '⚠️ This employment document lacks basic company and position information.'
             });
         }
 
-        // 7. Check for Annexures / Supporting Documents
-        const annexureKeywords = [
-            'annexure',
-            'attachment',
-            'enclosure',
-            'appendix',
-            'schedule',
-            'see attached',
-            'as per annexure'
+        if (!hasDate) {
+            foundRisks.push({
+                risk_level: 'RISKY',
+                trigger: 'No date found',
+                explanation: '⚠️ Employment documents should include issue date or joining date.'
+            });
+        }
+    };
+
+    // Validation for Contracts/Agreements
+    const validateContractDocument = (txt, lowerText, foundRisks) => {
+        // 1. Parties involved
+        const hasParties = lowerText.includes('party') || lowerText.includes('parties') ||
+            lowerText.includes('between') && lowerText.includes('and');
+
+        // 2. Effective Date
+        const hasEffectiveDate = lowerText.includes('effective date') || lowerText.includes('dated') ||
+            lowerText.includes('entered into');
+
+        // 3. Signatures
+        const hasSignature = lowerText.includes('signature') || lowerText.includes('signed by') ||
+            lowerText.includes('authorized signatory');
+
+        if (!hasParties) {
+            foundRisks.push({
+                risk_level: 'RISKY',
+                trigger: 'Parties not clearly identified',
+                explanation: '⚠️ Contract should clearly identify all parties involved.'
+            });
+        }
+
+        if (!hasSignature) {
+            foundRisks.push({
+                risk_level: 'RISKY',
+                trigger: 'No signature section',
+                explanation: '⚠️ Contracts typically require signatures from all parties.'
+            });
+        }
+    };
+
+    // Validation for Generic Documents
+    const validateGenericDocument = (txt, lowerText, foundRisks) => {
+        // Very minimal validation - just check if it has substance
+        const wordCount = txt.trim().split(/\s+/).length;
+
+        if (wordCount < 20) {
+            foundRisks.push({
+                risk_level: 'RISKY',
+                trigger: 'Insufficient content',
+                explanation: '⚠️ Document appears to have very limited content. Verify OCR quality.'
+            });
+        }
+
+        // Check for basic date presence
+        const datePatterns = [
+            /\b\d{1,2}[\/\-\.]\d{1,2}[\/\-\.]\d{2,4}\b/,
+            /\b\d{4}[\/\-\.]\d{1,2}[\/\-\.]\d{1,2}\b/,
+            /\b(?:jan|feb|mar|apr|may|jun|jul|aug|sep|oct|nov|dec)[a-z]*\s+\d{1,2},?\s+\d{4}\b/i
         ];
-        const mentionsAnnexures = annexureKeywords.some(keyword => lowerText.includes(keyword));
-        const hasAnnexureList = lowerText.includes('annexure a') || lowerText.includes('attachment 1') || /annexure\s*[a-z0-9]/i.test(lowerText);
+        const hasDate = datePatterns.some(pattern => pattern.test(txt));
 
-        if (mentionsAnnexures && !hasAnnexureList) {
+        if (!hasDate) {
             foundRisks.push({
                 risk_level: 'RISKY',
-                trigger: 'Missing annexures',
-                explanation: '⚠️ Document appears to be conditionally valid and may require additional annexures. References to attachments/annexures found but specific documents not clearly listed.'
+                trigger: 'No date found',
+                explanation: '⚠️ Most formal documents include a date. Consider verifying document completeness.'
             });
         }
-
-        // 8. General Validity Check - If multiple issues found
-        if (foundRisks.filter(r => r.risk_level === 'RISKY' && r.trigger.includes('approval')).length >= 3) {
-            const criticalIndex = foundRisks.findIndex(r => r.risk_level === 'RISKY');
-            if (criticalIndex >= 0) {
-                foundRisks[criticalIndex] = {
-                    ...foundRisks[criticalIndex],
-                    risk_level: 'AVOID',
-                    explanation: '🚨 CRITICAL: Multiple validation failures detected. ' + foundRisks[criticalIndex].explanation
-                };
-            }
-        }
-
-        setAnalysis(foundRisks);
     };
 
     const getRiskLevel = () => {
@@ -486,7 +550,7 @@ const ContractDecoder = () => {
                                     </div>
 
                                     <div className="disclaimer-box">
-                                        <strong>⚖️ AI Disclaimer:</strong> This tool performs OCR text extraction and validates documents for authenticity markers (seals, signatures, reference numbers, approval authorities, dates, and annexures). It is not a substitute for legal advice or professional document verification. Always consult qualified professionals for official validation.
+                                        <strong>⚖️ AI Disclaimer:</strong> This tool uses intelligent OCR and context-aware validation. It automatically detects document type (Government, Employment, Contract, or Generic) and applies appropriate validation rules. Not a substitute for legal advice or professional document verification. Always consult qualified professionals for official validation.
                                     </div>
                                 </div>
                             ) : (
