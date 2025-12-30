@@ -23,10 +23,11 @@ const Layout = () => {
       case '/decoder': return 'Contract Decoder';
       case '/scripts': return 'Conversation Scripts';
       case '/about': return 'About';
-      case '/support': return 'Support Us';
+      case '/privacy': return 'Privacy & Data';
       case '/login': return '';
       case '/signup': return 'Create Account';
       case '/profile': return 'My Profile';
+      case '/settings': return 'Settings';
       default: return 'Know Your Power';
     }
   };

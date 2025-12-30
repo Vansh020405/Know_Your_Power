@@ -7,12 +7,13 @@ import EligibilityChecker from './components/EligibilityChecker';
 import ContractDecoder from './components/ContractDecoder';
 import ConversationScripts from './components/ConversationScripts';
 import About from './components/About';
-import Support from './components/Support';
+import Privacy from './components/Privacy';
 import Contacts from './components/Contacts.jsx';
 import Login from './components/Login';
 import Signup from './components/Signup';
 import Profile from './components/Profile';
 import SavedSituations from './components/SavedSituations';
+import Settings from './components/Settings';
 import { AuthProvider } from './context/AuthContext';
 import { PreferencesProvider } from './context/PreferencesContext';
 
@@ -29,7 +30,7 @@ function App() {
               <Route path="decoder" element={<ContractDecoder />} />
               <Route path="scripts" element={<ConversationScripts />} />
               <Route path="about" element={<About />} />
-              <Route path="support" element={<Support />} />
+              <Route path="privacy" element={<Privacy />} />
               <Route path="contacts" element={<Contacts />} />
 
               {/* Auth Routes */}
@@ -37,6 +38,7 @@ function App() {
               <Route path="signup" element={<Signup />} />
               <Route path="profile" element={<Profile />} />
               <Route path="saved" element={<SavedSituations />} />
+              <Route path="settings" element={<Settings />} />
             </Route>
           </Routes>
         </BrowserRouter>

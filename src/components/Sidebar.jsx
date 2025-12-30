@@ -11,7 +11,9 @@ import {
     Home,
     Phone,
     Bookmark,
-    MessageCircle
+    MessageCircle,
+    Settings,
+    Lock
 } from 'lucide-react';
 
 const Sidebar = ({ isOpen, close }) => {
@@ -123,12 +125,12 @@ const Sidebar = ({ isOpen, close }) => {
                     <div className="nav-section-label" style={{ marginTop: '1rem' }}>Other</div>
 
                     <NavLink
-                        to="/support"
+                        to="/privacy"
                         className={({ isActive }) => `nav-link ${isActive ? 'active' : ''}`}
                         onClick={close}
                     >
-                        <Heart size={20} className="nav-link-icon" />
-                        <span>Support Us</span>
+                        <Lock size={20} className="nav-link-icon" />
+                        <span>Privacy & Data</span>
                     </NavLink>
 
                     <NavLink
@@ -138,6 +140,15 @@ const Sidebar = ({ isOpen, close }) => {
                     >
                         <Info size={20} className="nav-link-icon" />
                         <span>About</span>
+                    </NavLink>
+
+                    <NavLink
+                        to="/settings"
+                        className={({ isActive }) => `nav-link ${isActive ? 'active' : ''}`}
+                        onClick={close}
+                    >
+                        <Settings size={20} className="nav-link-icon" />
+                        <span>Settings</span>
                     </NavLink>
                 </nav>
             </aside>

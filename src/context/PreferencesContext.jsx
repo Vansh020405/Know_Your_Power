@@ -10,9 +10,18 @@ export const PreferencesProvider = ({ children }) => {
         return localStorage.getItem('user_region') || 'India (General)';
     });
 
+    // Language Preference
+    const [language, setLanguage] = useState(() => {
+        return localStorage.getItem('user_language') || 'English';
+    });
+
     useEffect(() => {
         localStorage.setItem('user_region', region);
     }, [region]);
+
+    useEffect(() => {
+        localStorage.setItem('user_language', language);
+    }, [language]);
 
     // History
     const [history, setHistory] = useState(() => {
@@ -49,6 +58,8 @@ export const PreferencesProvider = ({ children }) => {
         <PreferencesContext.Provider value={{
             region,
             setRegion,
+            language,
+            setLanguage,
             history,
             addToHistory,
             clearHistory

@@ -455,7 +455,7 @@ const Home = () => {
                     </div>
                     <div className="footer-links">
                         <button onClick={() => navigate('/about')} className="footer-link">About</button>
-                        <button onClick={() => navigate('/support')} className="footer-link">Support</button>
+                        <button onClick={() => navigate('/privacy')} className="footer-link">Privacy</button>
                         <button onClick={() => navigate('/contacts')} className="footer-link">Emergency</button>
                     </div>
                     <div className="footer-copy">
