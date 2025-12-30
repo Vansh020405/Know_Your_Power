@@ -21,6 +21,7 @@ const Layout = () => {
       case '/authority': return 'Authority Check';
       case '/eligibility': return 'Eligibility';
       case '/decoder': return 'Contract Decoder';
+      case '/scripts': return 'Conversation Scripts';
       case '/about': return 'About';
       case '/support': return 'Support Us';
       case '/login': return '';

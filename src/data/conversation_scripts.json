@@ -1,0 +1,292 @@
+{
+  "scripts": [
+    {
+      "id": "traffic_police_stop",
+      "category": "Traffic Police",
+      "icon": "AlertCircle",
+      "title": "Traffic Police Stops You",
+      "steps": [
+        {
+          "stepNumber": 1,
+          "theyMight": "Did you know your vehicle light is broken?",
+          "youCanSay": "Thank you for letting me know. I'll get it repaired. Can I see the issue?",
+          "whatItMeans": "You're acknowledging the issue without admitting guilt or getting defensive.",
+          "whatHappensNext": "They may issue a challan (traffic ticket) or warning. Ask for the written challan.",
+          "avoidSaying": "Don't say 'No, it's not broken!' without checking. Don't admit to knowing it was broken."
+        },
+        {
+          "stepNumber": 2,
+          "theyMight": "This is a serious violation. The fine is ₹1000.",
+          "youCanSay": "Understood. Can you show me the rule this violates? May I have the receipt and challan number?",
+          "whatItMeans": "You're being professional and asking for documentation, which protects your rights.",
+          "whatHappensNext": "They will provide a challan. Make note of the officer's name and vehicle number.",
+          "avoidSaying": "Don't negotiate the fine on the spot. Don't hand over only cash without a receipt."
+        },
+        {
+          "stepNumber": 3,
+          "theyMight": "Just give me ₹500 cash and you can go.",
+          "youCanSay": "I need a proper receipt and challan. If I can't pay now, what's the proper procedure?",
+          "whatItMeans": "You're refusing informal payments and insisting on transparency.",
+          "whatHappensNext": "If they continue pressuring, note their details and report to the traffic police helpline.",
+          "avoidSaying": "Never pay cash without receipt. Don't be rude—stay calm and firm."
+        }
+      ]
+    },
+    {
+      "id": "police_home_search",
+      "category": "Traffic Police",
+      "icon": "Shield",
+      "title": "Police Wants to Search Your Home",
+      "steps": [
+        {
+          "stepNumber": 1,
+          "theyMight": "We need to search your home for [reason]. Let us in.",
+          "youCanSay": "I'd like to see the search warrant first. What is it for?",
+          "whatItMeans": "You're asserting your right to know the legal reason before allowing entry.",
+          "whatHappensNext": "They must show you a valid warrant. If they don't have one, you can refuse entry.",
+          "avoidSaying": "Don't say 'No, leave immediately!' aggressively. Stay calm and respectful."
+        },
+        {
+          "stepNumber": 2,
+          "theyMight": "We have the authority. Open the door.",
+          "youCanSay": "Please show me the warrant. I'll cooperate fully once I see the legal order.",
+          "whatItMeans": "You're standing firm on your legal rights while appearing cooperative.",
+          "whatHappensNext": "If they have a warrant, you must allow the search. Be present during it and note what is taken.",
+          "avoidSaying": "Don't physically block the door. Don't become aggressive or violent."
+        },
+        {
+          "stepNumber": 3,
+          "theyMight": "We'll take this item as evidence.",
+          "youCanSay": "Please provide me a receipt listing all items being taken. I want it in writing.",
+          "whatItMeans": "You're creating a record of what was seized for your legal protection.",
+          "whatHappensNext": "They should provide a seizure memo. Keep a copy and note the officer's name and date.",
+          "avoidSaying": "Don't physically grab items back. Don't refuse to let them take things."
+        }
+      ]
+    },
+    {
+      "id": "police_questioning",
+      "category": "Traffic Police",
+      "icon": "MessageCircle",
+      "title": "Police Wants to Question You",
+      "steps": [
+        {
+          "stepNumber": 1,
+          "theyMight": "We need to ask you some questions. Come to the station.",
+          "youCanSay": "Am I being arrested or detained? What is this regarding?",
+          "whatItMeans": "You're asking for clarification about your status—essential for knowing your rights.",
+          "whatHappensNext": "They must tell you if you're detained. You have the right to know the reason.",
+          "avoidSaying": "Don't say 'I won't answer anything.' Don't become uncooperative yet."
+        },
+        {
+          "stepNumber": 2,
+          "theyMight": "Just come answer a few questions. It won't take long.",
+          "youCanSay": "Can I call someone to inform them where I'm going? Can I have your name and the station details?",
+          "whatItMeans": "You're exercising your right to inform family and getting official details.",
+          "whatHappensNext": "They may or may not allow a call. Make sure to remember their details.",
+          "avoidSaying": "Don't go without telling anyone where you're going."
+        },
+        {
+          "stepNumber": 3,
+          "theyMight": "Just confess and this will be over quickly.",
+          "youCanSay": "I'd like to speak to a lawyer before answering detailed questions. Can I have a lawyer present?",
+          "whatItMeans": "You're invoking your right to legal representation, which is your fundamental right.",
+          "whatHappensNext": "They must allow you to have a lawyer. Don't answer questions without one for serious cases.",
+          "avoidSaying": "Never confess to something you didn't do. Never sign anything without understanding it."
+        }
+      ]
+    },
+    {
+      "id": "hr_salary_issue",
+      "category": "HR / Workplace",
+      "icon": "Briefcase",
+      "title": "HR Cuts Your Salary Without Notice",
+      "steps": [
+        {
+          "stepNumber": 1,
+          "theyMight": "Due to performance issues, we're reducing your salary by 20%.",
+          "youCanSay": "Thank you for informing me. Can I have this in writing? What specific performance issues are you referring to?",
+          "whatItMeans": "You're asking for written documentation and clarity on the reason.",
+          "whatHappensNext": "They should provide written notice. If this is the first time, ask for a performance improvement plan.",
+          "avoidSaying": "Don't accept verbal changes. Always ask for written documentation."
+        },
+        {
+          "stepNumber": 2,
+          "theyMight": "We've already decided. The new salary is effective immediately.",
+          "youCanSay": "I understand, but I'd like written clarification on whether this is temporary or permanent, and if there was proper notice period given.",
+          "whatItMeans": "You're insisting on proper process and documentation.",
+          "whatHappensNext": "In India, salary cuts need notice (usually 30 days) and written explanation. Request this formally.",
+          "avoidSaying": "Don't resign in anger immediately. Get everything in writing first."
+        },
+        {
+          "stepNumber": 3,
+          "theyMight": "If you don't agree, you're free to leave.",
+          "youCanSay": "I'd like to understand the terms. Can we discuss this and can I have a copy of my employment contract and the modification notice in writing?",
+          "whatItMeans": "You're standing firm on your right to clarity and legal documentation.",
+          "whatHappensNext": "If you feel this is unfair, you can file a complaint with the Labour Department.",
+          "avoidSaying": "Don't say 'I quit!' without documenting the issue. This may affect your severance."
+        }
+      ]
+    },
+    {
+      "id": "hr_termination_sudden",
+      "category": "HR / Workplace",
+      "icon": "X",
+      "title": "Your Company Suddenly Fires You",
+      "steps": [
+        {
+          "stepNumber": 1,
+          "theyMight": "Your services are no longer required. Your last day is today.",
+          "youCanSay": "I understand. Can I have the termination letter in writing with the reason and final settlement details?",
+          "whatItMeans": "You're asking for written documentation of the termination.",
+          "whatHappensNext": "You have the right to a termination letter. It should mention the reason and final amount due.",
+          "avoidSaying": "Don't sign anything immediately without reading it carefully."
+        },
+        {
+          "stepNumber": 2,
+          "theyMight": "We'll send the termination letter later. For now, hand over your access card and laptop.",
+          "youCanSay": "I'll handover everything. But can I get a signed acknowledgment that I'm returning these items? I also need a copy of the termination letter today itself.",
+          "whatItMeans": "You're ensuring documentation of handover and insisting on the termination letter.",
+          "whatHappensNext": "Get a receipt for all items you're returning. Keep a copy.",
+          "avoidSaying": "Don't return things without written acknowledgment of handover."
+        },
+        {
+          "stepNumber": 3,
+          "theyMight": "We'll calculate your dues and send via bank transfer.",
+          "youCanSay": "Can I have the calculation breakdown in writing? This should include salary, gratuity, leave encashment, and any other dues.",
+          "whatItMeans": "You're asking for transparency in the final settlement calculation.",
+          "whatHappensNext": "Review the calculation. If anything seems wrong, raise a formal objection before accepting payment.",
+          "avoidSaying": "Don't accept a check without verifying the amount against your calculation."
+        }
+      ]
+    },
+    {
+      "id": "hr_workplace_harassment",
+      "category": "HR / Workplace",
+      "icon": "AlertTriangle",
+      "title": "Your Manager Is Harassing You",
+      "steps": [
+        {
+          "stepNumber": 1,
+          "theyMight": "You're incompetent. No one likes working with you.",
+          "youCanSay": "I don't appreciate that language. If there are specific work concerns, please provide feedback in writing so I can improve.",
+          "whatItMeans": "You're setting a professional boundary and asking for constructive feedback instead.",
+          "whatHappensNext": "If the behavior continues, document it with dates and details.",
+          "avoidSaying": "Don't respond with insults or emotional reactions."
+        },
+        {
+          "stepNumber": 2,
+          "theyMight": "I'm considering removing you from the project because of your attitude.",
+          "youCanSay": "I understand your concerns. Can we discuss this with HR present so there's clarity on expectations?",
+          "whatItMeans": "You're requesting a formal discussion with HR as a witness.",
+          "whatHappensNext": "Having HR present creates documentation and protects both parties.",
+          "avoidSaying": "Don't accept informal threats about your job status."
+        },
+        {
+          "stepNumber": 3,
+          "theyMight": "Forget HR. Just accept my feedback or find another job.",
+          "youCanSay": "I need to document this conversation. I'm filing a formal complaint with HR regarding workplace conduct.",
+          "whatItMeans": "You're escalating the issue to the official channel.",
+          "whatHappensNext": "File a formal complaint in writing with HR. Keep copies of all communications.",
+          "avoidSaying": "Don't threaten back or make this personal."
+        }
+      ]
+    },
+    {
+      "id": "college_attendance",
+      "category": "College / University Admin",
+      "icon": "GraduationCap",
+      "title": "College Says You Have Low Attendance",
+      "steps": [
+        {
+          "stepNumber": 1,
+          "theyMight": "Your attendance is below 75%. You're at risk of being debarred.",
+          "youCanSay": "Thank you for the heads-up. Can I see the attendance record? I'd like to understand where the shortfall is.",
+          "whatItMeans": "You're asking for documentation and clarity on the issue.",
+          "whatHappensNext": "Review the records carefully. There might be errors or medical leave that wasn't marked.",
+          "avoidSaying": "Don't ignore the warning. This is serious and can affect your exams."
+        },
+        {
+          "stepNumber": 2,
+          "theyMight": "No exceptions. If you miss classes, we must fail you.",
+          "youCanSay": "I understand the policy. If I have medical or emergency reasons, what's the procedure to get exemptions or make-up classes?",
+          "whatItMeans": "You're asking about legitimate exceptions within the college's own procedures.",
+          "whatHappensNext": "Most colleges have procedures for medical leaves. Request the proper documentation.",
+          "avoidSaying": "Don't argue that the policy is unfair. Ask about procedures within the system."
+        },
+        {
+          "stepNumber": 3,
+          "theyMight": "You need to appeal to the Dean. That costs ₹2000 and there's no guarantee.",
+          "youCanSay": "Can I have the appeal procedure and criteria in writing? What's the timeline for the decision?",
+          "whatItMeans": "You're asking for transparency and formal procedures.",
+          "whatHappensNext": "Get everything in writing. Check your college's handbook for appeals policy.",
+          "avoidSaying": "Don't pay money without understanding what you're paying for."
+        }
+      ]
+    },
+    {
+      "id": "college_marks_dispute",
+      "category": "College / University Admin",
+      "icon": "ClipboardCheck",
+      "title": "College Denies Your Exam Recheck Request",
+      "steps": [
+        {
+          "stepNumber": 1,
+          "theyMight": "We've reviewed the papers. The marks are correct. No rechecking.",
+          "youCanSay": "Can I see the answer sheet and the evaluated copy? I'd like to understand which answers were marked wrong.",
+          "whatItMeans": "You're asking to view your own answer sheet, which is usually your right.",
+          "whatHappensNext": "Most colleges allow this. Ask when you can view it and who will be present.",
+          "avoidSaying": "Don't accept a 'No' without asking why you can't see your own sheet."
+        },
+        {
+          "stepNumber": 2,
+          "theyMight": "The examiner's decision is final.",
+          "youCanSay": "I understand. However, I believe there's a scoring error in Question 5. Can you show me the grading rubric used?",
+          "whatItMeans": "You're asking for the objective criteria used for marking.",
+          "whatHappensNext": "If the rubric shows your answer should have been marked differently, you have grounds for recheck.",
+          "avoidSaying": "Don't claim 'the examiner is biased.' Stick to objective errors."
+        },
+        {
+          "stepNumber": 3,
+          "theyMight": "There's an appeal fee of ₹1000. It goes through a committee.",
+          "youCanSay": "What's the committee composition? How long does it take? Can I have the appeal process in writing?",
+          "whatItMeans": "You're asking for detailed information before committing money.",
+          "whatHappensNext": "Appeal through the formal process if you genuinely believe there's an error.",
+          "avoidSaying": "Don't pay without knowing who will review and how long it takes."
+        }
+      ]
+    },
+    {
+      "id": "college_ragging",
+      "category": "College / University Admin",
+      "icon": "Hand",
+      "title": "Your Seniors Are Ragging You",
+      "steps": [
+        {
+          "stepNumber": 1,
+          "theyMight": "Come to our room. It's just some fun tasks for freshers.",
+          "youCanSay": "Thank you for the invite, but I'd prefer to skip. I'm not comfortable with informal activities.",
+          "whatItMeans": "You're politely refusing without being rude.",
+          "whatHappensNext": "If they insist or pressure you, this crosses into ragging territory.",
+          "avoidSaying": "Don't go. Don't think 'it's just fun.' Trust your instincts."
+        },
+        {
+          "stepNumber": 2,
+          "theyMight": "Don't be stuck up. Everyone does this. You have to participate.",
+          "youCanSay": "I appreciate the welcome, but I'm not interested. Please respect that.",
+          "whatItMeans": "You're setting a firm boundary.",
+          "whatHappensNext": "If they continue, this is harassment. Document it with dates and people involved.",
+          "avoidSaying": "Don't feel pressured to 'fit in' through harmful activities."
+        },
+        {
+          "stepNumber": 3,
+          "theyMight": "If you don't participate, you'll be isolated in this college.",
+          "youCanSay": "I understand, but I need to report this. Can I speak to the Anti-Ragging Committee?",
+          "whatItMeans": "You're escalating to the official body that handles ragging cases.",
+          "whatHappensNext": "Every college has an Anti-Ragging Committee. This is a serious offense and will be investigated.",
+          "avoidSaying": "Don't stay silent thinking it'll pass. Report immediately."
+        }
+      ]
+    }
+  ]
+}

@@ -5,6 +5,7 @@ import Home from './components/Home';
 import AuthorityChecker from './components/AuthorityChecker';
 import EligibilityChecker from './components/EligibilityChecker';
 import ContractDecoder from './components/ContractDecoder';
+import ConversationScripts from './components/ConversationScripts';
 import About from './components/About';
 import Support from './components/Support';
 import Contacts from './components/Contacts.jsx';
@@ -26,6 +27,7 @@ function App() {
               <Route path="authority" element={<AuthorityChecker />} />
               <Route path="eligibility" element={<EligibilityChecker />} />
               <Route path="decoder" element={<ContractDecoder />} />
+              <Route path="scripts" element={<ConversationScripts />} />
               <Route path="about" element={<About />} />
               <Route path="support" element={<Support />} />
               <Route path="contacts" element={<Contacts />} />
