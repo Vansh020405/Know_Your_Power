@@ -410,6 +410,54 @@ const AuthorityChecker = () => {
                     )}
                 </div>
 
+                {/* NEXT STEPS - ACTIONABLE GUIDANCE */}
+                {selectedRule.next_steps && selectedRule.next_steps.length > 0 && (
+                    <div className="card" style={{ cursor: 'default', background: 'linear-gradient(135deg, rgba(16, 185, 129, 0.1) 0%, rgba(16, 185, 129, 0.05) 100%)', borderColor: 'var(--primary)', border: '2px solid var(--primary)' }}>
+                        <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '1rem' }}>
+                            <Zap size={20} color="var(--primary)" />
+                            <h3 className="label" style={{ color: 'var(--primary)', margin: 0, fontSize: '1.1rem', fontWeight: 700 }}>What To Do Next</h3>
+                        </div>
+                        <div style={{ display: 'flex', flexDirection: 'column', gap: '0.75rem' }}>
+                            {selectedRule.next_steps.map((step, i) => (
+                                <div key={i} style={{
+                                    display: 'flex',
+                                    alignItems: 'flex-start',
+                                    gap: '0.75rem',
+                                    padding: '0.75rem',
+                                    background: 'rgba(255, 255, 255, 0.03)',
+                                    borderRadius: '8px',
+                                    borderLeft: '3px solid var(--primary)'
+                                }}>
+                                    <span style={{
+                                        minWidth: '24px',
+                                        height: '24px',
+                                        borderRadius: '50%',
+                                        background: 'var(--primary)',
+                                        color: '#000',
+                                        display: 'flex',
+                                        alignItems: 'center',
+                                        justifyContent: 'center',
+                                        fontWeight: 700,
+                                        fontSize: '0.85rem',
+                                        flexShrink: 0
+                                    }}>
+                                        {i + 1}
+                                    </span>
+                                    <p style={{
+                                        color: 'var(--text)',
+                                        fontSize: '0.95rem',
+                                        lineHeight: '1.5',
+                                        margin: 0,
+                                        flex: 1
+                                    }}>
+                                        {step}
+                                    </p>
+                                </div>
+                            ))}
+                        </div>
+                    </div>
+                )}
+
                 {/* WHAT NOT TO SAY (BAD IDEA) */}
                 {selectedRule.what_not_to_say && (
                     <div className="card" style={{ cursor: 'default', background: 'rgba(239, 68, 68, 0.05)', borderColor: 'var(--danger)' }}>

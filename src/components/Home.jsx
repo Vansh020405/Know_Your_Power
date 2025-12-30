@@ -49,10 +49,46 @@ const Home = () => {
             // 2. Simulate Thinking
             setTimeout(() => {
                 let effectiveQuery = query;
+                const lowerQuery = query.toLowerCase().trim();
+
+                // Find the most recent AI message with a rule
                 const lastAiMsg = chatHistory.slice().reverse().find(m => m.sender === 'ai' && m.type === 'match');
 
+                // CONTEXT ENHANCEMENT: Detect follow-up questions
+                const isActionQuery = /^(what to do|what do i do|what should i do|next steps?|help|how|action|steps?)$/i.test(lowerQuery);
+                const isTopicResponse = lowerQuery.split(' ').length <= 2 && lowerQuery.length < 20; // Short clarifications like "salary", "traffic"
+
+                // If user has a recent rule and asks for action, show the same rule with context
                 if (lastAiMsg && lastAiMsg.data && lastAiMsg.data.rule) {
-                    effectiveQuery = `${lastAiMsg.data.rule.domain} ${query}`;
+                    const previousRule = lastAiMsg.data.rule;
+
+                    // If asking "what to do", return the same rule (which now has next_steps)
+                    if (isActionQuery) {
+                        let aiResponse = {
+                            sender: 'ai',
+                            text: "Here's what you can do:",
+                            type: 'match',
+                            data: { rule: previousRule }
+                        };
+                        setChatHistory(prev => [...prev, aiResponse]);
+                        setIsTyping(false);
+                        return;
+                    }
+
+                    // If it's a topic clarification (like responding "salary" to "Is it about Salary...?")
+                    if (isTopicResponse) {
+                        effectiveQuery = `${previousRule.domain} ${lowerQuery}`;
+                    }
+                } else if (isActionQuery) {
+                    // If asking "what to do" without context, ask for more info
+                    const aiResponse = {
+                        sender: 'ai',
+                        text: "I'd love to help! Could you first describe your situation? For example: 'Boss withholding pay' or 'Police stopped me'",
+                        type: 'no_result'
+                    };
+                    setChatHistory(prev => [...prev, aiResponse]);
+                    setIsTyping(false);
+                    return;
                 }
 
                 const analysis = analyzeSituation(effectiveQuery);
@@ -103,7 +139,7 @@ const Home = () => {
                     loop
                     muted
                     playsInline
-                
+
                 >
                     <source src="/hero_background.mp4" type="video/mp4" />
                 </video>
@@ -219,8 +255,43 @@ const Home = () => {
                                                         {msg.data.rule.verdict}
                                                     </div>
                                                     <p className="rich-summary">{msg.data.rule.summary}</p>
+
+                                                    {/* Show first 2 next steps if available */}
+                                                    {msg.data.rule.next_steps && msg.data.rule.next_steps.length > 0 && (
+                                                        <div style={{ marginTop: '0.75rem', marginBottom: '0.5rem' }}>
+                                                            <div style={{ fontSize: '0.75rem', fontWeight: 700, color: 'var(--primary)', marginBottom: '0.5rem', textTransform: 'uppercase', letterSpacing: '0.5px' }}>
+                                                                Quick Actions:
+                                                            </div>
+                                                            {msg.data.rule.next_steps.slice(0, 2).map((step, idx) => (
+                                                                <div key={idx} style={{
+                                                                    fontSize: '0.85rem',
+                                                                    color: '#ccc',
+                                                                    marginBottom: '0.5rem',
+                                                                    paddingLeft: '0.5rem',
+                                                                    borderLeft: '2px solid var(--primary)',
+                                                                    lineHeight: '1.4'
+                                                                }}>
+                                                                    {idx + 1}. {step}
+                                                                </div>
+                                                            ))}
+                                                            {msg.data.rule.next_steps.length > 2 && (
+                                                                <div style={{
+                                                                    fontSize: '0.75rem',
+                                                                    color: 'var(--text-muted)',
+                                                                    marginTop: '0.5rem',
+                                                                    fontStyle: 'italic'
+                                                                }}>
+                                                                    +{msg.data.rule.next_steps.length - 2} more steps available
+                                                                </div>
+                                                            )}
+                                                        </div>
+                                                    )}
+
                                                     <button className="rich-btn" onClick={() => navigateToRule(msg.data.rule)}>
-                                                        See Full Context <ChevronRight size={14} />
+                                                        {msg.data.rule.next_steps && msg.data.rule.next_steps.length > 2
+                                                            ? `See All ${msg.data.rule.next_steps.length} Steps`
+                                                            : 'See Full Context'
+                                                        } <ChevronRight size={14} />
                                                     </button>
                                                 </div>
                                             )}

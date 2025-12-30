@@ -20,6 +20,15 @@
                 "Salary is consistently paid on the 20th without agreement."
             ],
             "what_to_say": "I understand the situation, but my financial commitments rely on my salary being paid by the 7th as per the Payment of Wages Act. Please confirm when it will be credited.",
+            "next_steps": [
+                "✉️ Send a written email/letter to HR and your manager asking for salary payment with reference to the Payment of Wages Act, 1936.",
+                "📋 Keep records of all communications (emails, messages, pay slips showing delay).",
+                "⏰ If not paid within 7 days, send a formal legal notice through a lawyer (many lawyers offer free consultation).",
+                "🏛️ File a complaint with the Labour Commissioner in your state (can be done online in most states).",
+                "💼 Reach out to your company's escalation matrix (skip-level manager, head of HR, or company directors).",
+                "📞 Call the Labour Department helpline: 1800-11-6666 for guidance.",
+                "⚠️ As a last resort, you can file a case under the Payment of Wages Act - maximum penalty includes imprisonment for the employer."
+            ],
             "source_category": "Payment of Wages Act, 1936"
         },
         {
@@ -43,6 +52,15 @@
                 "Working weekends typically requires a 'Comp-off' or overtime pay."
             ],
             "what_to_say": "I am happy to support the team, but these extra hours are significant. Can we discuss overtime pay or compensatory off for this time?",
+            "next_steps": [
+                "📊 Track your hours - Maintain a daily log of actual working hours vs contracted hours (use a spreadsheet or time-tracking app).",
+                "📧 Email your manager documenting overtime hours worked and request compensation (keep this for legal proof).",
+                "📖 Check your employment contract - See if overtime is mentioned and what the agreed rate is.",
+                "⚖️ Know your rights - Overtime should be paid at 2x normal rate as per Minimum Wages Act/Shops Act.",
+                "🗣️ Raise it formally - Send written request to HR for overtime pay or compensatory off with dates and hours.",
+                "🏛️ File complaint with Labour Commissioner if company refuses (online complaint available in most states).",
+                "💡 Consider alternatives - If company won't pay, negotiate for flex hours, comp-off days, or adjusted work schedule."
+            ],
             "source_category": "Minimum Wages Act, 1948"
         },
         {
@@ -64,6 +82,15 @@
                 "HR calls you into a room and demands you sign a resignation letter immediately."
             ],
             "what_to_say": "I am not resigning. If the company wishes to terminate my employment, please provide a formal termination letter stating the reasons.",
+            "next_steps": [
+                "🚫 DO NOT sign any resignation letter - you cannot take this back once signed.",
+                "📧 Send an immediate email to HR and your manager stating 'I am not resigning voluntarily. Any termination must be in writing with reasons.'",
+                "📱 Record the conversation (audio/video) if possible in states where single-party consent is legal.",
+                "📄 If they terminate you, demand: (1) Termination letter with reasons, (2) Full and final settlement, (3) Experience/Relieving letter.",
+                "💰 You may be entitled to: Notice pay (1-3 months salary), Gratuity (if 5+ years), Unused leave encashment, Pending salary.",
+                "⚖️ File a complaint with the Labour Commissioner for 'illegal termination' if they don't follow due process.",
+                "🗣️ Consult a labour lawyer immediately - many offer free initial consultation. You can sue for wrongful termination and claim compensation."
+            ],
             "source_category": "Industrial Disputes Act, 1947"
         },
         {
@@ -86,6 +113,15 @@
                 "Company asks for ₹2 Lakhs for leaving, but gave no training."
             ],
             "what_to_say": "I am willing to reimburse the actual cost of training provided to me. Please share the breakdown of these specific expenses.",
+            "next_steps": [
+                "📄 Request bond breakdown in writing - Ask HR/company to provide itemized list of training costs they claim.",
+                "🔍 Verify actual training - Check if you received specialized training (certifications, external courses) vs regular onboarding.",
+                "⚖️ Know the law - Section 27 of Indian Contract Act prohibits restraint of trade; bonds are only valid for genuine training costs.",
+                "💰 Negotiate settlement - Most companies settle for 30-50% of claimed amount rather than go to court.",
+                "📧 Send legal notice through lawyer - Often companies drop demands when they receive lawyer's notice.",
+                "🏛️ File case if harassed - Approach Labour Court if company threatens salary withholding or experience letter denial.",
+                "🎯 Final option - Simply resign and leave; many bond clauses are unenforceable and companies rarely pursue legal action."
+            ],
             "source_category": "Indian Contract Act, 1872"
         },
         {
@@ -107,6 +143,15 @@
                 "HR says they won't give relieving letter until you sign a non-compete."
             ],
             "what_to_say": "I have completed my exit formalities. Withholding my experience letter is legally untenable. Please release it immediately.",
+            "next_steps": [
+                "📧 Send formal email to HR - Request experience/relieving letter immediately, mention completion of all exit formalities.",
+                "📋 Follow up in writing every 3 days - Create paper trail of your requests (emails are legal proof).",
+                "⚖️ Send legal notice after 15 days - Hire a lawyer to send notice citing violation of right to profession (Article 19).",
+                "🏛️ File complaint with Labour Commissioner - They can order company to issue documents.",
+                "📝 Get statutory declaration - If company still refuses, get a notarized affidavit of your employment (temporary solution for job search).",
+                "💼 Inform new employer - Most good companies understand this issue and may hire you pending letter.",
+                "⚠️ File civil suit - As last resort, approach civil court for direction to release documents + damages."
+            ],
             "source_category": "Industrial Disputes Act / Shops Act"
         },
         {
@@ -131,6 +176,15 @@
                 "Company threatens to terminate during pregnancy."
             ],
             "what_to_say": "As per the Maternity Benefit Act, I am entitled to 26 weeks of paid leave. Please confirm the process for formally applying.",
+            "next_steps": [
+                "📋 Apply formally in writing - Submit maternity leave application to HR with expected delivery date (minimum 8 weeks before).",
+                "📄 Provide medical certificate - Attach doctor's certificate confirming pregnancy and expected delivery date.",
+                "💰 Confirm salary during leave - Ensure HR confirms you'll receive full salary for all 26 weeks.",
+                "📧 Document everything - Keep copies of all communications regarding your leave application.",
+                "⚖️ Know your full rights - 26 weeks for first 2 children, 12 weeks for 3rd onwards, nursing breaks for 15 months post-delivery.",
+                "🚫 Report threats/denial - If company threatens termination or denies leave, immediately contact Labour Commissioner.",
+                "🏛️ File complaint if denied - Maternity Benefit Act violation can result in imprisonment for employer + compensation to you."
+            ],
             "source_category": "Maternity Benefit Act, 1961"
         },
         {
@@ -153,6 +207,16 @@
                 "Company says 'just ignore him' without inquiry."
             ],
             "what_to_say": "I would like to file a formal complaint under the POSH Act. Please direct me to the Internal Complaints Committee.",
+            "next_steps": [
+                "📝 Document everything - Note down dates, times, witnesses, and exact details of each harassment incident immediately.",
+                "📧 File written complaint to ICC - Every company with 10+ employees must have Internal Complaints Committee. Ask HR for ICC contact.",
+                "📱 Keep evidence - Save messages, emails, recordings (if legally recorded), or any proof of harassment.",
+                "🔒 Confidentiality protected - POSH Act mandates strict confidentiality; company cannot share your complaint details.",
+                "⏰ Timeline - ICC must complete inquiry within 90 days. You can follow up on progress.",
+                "🏛️ External option - If company has no ICC or doesn't act, file complaint with Local Complaints Committee (district level).",
+                "⚖️ Criminal case - For serious harassment, file FIR under IPC Section 354A; POSH complaint and criminal case can run parallel.",
+                "🤝 Seek support - Contact NGOs like Safecity, SHE Teams, or National Commission for Women helpline: 7827-170-170."
+            ],
             "source_category": "POSH Act, 2013"
         },
         {
@@ -176,6 +240,15 @@
                 "Employer refuses gratuity saying you resigned."
             ],
             "what_to_say": "PF enrollment is mandatory under the EPF Act. Please initiate my registration immediately.",
+            "next_steps": [
+                "📧 Send written request to HR - Email asking for PF enrollment with reference to EPF Act, 1952.",
+                "🔍 Check online - Visit EPFO portal (epfindia.gov.in) and search your UAN using Aadhaar to see if you're registered.",
+                "📋 Know your rights - Company MUST enroll you in PF if they have 20+ employees and you earn below ₹15,000 basic.",
+                "💰 Employer contribution - Company must contribute 12% + you contribute 12% = total 24% of basic salary goes to PF.",
+                "⚖️ File complaint - If company refuses, file online complaint at EPFO portal or call EPF helpline: 1800-118-005.",
+                "🏛️ Gratuity after 5 years - If you complete 5 years, you're entitled to gratuity = 15 days salary × years of service.",
+                "⚠️ Legal action - PF denial is a criminal offense; company can face penalties and you can claim damages."
+            ],
             "source_category": "EPF Act / Payment of Gratuity Act"
         },
         {
@@ -198,6 +271,15 @@
                 "Contract says 'Employee: 3 months, Employer: 1 week'."
             ],
             "what_to_say": "I am willing to serve a reasonable notice period. However, the current clause seems one-sided and may not be enforceable.",
+            "next_steps": [
+                "📄 Review your contract - Check exact notice period clause and compare what's required from employee vs employer.",
+                "⚖️ Challenge one-sided clauses - Courts have struck down notices like '3 months for employee, 0 for employer' as unfair.",
+                "💬 Negotiate with company - Request mutual notice reduction or buyout option (pay 1-2 months instead of serving 3).",
+                "📧 Serve written notice - Send formal resignation email/letter to HR and manager with your proposed last working day.",
+                "🤝 Discuss early relief - Many companies allow immediate relief or shorter notice if replacement is found or handover is complete.",
+                "💰 Calculate buyout cost - If paying in lieu, you typically pay your salary amount for notice period not served.",
+                "🏃 Leave if critical - If you have urgent offer, you can leave; company rarely pursues legal action for notice violations (but you may lose references)."
+            ],
             "source_category": "Industrial Employment Act / Contract Law"
         },
         {
@@ -219,6 +301,16 @@
                 "College refuses to return 10th/12th marksheets until full 4-year fee is paid."
             ],
             "what_to_say": "As per UGC guidelines, retaining original certificates is not permitted. Please verify them and return them to me today.",
+            "next_steps": [
+                "📧 Send written request to college - Email principal/registrar demanding immediate return of certificates.",
+                "📋 Cite UGC guidelines - Reference 'UGC Notification on Student Entitlements' that prohibits withholding documents.",
+                "📞 Call UGC helpline -  Dial 1800-111-656 (UGC) or 011-23239196 to report violation.",
+                "📱 File complaint online - Go to grievance.ugc.ac.in and register complaint against college.",
+                "⚖️ Send legal notice - Have a lawyer send notice demanding return within 7 days.",
+                "🏛️ Approach court - File writ petition in High Court; courts take serious view of certificate withholding.",
+                "📝 Get RTI information - File RTI asking under what authority college is keeping your documents.",
+                "💼 Escalate to University - Complaint to affiliated university; they can directcollege to release documents."
+            ],
             "source_category": "UGC Guidelines"
         },
         {
@@ -241,6 +333,16 @@
                 "You have 50% attendance and no medical certificate."
             ],
             "what_to_say": "I have valid medical reasons for my absence and can submit the necessary certificates for condonation of shortage.",
+            "next_steps": [
+                "🏝️ Get medical certificates - Collect all doctor certificates, prescription bills for sick days.",
+                "📧 Apply for condonation - Submit formal application to HOD/Dean with medical proof requesting attendance shortage condonation.",
+                "📋 Check university rules - Most universities allow 10-15% relaxation for medical/sports/NCC participation.",
+                "🎯 Gather evidence - College attendance register, emails about participation in events, sports certificates.",
+                "👥 Get support letter - If attended seminars/competitions, get certificate from organizing committee.",
+                "⚖️ Know your rights - Arbitrary denial without considering genuine reasons can be challenged in court.",
+                "🏛️ File writ petition - If college unreasonably denies despite valid reasons, approach High Court.",
+                "📞 Contact university - Escalate to university's grievance cell if college doesn't respond."
+            ],
             "source_category": "University Ordinances"
         },
         {
@@ -262,6 +364,16 @@
                 "College says 'fees once paid is non-refundable' even if you leave in 2 days."
             ],
             "what_to_say": "As per UGC Fee Refund Guidelines, I am entitled to a refund since I am withdrawing within the stipulated permissible period.",
+            "next_steps": [
+                "📧 Submit withdrawal in writing - Email formal withdrawal letter to college with date and reason.",
+                "💰 Check timeline - If within 15 days of admission: 100% refund; 15-30 days: 90% refund, etc.",
+                "📋 Demand fee receipt - College must give detailed fee receipt showing all components.",
+                "📱 Know UGC rules - Visit UGC website and download 'Fee Refund Policy' to show college.",
+                "📞 Call UGC helpline - Report violation at 1800-111-656 if college refuses refund.",
+                "⚖️ Send legal notice - If college delays beyond 30 days, send lawyer's notice.",
+                "🏛️ File consumer complaint - Approach Consumer Disputes Redressal Forum for refund + compensation.",
+                "📧 Email to authorities - Send complaint to university registrar, VCand education department."
+            ],
             "source_category": "UGC Fee Refund Policy"
         },
         {
@@ -284,6 +396,16 @@
                 "Being asked personal questions or abused."
             ],
             "what_to_say": "I do not consent to this. Ragging is illegal and I will report this to the anti-ragging committee if it continues.",
+            "next_steps": [
+                "📞 Report immediately - Call National Anti-Ragging Helpline: 1800-180-5522 (24x7 toll-free).",
+                "📱 Online complaint - Go to antiragging.in and file complaint (can be anonymous).",
+                "📝 Document evidence - Record videos/audio, take screenshots of messages, note dates/times/names.",
+                "🚫 Don't comply - Never participate even if pressured; ragging victims become perpetrators legally.",
+                "🏫 Inform college committee - Every college has Anti-Ragging Committee and Squad; file written complaint.",
+                "👮 File FIR - Ragging is criminal offense; go to nearest police station to file FIR.",
+                "⚖️ Know the law - Perpetrators face expulsion, 3 years jail, fine; college can lose recognition.",
+                "🤝 Talk to parents/counselor - Seek emotional support; many colleges have counseling services."
+            ],
             "source_category": "UGC Anti-Ragging Regulations, 2009"
         },
         {
@@ -306,6 +428,16 @@
                 "Traffic police asks to see your gallery or chats."
             ],
             "what_to_say": "I do not consent to a search of my private device without a warrant or legal notice.",
+            "next_steps": [
+                "🚫 Politely refuse - Say 'I do not consent to phone search without a warrant. This is my right to privacy.'",
+                "📱 Lock your phone immediately - Use biometric/password lock so it can't be accessed.",
+                "🎥 Start recording (if safe) - Some states allow single-party consent recording; this creates evidence.",
+                "👥 Call a witness - If stopped in public, ask a friend/family member to come or stay on call as witness.",
+                "📝 Note details - Officer's name, badge number, time, location - document everything.",
+                "⚖️ Know your rights - Police need warrant under CrPC unless you're arrested for serious crime.",
+                "📞 Call helpline if harassed - Dial 100 (police control room) or state police complaint number to report harassment.",
+                "🏛️ File complaint later - If forced to show phone, file complaint at police station or with SP/Commissioner the same day."
+            ],
             "source_category": "Right to Privacy / CrPC"
         },
         {
@@ -327,6 +459,16 @@
                 "Police ask you to come to the station without saying why."
             ],
             "what_to_say": "Am I under arrest? If so, please inform me of the grounds. If not, am I free to go?",
+            "next_steps": [
+                "❓ Ask clearly - 'Am I under arrest? What is the reason?' They MUST tell you.",
+                "📝 Note everything - Officer names, badge numbers, exact time, reason given for detention.",
+                "📞 Call family/lawyer - You have right to make ONE phone call immediately after arrest.",
+                "🚫 Don't sign anything - Do not sign any blank papers or statements without reading/lawyer present.",
+                "⏰ 24-hour rule - Police must produce you before magistrate within 24 hours of arrest.",
+                "🤐 Stay silent - You can refuse to answer questions until lawyer arrives (right against self-incrimination).",
+                "📧 Get memo - Police must give you arrest memo with grounds of arrest in writing.",
+                "🏛️ Demand magistrate - If illegal detention, demand to be taken to magistrate immediately."
+            ],
             "source_category": "Constitution of India, Article 22"
         },
         {
@@ -348,6 +490,16 @@
                 "Police try to take a woman to the station at 8 PM for questioning."
             ],
             "what_to_say": "As per the CrPC, women cannot be called to the station or arrested after sunset. Please come back with a female officer during the day.",
+            "next_steps": [
+                "🕐 Check time - If between 6 PM - 6 AM, you have special protection under law.",
+                "🚫 Firmly refuse - Say 'I know my rights under CrPC Section 46(4). You cannot arrest me at night.'",
+                "📱 Call family/lawyer - Inform them immediately of the situation.",
+                "👮 Demand female officer - If they insist, demand that a female police officer must be present.",
+                "📝 Ask for written notice - Any questioning must have written justification and Magistrate's permission for night arrest.",
+                "🏠 Home questioning only - For minor cases, they can question at your residence, not police station.",
+                "📞 Call women's helpline - Dial 1091 (Women Helpline) or 181 (Women in Distress) for immediate support.",
+                "🏛️ File complaint next day - If harassed, file complaint with SP/Commissioner against the officers."
+            ],
             "source_category": "CrPC Section 46(4)"
         },
         {
@@ -369,6 +521,15 @@
                 "Cop asks for license at a checkpost."
             ],
             "what_to_say": "I have my documents here (or on DigiLocker). I am happy to show them to you.",
+            "next_steps": [
+                "📱 Use DigiLocker - Download DigiLocker app and keep DL, RC, Insurance there (100% legal and courts accept it).",
+                "✅ Always carry/show - You MUST show documents when uniformed officer asks; refusal leads to fine.",
+                "📸 Keep photos backup - Have photos of all documents on phone as backup.",
+                "📄 Check validity - Ensure your license, RC, insurance, and PUC are not expired before driving.",
+                "💰 Pay challan online - If fined, you can pay online through e-challan portal or Paytm to avoid hassle.",
+                "🚗 Document condition - If stopped, politely cooperate; arguing can lead to more scrutiny.",
+                "📞 Know your RTO - Keep your RTO number and vehicle details memorized for quick reference."
+            ],
             "source_category": "Motor Vehicles Act"
         },
         {
@@ -387,6 +548,16 @@
                 "Cop snatches bike keys at a signal."
             ],
             "what_to_say": "Please do not remove my keys. I am cooperating and not fleeing. You can note my details.",
+            "next_steps": [
+                "🚫 Politely refuse - Say 'You cannot seize my keys. Please issue challan if there's violation.'",
+                "📝 Note officer details - Name, badge number, police station - for complaint if keys forcefully taken.",
+                "🎥 Record if safe - Video record the interaction (keep phone recording from pocket if risky).",
+                "📞 Call someone - Have a friend/family on call as witness to the situation.",
+                "💰 Don't pay bribe - Officer asking for keys usually wants bribe. Refuse and insist on official challan.",
+                "📧 File complaint - If keys seized, immediately file complaint at police station or online portal.",
+                "⚖️ Know your rights - Key seizure is NOT authorized under Motor Vehicles Act; it's harassment.",
+                "🏛️ Approach court - If vehicle detained illegally, file writ petition for its immediate release."
+            ],
             "source_category": "Motor Vehicles Act Implementation"
         },
         {
@@ -409,6 +580,16 @@
                 "Interrogation starts before lawyer arrives."
             ],
             "what_to_say": "I wish to exercise my right to legal counsel. I will not answer questions until my lawyer is present.",
+            "next_steps": [
+                "📞 Call lawyer immediately - Use your one phone call wisely; call a lawyer or family who can arrange one.",
+                "🤐 Exercise right to silence - Say 'I want to speak to my lawyer first' and then stay silent.",
+                "🚫 Don't sign anything - Never sign statements, confessions, or blank papers without lawyer review.",
+                "📝 Request legal aid - If you can't afford lawyer, demand state-provided legal aid (it's your constitutional right).",
+                "⏰ No questioning without lawyer - Police cannot legally interrogate you after you've invoked lawyer right.",
+                "📋 Know your rights - Right to lawyer is under Article 22(1); violation can get case dismissed.",
+                "🏛️ Demand magistrate - If police deny lawyer access, demand to be produced before magistrate immediately.",
+                "📧 File complaint - If lawyer access denied, your lawyer should file habeas corpus petition in High Court."
+            ],
             "source_category": "Constitution Article 22 / CrPC"
         },
         {
@@ -432,6 +613,16 @@
                 "Officer says 'Settle it among yourselves'."
             ],
             "what_to_say": "As per Section 154 CrPC, you are legally bound to register my complaint. Please do so immediately or I will escalate this.",
+            "next_steps": [
+                "📝 Demand FIR in writing - Say 'I want to file FIR under Section 154 CrPC. Please register it.'",
+                "📧 Send written complaint - Email your complaint to SHO, SP, and DGP with all details (creates legal record).",
+                "📋 Get acknowledgment - Insist on receiving FIR copy with FIR number immediately after filing.",
+                "📞 Call helpline - If refused, call police control room 100 or state police complaint number.",
+                "🏛️ Approach Magistrate - If police refuse, directly approach local Magistrate and file complaint (u/s 156(3) CrPC).",
+                "📱 Online FIR - Many states allow online FIR filing for certain offenses; check your state police website.",
+                "⚖️ File complaint against officer - Refusing to register FIR is misconduct; file complaint against the officer with SP.",
+                "🎥 Record refusal - If safe, record the officer refusing to file FIR (strong evidence for legal action)."
+            ],
             "source_category": "CrPC Section 154"
         },
         {
@@ -453,6 +644,16 @@
                 "Traffic cop says 'Give ₹500 or I'll seize your vehicle'."
             ],
             "what_to_say": "I would prefer to pay the official fine through proper channels. Please issue me a challan.",
+            "next_steps": [
+                "🚫 Never offer bribe - Offering bribe makes YOU guilty too under Prevention of Corruption Act.",
+                "📝 Always demand challan - Say 'Please issue me official challan. I will pay online/at court.'",
+                "🎥 Record if demanded - If officer asks for bribe, discreetly record it (audio/video evidence).",
+                "📞 Note details - Officer name, badge number, vehicle number, time, location.",
+                "💰 Know fine amounts - Check actual fine for your offense online to avoid overpaying.",
+                "📱 Report on app - Use 'I Paid a Bribe' app or state anti-corruption helpline to report bribe demand.",
+                "⚖️ File complaint - Report to Anti-Corruption Bureau (ACB) or Lokayukta within 24 hours with evidence.",
+                "🏛️ Legal action - Bribe-taking police can face jail time; your complaint can lead to departmental action."
+            ],
             "source_category": "Prevention of Corruption Act"
         },
         {
@@ -476,6 +677,16 @@
                 "Search done in public view."
             ],
             "what_to_say": "As per the CrPC, a female officer must conduct this search in a private place. Please arrange for that.",
+            "next_steps": [
+                "✋ Assert your rights - Say 'Only female officer can search me, in private, with another woman present.'",
+                "🚫 Refuse male officer - DO NOT allow male officer to search you under any circumstance.",
+                "📱 Call family/female friend - Ask them to come as witness for the search procedure.",
+                "📝 Demand privacy - Search must be in a closed room/private space, never in public view.",
+                "🎥 Note violations - If improper search done, note officer names and file complaint immediately.",
+                "📞 Call women's helpline - Dial 1091 or 181 for immediate support if being harassed.",
+                "🏛️ File FIR if violated - Improper body search is sexual harassment; file FIR under IPC Section 354.",
+                "⚖️ Seek compensation - You can file case for damages and compensation for dignity violation."
+            ],
             "source_category": "CrPC Section 51"
         },
         {
@@ -518,6 +729,16 @@
                 "Landlord deducts full deposit for 'painting' after you leave."
             ],
             "what_to_say": "Please provide the bills for the damages you are claiming. Normal wear and tear is not valid for deduction.",
+            "next_steps": [
+                "📸 Take photos before leaving - Document the property condition (date-stamped photos/videos).",
+                "📧 Send move-out notice - Email landlord about vacating with expected move-out date.",
+                "📝 Demand itemized deductions - Ask landlord to provide detailed bill for any damage claimed.",
+                "💰 Know what's deductible - Only actual damages (broken items, deep stains) not painting, minor wear.",
+                "⚖️ Send legal notice - If deposit not returned in 30 days, send lawyer's notice.",
+                "🏛️ File civil suit - Approach Small Causes Court for deposit + interest + compensation for harassment.",
+                "📞 Call police (if threats) - If landlord threatens or harasses, call police.",
+                "📋 Keep proof - Rent receipts, lease agreement, deposit receipt, move-in/out photos - essential evidence."
+            ],
             "source_category": "Model Tenancy Act / Contract"
         },
         {
@@ -539,6 +760,16 @@
                 "Landlord asks you to vacate in 24 hours."
             ],
             "what_to_say": "I am entitled to proper legal notice as per our agreement/law. Immediate eviction is illegal.",
+            "next_steps": [
+                "📧 Check your lease - See what notice period is mentioned in rental agreement.",
+                "🚫 Refuse to vacate - Legally, landlord cannot evict without proper notice (usually 1-3 months).",
+                "📋 Demand written notice - Ask landlord to provide eviction notice in writing with reason and date.",
+                "👮 Call police if forced - If landlord tries to forcefully evict or throws belongings out, call 100.",
+                "⚖️ Know your rights - Landlord needs court order for forceful eviction; self-help not allowed.",
+                "🏛️ File injunction - Approach civil court for injunction against illegal eviction.",
+                "📞 File police complaint - Forceful eviction is criminal trespass; file FIR.",
+                "📱 Record harassment - Document all threats, messages for legal evidence."
+            ],
             "source_category": "Rent Control Act / Transfer of Property Act"
         },
         {
@@ -561,6 +792,16 @@
                 "Shows up unannounced for 'inspection'."
             ],
             "what_to_say": "As per our rental agreement, you need to inform me 24 hours in advance before entering. Please respect my privacy.",
+            "next_steps": [
+                "🚫 Change locks if needed - If landlord has copy and enters without permission, change locks (inform them).",
+                "📧 Send written notice - Email stating 'You must give 24-48 hours notice before entry as per tenancy norms.'",
+                "📋 Check lease agreement - See if entry conditions are mentioned; if not, standard law applies.",
+                "📱 Install camera (if allowed) - For your safety, install small camera at entrance (inform landlord).",
+                "👮 Call police if trespassing - If landlord enters forcefully or repeatedly without notice, file complaint.",
+                "⚖️ Know your rights - Once rented, you have 'exclusive possession'; unauthorized entry is trespass.",
+                "🏛️ File case if continues - Can file for injunction + damages for privacy violation.",
+                "📞 Record instances - Note down each unauthorized entry with date/time for legal record."
+            ],
             "source_category": "Transfer of Property Act / Trespass Law"
         },
         {
@@ -582,6 +823,16 @@
                 "Bought a shirt, zipper is broken, shop says 'No Refund'."
             ],
             "what_to_say": "As a consumer, I am entitled to a replacement or refund for a defective product. 'No Refund' policies do not override the law.",
+            "next_steps": [
+                "📋 Keep all proof - Bill, warranty card, product photos, defect evidence.",
+                "📧 Send written complaint - Email/letter to shop manager describing defect and demanding replacement/refund.",
+                "📞 Follow up in 7 days - If no response, call and email again creating paper trail.",
+                "⚖️ Know your rights - Consumer Protection Act gives you right to replacement/refund for defective goods.",
+                "🏛️ File consumer complaint - Go to National Consumer Helpline 1800-11-4000 or consumerhelpline.gov.in.",
+                "📱 Online complaint - File at edaakhil.nic.in (e-Daakhil portal) for consumer disputes.",
+                "📋 Approach Consumer Forum - For disputes up to ₹1 lakh: District Forum; above: State/National Commission.",
+                "💰 Claim compensation - Can get refund + compensation for deficiency of service + legal costs."
+            ],
             "source_category": "Consumer Protection Act, 2019"
         },
         {
@@ -604,6 +855,16 @@
                 "Cinema charges extra for water bottle."
             ],
             "what_to_say": "The MRP printed on this product is ₹X. You cannot charge more than that. Please adjust the bill.",
+            "next_steps": [
+                "🚫 Refuse to pay excess - Politely but firmly say 'MRP is ₹X, I will pay only that.'",
+                "📸 Take photo of MRP - Capture MRP tag and bill showing overcharge as evidence.",
+                "📧 Report to legal metrology - File complaint at state legal metrology department.",
+                "📞 Call consumer helpline - Dial 1800-11-4000 to report MRP violation.",
+                "📱 Use app - Download 'Legal Metrology App' and file complaint instantly.",
+                "💰 Know penalties - Shop can be fined up to ₹25,000; repeat offense: ₹1 lakh + imprisonment.",
+                "🏛️ File consumer case - Can approach consumer forum for refund of excess + compensation.",
+                "🖊️ Social media - Tag @MinOfCA (Ministry of Consumer Affairs) on Twitter to escalate."
+            ],
             "source_category": "Legal Metrology Act, 2009"
         },
         {
@@ -626,6 +887,16 @@
                 "Flight cancelled 2 hours before departure with no reason."
             ],
             "what_to_say": "As per DGCA regulations, I am entitled to compensation for this delay/cancellation. Please issue it immediately or provide written reasons.",
+            "next_steps": [
+                "📧 Email airline immediately - Send complaint to airline's customer service with flight details.",
+                "📋 Collect evidence - Boarding pass, tickets, delay announcement, airport display photos.",
+                "💰 Know compensation amount - Domestic: ₹5,000 (delay >3hrs), ₹10,000 (cancellation within 2 weeks).",
+                "📞 Call airline - Speak to ground staff/customer service for immediate hotel/meal arrangements if overnight delay.",
+                "🏛️ File complaint with DGCA - If airline refuses, go to airlinefeedback.dgca.gov.in to file complaint.",
+                "📱 AirSewa app/portal - Government app for immediate redressal of flight issues.",
+                "⚖️ Approach consumer forum - File case in consumer court for compensation + harassment damages.",
+                "💼 Claim from employer - If business trip, submit claim to employer and let them handle with airline."
+            ],
             "source_category": "DGCA CAR, Section 3"
         },
         {
@@ -734,6 +1005,814 @@
             ],
             "what_to_say": "Why was my vehicle towed? Please provide the official receipt and penalty details as per the MV Act.",
             "source_category": "Motor Vehicles Act"
+        },
+        {
+            "rule_id": "hr_probation_extension",
+            "domain": "Workplace",
+            "topic": "Termination",
+            "summary": "Employers can extend probation but must follow rules.",
+            "verdict": "CONDITIONAL",
+            "conditions": [
+                "Extension must be communicated in writing with valid reasons.",
+                "Total probation period should not exceed what's reasonable (typically 6 months max)."
+            ],
+            "exceptions": [
+                "If contract allows for specific extension period.",
+                "Performance-based extension with clear improvement plan."
+            ],
+            "simple_explanation": "Your employer can extend your probation period, but they must inform you in writing with specific reasons. Indefinite or repeated extensions without valid cause are unfair.",
+            "detailed_explanation": "While probation extensions are permitted, courts have held that unreasonable or indefinite extensions amount to exploitation. Extensions must be justified, documented, and limited in duration.",
+            "examples": [
+                "Company extends probation for 3rd time without clear reasons.",
+                "Employer extends probation indefinitely saying 'performance needs improvement' without specifics."
+            ],
+            "what_to_say": "I would like to understand the specific reasons for the extension and what performance criteria I need to meet for confirmation.",
+            "next_steps": [
+                "📧 Request written explanation - Ask HR for formal email stating reasons for extension and duration.",
+                "📋 Ask for clear goals - Request specific, measurable performance targets for confirmation.",
+                "📝 Document everything - Keep all performance reviews, emails, and work achievements.",
+                "💬 Schedule meeting with manager - Discuss concerns and get clarity on expectations.",
+                "⏰ Set timeline - If extended, ensure there's a clear end date and review process.",
+                "⚖️ Know your rights - Extensions beyond 6 months total may be challengeable as unfair labor practice.",
+                "🔍 Review contract - Check what your appointment letter says about probation duration.",
+                "💼 Consider options - If extension seems unreasonable, you may want to look for other opportunities."
+            ],
+            "source_category": "Industrial Employment Act / Contract Law"
+        },
+        {
+            "rule_id": "hr_appraisal_denial",
+            "domain": "Workplace",
+            "topic": "Salary",
+            "summary": "Companies can deny appraisal but must have valid process.",
+            "verdict": "CAN",
+            "conditions": [
+                "Denial must be based on documented performance issues.",
+                "Company must follow their stated appraisal policy.",
+                "Cannot be discriminatory or arbitrary."
+            ],
+            "exceptions": [
+                "If company-wide freeze due to financial crisis (must apply to all).",
+                "If you joined recently and haven't completed minimum tenure."
+            ],
+            "simple_explanation": "Your company can deny an appraisal/increment, but it should be based on fair performance evaluation, not favoritism or discrimination. They must follow their own policies.",
+            "detailed_explanation": "While increment is not a legal right, companies must follow their own policies and cannot deny raises arbitrarily or discriminatorily. Performance-based denial must be documented.",
+            "examples": [
+                "You get 'meets expectations' rating but no increment while others do.",
+                "Boss says 'no increment this year' without any appraisal process."
+            ],
+            "what_to_say": "I would like to understand the appraisal process and criteria. Can you share my performance evaluation and how the decision was made?",
+            "next_steps": [
+                "📧 Request performance review - Ask for written feedback on your performance rating.",
+                "📊 Gather evidence - Collect achievements, project completions, positive emails from clients/managers.",
+                "📋 Check company policy - Review employee handbook for appraisal policy and cycle.",
+                "💬 Schedule one-on-one - Meet with manager to discuss performance and areas of improvement.",
+                "🔍 Compare peers - If similar performers got increments, document this (without violating privacy).",
+                "📝 Document conversation - Keep records of all discussions about appraisal denial.",
+                "⚖️ Escalate if unfair - If denial seems discriminatory, raise with HR or skip-level manager.",
+                "💼 Evaluate market - Consider external opportunities if company consistently undervalues you."
+            ],
+            "source_category": "Employment Contract / Service Conditions"
+        },
+        {
+            "rule_id": "hr_relocation_forced",
+            "domain": "Workplace",
+            "topic": "Termination",
+            "summary": "Forced relocation depends on your contract.",
+            "verdict": "CONDITIONAL",
+            "conditions": [
+                "If contract mentions 'transferable' or 'willing to relocate', company can transfer you.",
+                "Employer must give reasonable notice (30-60 days typically).",
+                "Cannot be used as punishment or to force resignation."
+            ],
+            "exceptions": [
+                "If you have location-specific hiring (contract says 'Mumbai office').",
+                "Medical/family emergency making relocation impossible."
+            ],
+            "simple_explanation": "If your contract says you're transferable, the company can ask you to relocate. But they must give proper notice and cannot use it to harass you. If contract specifies a location, forced transfer may be illegal.",
+            "detailed_explanation": "Transfer rights depend on employment contract terms. Courts protect employees from arbitrary transfers used to force resignation, especially if contract specifies location or if transfer causes undue hardship.",
+            "examples": [
+                "Contract says 'Delhi based' but company suddenly transfers you to Chennai in 15 days.",
+                "Boss transfers you as 'punishment' for raising complaint."
+            ],
+            "what_to_say": "I need to review my contract regarding transfer terms. Can we discuss the business justification and timeline for this relocation?",
+            "next_steps": [
+                "📄 Check your contract - Look for 'transferable', 'location', or 'relocation' clauses in appointment letter.",
+                "📧 Request written transfer order - Ask for formal order with reason, location, joining date.",
+                "💬 Negotiate timeline - Request adequate notice period (60-90 days) to make arrangements.",
+                "📋 Ask for relocation benefits - Inquire about packing/moving allowance, accommodation, family support.",
+                "⚖️ Know your rights - If contract is location-specific, forced transfer may be illegal.",
+                "💼 Document hardship - If transfer causes extreme hardship (medical, family issues), present documentation.",
+                "🗣️ Escalate concerns - If transfer seems punitive or discriminatory, raise with HR/senior management.",
+                "🎯 Consider alternatives - Discuss remote work, gradual transition, or alternate role in current location."
+            ],
+            "source_category": "Industrial Employment Act / Contract Law"
+        },
+        {
+            "rule_id": "hr_wfh_denial",
+            "domain": "Workplace",
+            "topic": "Leave",
+            "summary": "Work from home is generally at employer's discretion.",
+            "verdict": "CAN",
+            "conditions": [
+                "Unless contract guarantees WFH, company can deny it.",
+                "Must apply policy uniformly (cannot allow some and deny others arbitrarily)."
+            ],
+            "exceptions": [
+                "Medical emergency with doctor's certificate.",
+                "Disability requiring accommodation.",
+                "Maternity/paternity period as per law."
+            ],
+            "simple_explanation": "Work from home is usually the employer's decision unless your contract specifically guarantees it. However, they cannot deny it discriminatorily or during medical emergencies.",
+            "detailed_explanation": "Post-pandemic, WFH remains at employer's discretion unless contractually guaranteed. However, disabled employees may claim WFH as reasonable accommodation under Rights of Persons with Disabilities Act.",
+            "examples": [
+                "You have medical certificate for bed rest but company insists on office attendance.",
+                "Company allows WFH to some teams but randomly denies your request."
+            ],
+            "what_to_say": "I understand the policy. However, given my situation [medical/family emergency], can we explore a temporary WFH arrangement?",
+            "next_steps": [
+                "📋 Check company policy - Review  WFH/flexible work policy in employee handbook.",
+                "📧 Formal request - Send written request with valid justification (medical, caregiving, etc.).",
+                "🏥 Provide documentation - Attach doctor's certificate, medical reports if health-related.",
+                "💬 Propose trial period - Suggest WFH for specific duration with performance review.",
+                "📊 Show productivity - Present data on how you can maintain/improve output from home.",
+                "⚖️ Know your rights - If you're disabled, you may claim WFH as reasonable accommodation.",
+                "🤝 Negotiate hybrid - If full WFH denied, request hybrid model (2-3 days/week from home).",
+                "💼 Evaluate options - If WFH is critical for you, consider roles/companies offering this flexibility."
+            ],
+            "source_category": "Employment Contract / Workplace Policy"
+        },
+        {
+            "rule_id": "hr_medical_leave_denial",
+            "domain": "Workplace",
+            "topic": "Leave",
+            "summary": "Employers cannot deny genuine medical leave with proper proof.",
+            "verdict": "CANNOT",
+            "conditions": [
+                "You must provide doctor's certificate/medical proof.",
+                "Should inform employer as soon as possible.",
+                "Leave balance should be available (if paid leave)."
+            ],
+            "exceptions": [
+                "If you've exhausted all medical leave quota, may be unpaid.",
+                "Suspicious patterns (always sick on Mondays/Fridays) may require additional verification."
+            ],
+            "simple_explanation": "If you're genuinely sick with doctor's certificate, your employer cannot deny medical leave. For short illness (1-2 days), most companies allow self-declaration. Longer illness requires medical certificate.",
+            "detailed_explanation": "Medical leave is a fundamental right. Shops & Establishments Act mandates sick leave provision. Denying genuine medical leave violates employee welfare and can be challenged.",
+            "examples": [
+                "You submit doctor's certificate for dengue but manager says 'we're short-staffed, you must come'.",
+                "Company threatens salary deduction for medical leave despite having leave balance."
+            ],
+            "what_to_say": "I have a genuine medical condition certified by my doctor. I will share the medical certificate and need to take leave as advised for my recovery.",
+            "next_steps": [
+                "🏥 Get medical certificate - Visit doctor and obtain formal certificate with diagnosis and rest period.",
+                "📧 Inform immediately - Send email/message to manager and HR about illness and expected leave duration.",
+                "📋 Submit leave application - Fill formal leave form as per company process.",
+                "📄 Attach documentation - Send scanned copy of medical certificate with leave application.",
+                "📞 Keep communication open - Update manager if leave needs extension based on doctor's advice.",
+                "⚖️ Know your rights - Medical leave denial despite valid proof can be challenged with Labour Commissioner.",
+                "📝 Document everything - Keep copies of medical certificates, leave applications, and responses.",
+                "💼 Check leave policy - Review your leave balance and company's medical leave policy."
+            ],
+            "source_category": "Shops & Establishments Act / Leave Policy"
+        },
+        {
+            "rule_id": "hr_salary_deduction_unauthorized",
+            "domain": "Workplace",
+            "topic": "Salary",
+            "summary": "Unauthorized salary deductions are illegal.",
+            "verdict": "CANNOT",
+            "conditions": [
+                "Deductions only allowed for: PF, taxes, authorized absences, loan repayment (with consent).",
+                "Fines/penalties must be as per Standing Orders and with proper inquiry."
+            ],
+            "exceptions": [
+                "Recovery of advance/loan taken by you.",
+                "Court-ordered deductions (child support, debt recovery)."
+            ],
+            "simple_explanation": "Your employer cannot randomly deduct money from your salary. Deductions must be authorized by law (taxes, PF) or by you (loans), or due to proven misconduct after proper inquiry.",
+            "detailed_explanation": "Payment of Wages Act strictly regulates salary deductions. Unauthorized deductions for damages, shortages, or as penalties without due process are illegal and punishable.",
+            "examples": [
+                "Company deducts ₹5,000 saying 'project quality was poor' without any investigation.",
+                "Employer cuts salary for 'office property damage' you didn't cause."
+            ],
+            "what_to_say": "I notice unauthorized deductions in my salary. Please provide written explanation with legal basis for these deductions.",
+            "next_steps": [
+                "📧 Request pay slip breakdown - Ask HR for detailed salary slip showing all deductions with reasons.",
+                "📋 Review deductions - Check which deductions were authorized by you vs imposed by company.",
+                "💬 Question unauthorized cuts - Send email questioning any deduction not explained or not authorized.",
+                "📄 Check appointment letter - Review what deductions were mentioned in your contract.",
+                "⚖️ Know your rights - Under Payment of Wages Act, only specific deductions are permitted.",
+                "📞 Escalate to HR - If manager made arbitrary deduction, escalate to HR/payroll team.",
+                "🏛️ File complaint - If not resolved, file complaint with Labour Commissioner for illegal deduction.",
+                "💰 Demand refund - You can claim back any illegally deducted amount with interest."
+            ],
+            "source_category": "Payment of Wages Act, 1936"
+        },
+        {
+            "rule_id": "hr_background_verification_delay",
+            "domain": "Workplace",
+            "topic": "Termination",
+            "summary": "Companies can verify background but cannot indefinitely delay joining.",
+            "verdict": "CONDITIONAL",
+            "conditions": [
+                "Background verification must be completed within reasonable time (30-45 days typically).",
+                "Cannot keep you waiting indefinitely without updates."
+            ],
+            "exceptions": [
+                "Delays due to previous employer not responding (not new employer's fault).",
+                "Police verification in sensitive sectors may take longer."
+            ],
+            "simple_explanation": "Background verification is standard, but companies must complete it in reasonable time. If it's taking too long due to their delays, you can escalate or join elsewhere.",
+            "detailed_explanation": "While employers have right to verify credentials, unreasonable delays causing loss of employment opportunity may be challengeable. Offer letters typically mention tentative joining subject to verification.",
+            "examples": [
+                "Company keeps you waiting 3 months for background check without updates.",
+                "You missed other offers waiting for BGV that keeps getting delayed."
+            ],
+            "what_to_say": "I understand the need for background verification. However, can you provide a timeline for completion? I have made commitments based on the offer.",
+            "next_steps": [
+                "📧 Follow up regularly - Email HR every week asking for status update on BGV.",
+                "📋 Offer to help - Provide additional documents, contact details if needed to speed up process.",
+                "⏰ Set reasonable deadline - Politely mention you need closure within X weeks.",
+                "📄 Review offer letter - Check if it mentions specific BGV timeline or conditions.",
+                "💬 Understand delays - Ask specifically what's causing delay and if you can assist.",
+                "🎯 Keep other options open - Don't reject other offers until this one is confirmed.",
+                "⚖️ Know your rights - Unreasonable BGV delays causing loss can be grounds for complaint.",
+                "💼 Document everything - Keep all offer letters, emails, and communication for records."
+            ],
+            "source_category": "Employment Contract / Recruitment Practices"
+        },
+        {
+            "rule_id": "hr_joining_bonus_recovery",
+            "domain": "Workplace",
+            "topic": "Bond",
+            "summary": "Joining bonus recovery is valid only under certain conditions.",
+            "verdict": "CONDITIONAL",
+            "conditions": [
+                "Contract must clearly state joining bonus is repayable if you leave within X period.",
+                "Recovery must be proportionate (if you stay 1 year of 2-year bond, 50% recovery is fair)."
+            ],
+            "exceptions": [
+                "If company fires you, they cannot recover joining bonus.",
+                "If you complete the minimum tenure mentioned, no recovery."
+            ],
+            "simple_explanation": "If your offer letter mentions joining bonus must be returned if you leave within a certain period, the company can recover it. However, recovery should be proportionate to time served.",
+            "detailed_explanation": "Joining bonus with repayment clause is legally valid if clearly communicated upfront. However, full recovery regardless of time served may be deemed punitive. Courts favor proportionate recovery.",
+            "examples": [
+                "You got ₹2L joining bonus, contract says repay if leaving within 2 years. You leave after 1 year.",
+                "Company wants full joining bonus back even though you stayed 22 months of 24-month bond."
+            ],
+            "what_to_say": "I understand the joining bonus is repayable. Can we discuss a proportionate settlement based on the time I've served?",
+            "next_steps": [
+                "📄 Review offer letter - Check exact wording about joining bonus repayment terms.",
+                "🧮 Calculate proportionate - If you completed significant tenure, propose proportionate repayment.",
+                "💬 Negotiate with HR - Most companies are open to negotiation rather than full recovery.",
+                "📧 Propose settlement - Send written proposal for partial repayment based on time served.",
+                "⚖️ Know your rights - Disproportionate penalties may be challengeable in court.",
+                "💰 Check last settlement - They may deduct from final settlement; ensure calculation is correct.",
+                "📋 Get settlement letter - Before paying, get written confirmation that all dues are settled.",
+                "🎯 Consider timing - If repayment is large, negotiate payment plan over few months."
+            ],
+            "source_category": "Employment Contract / Indian Contract Act"
+        },
+        {
+            "rule_id": "hr_non_compete_enforcement",
+            "domain": "Workplace",
+            "topic": "Resignation",
+            "summary": "Non-compete clauses are largely unenforceable in India.",
+            "verdict": "CANNOT",
+            "conditions": [
+                "Section 27 of Indian Contract Act makes restraint of trade void.",
+                "Post-employment restrictions on working for competitors are generally not enforceable."
+            ],
+            "exceptions": [
+                "Non-disclosure of confidential information is enforceable.",
+                "During employment, exclusivity can be enforced.",
+                "Very limited restrictions (not joining direct competitor for 3-6 months with garden leave) might be upheld."
+            ],
+            "simple_explanation": "In India, non-compete clauses that prevent you from working in your field after leaving a company are mostly unenforceable. You have the right to earn a livelihood.",
+            "detailed_explanation": "Indian courts consistently hold that absolute non-compete clauses violate constitutional right to profession (Article 19(1)(g)). Only reasonable restrictions during employment or with paid garden leave may be valid.",
+            "examples": [
+                "Contract says 'cannot join any tech company for 2 years after resignation'.",
+                "Ex-employer threatens legal action for joining competitor."
+            ],
+            "what_to_say": "I understand the concern about confidential information, which I will not disclose. However, the non-compete clause restricting my right to work is not enforceable under Indian law.",
+            "next_steps": [
+                "📄 Review non-compete clause - Check exact wording and scope of restriction.",
+                "⚖️ Know the law - Section 27 of Indian Contract Act makes restraint of trade agreements void.",
+                "📧 Respond if threatened - Politely state you're aware of your legal rights.",
+                "🤐 Maintain confidentiality - Don't share or use confidential information from previous employer.",
+                "💼 Join new employer - Most non-compete clauses are not enforced; proceed with new job.",
+                "📋 Keep documentation - Save all communications in case of legal threats.",
+                "🗣️ Consult lawyer if sued - If ex-employer files case, consult employment lawyer (they usually lose).",
+                "💬 Inform new employer - Tell new company about non-compete so they're aware and can support you."
+            ],
+            "source_category": "Indian Contract Act Section 27 / Article 19(1)(g)"
+        },
+        {
+            "rule_id": "hr_weekend_work_mandatory",
+            "domain": "Workplace",
+            "topic": "Overtime",
+            "summary": "Weekend work depends on contract and industry norms.",
+            "verdict": "CONDITIONAL",
+            "conditions": [
+                "If contract mentions fixed weekdays + weekend availability, employer can ask for weekend work.",
+                "Must provide compensatory offs or overtime pay as per law.",
+                "Cannot make it mandatory beyond contracted hours without compensation."
+            ],
+            "exceptions": [
+                "Emergency situations (production deadline, client emergency).",
+                "If you're in senior management/client-facing role with such expectations."
+            ],
+            "simple_explanation": "Whether you must work weekends depends on your work contract and industry. However, if asked to work beyond contracted hours, you should get compensatory offs or overtime pay.",
+            "detailed_explanation": "Shops & Establishments Act typically mandates one weekly off. If employer requires weekend work, they must provide alternate off or overtime compensation as per employment terms and applicable laws.",
+            "examples": [
+                "Manager expects you to work every Saturday without any comp-off.",
+                "Contract says 5-day week but boss schedules meetings on Sundays regularly."
+            ],
+            "what_to_say": "I'm willing to support weekend work when needed. Can we discuss compensatory offs or overtime pay for this additional time?",
+            "next_steps": [
+                "📄 Check your contract - See if it mentions weekly offs, working days, or weekend availability.",
+                "📧 Clarify expectations - Ask manager to specify if weekend work is one-time emergency or regular expectation.",
+                "📋 Track weekend work - Maintain log of all weekend hours worked.",
+                "💰 Request compensation - Ask for comp-off within same week or overtime pay per company policy.",
+                "⚖️ Know your rights - Shops Act mandates at least one weekly off (some states specify Sunday).",
+                "💬 Escalate if exploited - If weekends become routine without compensation, raise with HR.",
+                "🎯 Set boundaries - Politely establish availability (e.g., 'I can work one weekend/month with advance notice').",
+                "💼 Evaluate culture - Regular unpaid weekend work may indicate poor work culture; consider if this is sustainable."
+            ],
+            "source_category": "Shops & Establishments Act / Employment Terms"
+        },
+        {
+            "rule_id": "college_internal_marks_dispute",
+            "domain": "College",
+            "topic": "Documents",
+            "summary": "Internal assessment must be fair and based on announced criteria.",
+            "verdict": "CONDITIONAL",
+            "conditions": [
+                "College must announce internal assessment criteria at start of semester.",
+                "Marks should be based on actual performance, not favoritism.",
+                "You have right to see evaluated answer sheets/presentations."
+            ],
+            "exceptions": [
+                "If genuinely absent for tests/submissions without valid reason.",
+                "If caught copying/plagiarism during internal assessment."
+            ],
+            "simple_explanation": "Internal marks should be awarded fairly based on pre-announced criteria. If you feel marks are unfair or given due to favoritism, you can challenge them by showing your work and requesting review.",
+            "detailed_explanation": "University ordinances mandate transparent internal assessment. Arbitrary marking, favoritism, or not following announced criteria can be challenged through college/university grievance channels.",
+            "examples": [
+                "You scored well in all tests but professor gives you low internal marks without explanation.",
+                "Teacher gives full marks to favorite students despite poor performance, low marks to you."
+            ],
+            "what_to_say": "I would like to review my internal assessment marks and understand the evaluation criteria. Can I see my evaluated papers/assignments?",
+            "next_steps": [
+                "📄 Request mark sheets - Ask faculty/department for detailed breakup of internal marks.",
+                "📋 Check announced criteria - Refer to course syllabus/handbook for internal assessment weightage.",
+                "👁️ Review your work - Ask to see evaluated answer sheets, assignments, presentation scores.",
+                "💬 Meet faculty - Schedule meeting with concerned teacher to understand scoring rationale.",
+                "📧 Escalate to HOD - If teacher doesn't respond, raise concern with Head of Department.",
+                "📝 File formal complaint - Submit written complaint to Dean/Principal with evidence.",
+                "⚖️ University grievance - Approach university's Student Grievance Cell if college doesn't respond.",
+                "📊 Gather evidence - Collect your assignments, test papers, attendance to show your actual performance."
+            ],
+            "source_category": "University Ordinances / Academic Regulations"
+        },
+        {
+            "rule_id": "college_hostel_fee_excess",
+            "domain": "College",
+            "topic": "Fees",
+            "summary": "Hostel fees must be reasonable and only for actual facilities provided.",
+            "verdict": "CANNOT",
+            "conditions": [
+                "Fees should match facilities provided (room, mess, utilities).",
+                "Cannot charge arbitrary or excessive amounts beyond actual costs.",
+                "Fee structure should be transparent and announced beforehand."
+            ],
+            "exceptions": [
+                "Fees can be increased with proper justification (inflation, facility upgrade).",
+                "Special facilities (AC rooms, single occupancy) cost more."
+            ],
+            "simple_explanation": "Hostel fees should be reasonable and transparent. Colleges cannot charge excessive amounts or hide fees. You have right to know what you're paying for.",
+            "detailed_explanation": "UGC/AICTE guidelines require fee transparency. Hostel fees must be justified by actual amenities. Arbitrary or hidden charges can be challenged.",
+            "examples": [
+                "College charges ₹1.5L hostel fee but provides poor food, no hot water.",
+                "Hidden charges appear at payment time not mentioned in prospectus."
+            ],
+            "what_to_say": "Can you provide detailed breakup of hostel fees showing what each charge covers? This seems higher than comparable hostels.",
+            "next_steps": [
+                "📄 Request fee breakup - Ask hostel administration for itemized fee structure (room rent, mess, electricity, etc.).",
+                "📋 Compare with others - Research hostel fees at similar colleges in your city/region.",
+                "💬 Raise concern - Discuss with hostel warden/administration about excessive fees.",
+                "📧 Written complaint - Submit complaint to college principal with comparison data.",
+                "🏛️ Escalate to university - If college doesn't respond, complain to affiliated university.",
+                "📞 Call UGC - Report to UGC helpline 1800-111-656 for excessive fee charging.",
+                "⚖️ Consumer forum - Hostel services fall under consumer protection; can file complaint.",
+                "🤝 Collective action - Form hostel committee with other students to negotiate fee reduction."
+            ],
+            "source_category": "UGC Guidelines / Consumer Protection"
+        },
+        {
+            "rule_id": "college_scholarship_delay",
+            "domain": "College",
+            "topic": "Fees",
+            "summary": "Colleges must process scholarships timely and cannot deny eligible students.",
+            "verdict": "CANNOT",
+            "conditions": [
+                "If you meet scholarship criteria, college must forward your application.",
+                "Cannot delay or block scholarship processing for their benefit."
+            ],
+            "exceptions": [
+                "If you don't meet eligibility criteria (marks, income, category).",
+                "If required documents are incomplete."
+            ],
+            "simple_explanation": "If you're eligible for government scholarship, your college cannot delay or block your application. They must process it and release funds to you once received.",
+            "detailed_explanation": "Government scholarships are students' entitlements. Colleges delaying processing or misusing scholarship funds face serious penalties. Students can directly complain to scholarship portal/district authorities.",
+            "examples": [
+                "You applied for SC/ST scholarship 6 months ago, college hasn't forwarded it.",
+                "College receives scholarship amount but doesn't credit it to your account."
+            ],
+            "what_to_say": "I am eligible for [scholarship name] and submitted all documents. Please share the status and when the application will be forwarded.",
+            "next_steps": [
+                "📱 Check scholarship portal - Login to National Scholarship Portal/state portal to see application status.",
+                "📋 Verify eligibility - Confirm you meet all criteria (income, marks, category, course).",
+                "📄 Collect acknowledgment - Ensure college gave you receipt/acknowledgment of scholarship application.",
+                "📧 Email college - Send formal request to scholarship cell/accounts office for status update.",
+                "📞 Call scholarship helpline - Each scholarship has helpline number; call to inquire about your application.",
+                "🏛️ Escalate to district office - If college delays, approach District Social Welfare Office directly.",
+                "⚖️ File RTI - Use RTI to ask college on what date they forwarded your scholarship application.",
+                "📝 Complaint to portal - Most scholarship portals have grievance section to report college delays."
+            ],
+            "source_category": "Scholarship Schemes / UGC Guidelines"
+        },
+        {
+            "rule_id": "college_exam_schedule_sudden_change",
+            "domain": "College",
+            "topic": "Attendance",
+            "summary": "Universities cannot suddenly change exam dates without reasonable notice.",
+            "verdict": "CANNOT",
+            "conditions": [
+                "Exam schedule changes must be notified at least 15-30 days in advance.",
+                "Changes should only be for valid reasons (emergency, technical issues)."
+            ],
+            "exceptions": [
+                "Natural disasters, pandemic, force majeure situations.",
+                "Paper leak or exam malpractice requiring rescheduling."
+            ],
+            "simple_explanation": "Universities should give adequate notice before changing exam dates. Last-minute changes (within a week) without serious reason are unfair and can be challenged.",
+            "detailed_explanation": "University examination ordinances typically mandate minimum notice period for schedule changes. Abrupt changes affecting student preparation can be challenged through university grievance mechanisms.",
+            "examples": [
+                "Exam scheduled for June 15 is suddenly moved to June 8 with only 4 days notice.",
+                "Datesheet changed for convenience without considering student preparation."
+            ],
+            "what_to_say": "This sudden change gives us insufficient preparation time. Can the university reconsider or provide valid justification for the change?",
+            "next_steps": [
+                "📧 Check official notice - Verify the schedule change on university official website/notice board.",
+                "📋 Understand reason - Find out why the change was made (emergency vs administrative convenience).",
+                "🗣️ Collective representation - Form student committee to approach university administration together.",
+                "📝 Submit representation - Written petition signed by multiple students requesting reconsideration.",
+                "📞 Contact Controller of Exams - Call/email university examination department for clarification.",
+                "⚖️ Know your rights - University ordinances usually mandate minimum 15-day notice for changes.",
+                "🏛️ Approach Student Union - Get student union/council to represent the concern officially.",
+                "📱 Social media pressure - Tweet at university handle (professionally) to create awareness."
+            ],
+            "source_category": "University Examination Ordinances"
+        },
+        {
+            "rule_id": "college_dress_code_unreasonable",
+            "domain": "College",
+            "topic": "Ragging",
+            "summary": "College dress codes must be reasonable and non-discriminatory.",
+            "verdict": "CONDITIONAL",
+            "conditions": [
+                "Dress codes for professional courses (medical, hospitality) are acceptable.",
+                "Rules should be uniform for all genders and not target specific communities.",
+                "Cannot enforce personal grooming choices (hair length, facial hair beyond basic neatness)."
+            ],
+            "exceptions": [
+                "Uniforms in schools/professional colleges are generally valid.",
+                "Lab safety requirements (closed shoes, tied hair)."
+            ],
+            "simple_explanation": "Colleges can have dress codes for valid reasons (safety, professional training), but they cannot be arbitrary, discriminatory, or violate personal freedom without justification.",
+            "detailed_explanation": "While educational institutions have some authority to enforce dress codes, unreasonable restrictions that discriminate based on gender, religion, or violate fundamental rights can be challenged in court.",
+            "examples": [
+                "College bans jeans for girls but allows for boys.",
+                "Mandatory dress code for general degree college without professional justification."
+            ],
+            "what_to_say": "I understand maintaining decorum, but this dress code seems discriminatory/unreasonable. Can the college provide justification?",
+            "next_steps": [
+                "📄 Review college rules - Check if dress code is mentioned in college prospectus/handbook.",
+                "📋 Document discrimination - If rule is gender-specific or targets certain groups, collect evidence.",
+                "💬 Raise with principal - Submit representation explaining why the code is unreasonable.",
+                "🤝 Collective petition - Get multiple students to sign petition against unfair dress code.",
+                "📧 Approach college committee - Present concern at college council or student grievance committee.",
+                "⚖️ Legal opinion - Discriminatory dress codes can be challenged as violating Article 14 (equality), 19 (freedom), 21 (dignity).",
+                "🏛️ Approach university - If college affiliated to university, complain to university authorities.",
+                "📱 Public awareness - Last resort: media/social media to highlight unreasonable restrictions (use responsibly)."
+            ],
+            "source_category": "Fundamental Rights / University Regulations"
+        },
+        {
+            "rule_id": "college_library_access_restriction",
+            "domain": "College",
+            "topic": "Documents",
+            "summary": "College cannot arbitrarily deny library or facility access to students.",
+            "verdict": "CANNOT",
+            "conditions": [
+                "As enrolled student, you have right to use college facilities including library, labs, sports.",
+                "Can only be restricted for disciplinary reasons after proper inquiry."
+            ],
+            "exceptions": [
+                "Temporary restriction during exams for non-exam students.",
+                "Fee dues may limit some facilities (but not academic resources like library)."
+            ],
+            "simple_explanation": "Once you're admitted and paying fees, you have right to use college facilities. College cannot randomly ban you from library, lab, or sports without valid disciplinary reason and proper process.",
+            "detailed_explanation": "Educational facilities are part of what students pay for. Arbitrary denial violates contractual obligation and right to education. Even fee defaulters cannot be denied academic facilities as per UGC.",
+            "examples": [
+                "Librarian bans you because you argued with them once.",
+                "College blocks lab access saying 'too many students today'."
+            ],
+            "what_to_say": "As an enrolled student, I have the right to access college facilities. Please provide the reason for this restriction and the process to resolve it.",
+            "next_steps": [
+                "📧 Request written reason - Ask college administration for formal explanation of access denial.",
+                "📋 Check college rules - Review what student handbook says about facility access rights.",
+                "💬 Meet concerned authority - Speak with librarian/lab in-charge/dean to understand issue.",
+                "📝 Written complaint - Submit complaint to principal if restriction seems arbitrary.",
+                "📄 Show fee receipts - Prove you've paid fees and are entitled to facilities.",
+                "⚖️ Know your rights - UGC mandates that admitted students must have access to learning resources.",
+                "🏛️ University grievance - Escalate to university if college doesn't resolve quickly.",
+                "🤝 Collective pressure - If affecting multiple students, represent together for faster resolution."
+            ],
+            "source_category": "UGC Guidelines / Student Rights"
+        },
+        {
+            "rule_id": "consumer_online_return_denial",
+            "domain": "Documents",
+            "topic": "Shopping",
+            "summary": "E-commerce sites must accept returns for defective/wrong products.",
+            "verdict": "CANNOT",
+            "conditions": [
+                "For defective, damaged, or wrong items, return must be accepted.",
+                "Return window is typically 7-30 days as per website policy.",
+                "Product should be unused with tags for non-defective returns."
+            ],
+            "exceptions": [
+                "Innerwear, cosmetics, grocery items usually not returnable for hygiene reasons.",
+                "Custom-made or personalized items."
+            ],
+            "simple_explanation": "If you receive a defective, damaged, or wrong product, the seller must accept return and refund. For non-defective items, return depends on the site's policy, but defective items must always be returnable.",
+            "detailed_explanation": "Consumer Protection Act covers e-commerce. Sellers cannot deny returns for defective products. Platform is also liable. However, 'change of mind' returns depend on seller's stated policy.",
+            "examples": [
+                "Received broken phone, seller says 'courier damaged, not our fault'.",
+                "Wrong size delivered, seller refuses return saying 'final sale'."
+            ],
+            "what_to_say": "This product is defective/wrong as per order. As per Consumer Protection Act, I'm entitled to return/refund. Please arrange reverse pickup.",
+            "next_steps": [
+                "📸 Photo/video evidence - Unbox on camera showing defect/damage/wrong item.",
+                "📧 Raise complaint immediately - Use app/website to file return request within return window.",
+                "📋 Choose correct reason - Select 'defective', 'damaged', or 'wrong item' in return form.",
+                "📞 Call customer care - Speak to support if online return request is rejected.",
+                "💬 Email escalation - Send detailed complaint to seller's escalation email with evidence.",
+                "⚖️ Consumer complaint - File at National Consumer Helpline 1800-11-4000 or consumerhelpline.gov.in.",
+                "📱 Social media - Tag brand/platform on Twitter/Facebook (often faster resolution).",
+                "🏛️ Consumer forum - For higher value items, file case at district consumer disputes forum."
+            ],
+            "source_category": "Consumer Protection Act, 2019 / E-commerce Rules"
+        },
+        {
+            "rule_id": "consumer_credit_card_fraud",
+            "domain": "Documents",
+            "topic": "Consumer",
+            "summary": "Banks must reverse unauthorized credit card transactions.",
+            "verdict": "CANNOT",
+            "conditions": [
+                "Report fraud within 3 days for zero liability.",
+                "Bank must investigate and reverse if fraud is proven.",
+                "You must not have shared OTP/PIN/CVV willingly."
+            ],
+            "exceptions": [
+                "If you shared credentials knowingly, bank may not reverse.",
+                "Report delay beyond 7 days may complicate claim."
+            ],
+            "simple_explanation": "If your credit card is used fraudulently without your knowledge, report immediately to bank. They must reverse unauthorized transactions. But don't share OTP/CVV with anyone.",
+            "detailed_explanation": "RBI guidelines mandate zero liability for customers who report fraud promptly. Banks cannot hold customer liable for unauthorized transactions unless customer was negligent or shared credentials.",
+            "examples": [
+                "Unknown transaction of ₹25,000 appears on credit card statement.",
+                "Card was with you, but online transaction happened from different city."
+            ],
+            "what_to_say": "I notice unauthorized transactions on my card. I did not make these transactions and did not share any credentials. Please block my card immediately and reverse these charges.",
+            "next_steps": [
+                "📞 Call bank immediately - Contact customer care and block card right away (within hours of noticing fraud).",
+                "📧 Email/SMS report - Send written complaint to bank's fraud/disputes email with transaction details.",
+                "📋 File FIR - Go to cybercrime police station and file FIR (bank may request this).",
+                "💳 Request new card - Ask bank to issue replacement card with new number.",
+                "📝 Dispute transactions - Fill formal transaction dispute form with bank within 3 days.",
+                "📄 Document everything - Save all communications, transaction alerts, bank responses.",
+                "⚖️ Escalate to Banking Ombudsman - If bank delays beyond 30 days, complain at rbi.org.in.",
+                "🔒 Enable alerts - Set up SMS/email alerts for all transactions to catch fraud early next time."
+            ],
+            "source_category": "RBI Guidelines / Payment Systems"
+        },
+        {
+            "rule_id": "consumer_insurance_claim_rejection",
+            "domain": "Documents",
+            "topic": "Consumer",
+            "summary": "Insurance companies must give valid reasons for claim rejection.",
+            "verdict": "CONDITIONAL",
+            "conditions": [
+                "Rejection must be based on policy terms, not arbitrary.",
+                "Company must provide written reason within specified time (typically 30 days).",
+                "Cannot reject for minor documentation issues without giving chance to rectify."
+            ],
+            "exceptions": [
+                "Genuine policy exclusions (pre-existing disease, claim within waiting period).",
+                "Fraud or misrepresentation in application."
+            ],
+            "simple_explanation": "Insurance companies can reject claims if there's valid policy-based reason, but they must explain in writing. Random rejections or rejecting for minor paperwork issues without allowing correction are unfair.",
+            "detailed_explanation": "IRDAI regulations mandate insurers follow due process in claim settlement. Rejection without proper investigation or valid grounds can be challenged with Insurance Ombudsman who can order payment with interest.",
+            "examples": [
+                "Health insurance rejects claim saying 'medical documents unclear' without specifying what's needed.",
+                "Car insurance denies accident claim without proper investigation."
+            ],
+            "what_to_say": "I need detailed written explanation for this claim rejection with specific policy clause references. If documents are insufficient, please specify what additional proof you need.",
+            "next_steps": [
+                "📧 Request rejection letter - Ask for formal written communication stating exact reason for rejection.",
+                "📋 Review policy document - Check if rejection reason is actually mentioned in policy terms.",
+                "📄 Submit missing docs - If rejected for incomplete documents, submit whatever they're asking for.",
+                "💬 Escalate within company - Write to insurer's grievance cell/escalation team.",
+                "📞 Call IRDAI helpline - Dial 155255 (Integrated Grievance Management System) to file complaint.",
+                "⚖️ Insurance Ombudsman - File complaint at bimabharosa.irdai.gov.in if not resolved in 30 days.",
+                "🏛️ Consumer forum - Can also approach consumer disputes forum for insurance claim disputes.",
+                "💼 Legal notice - For large claims, send lawyer's notice demanding settlement with policy reference."
+            ],
+            "source_category": "IRDAI Regulations / Insurance Act"
+        },
+        {
+            "rule_id": "consumer_gym_membership_cancellation",
+            "domain": "Documents",
+            "topic": "Contract",
+            "summary": "Gym membership cancellation rules must be reasonable.",
+            "verdict": "CONDITIONAL",
+            "conditions": [
+                "Gym can have notice period (30-60 days) for cancellation.",
+                "Cannot keep entire year's fees if you want to exit mid-year with valid reason.",
+                "Medical reasons, relocation should allow proportionate refund."
+            ],
+            "exceptions": [
+                "If you signed contract with clear '12-month lock-in, no refund' clause.",
+                "If gym provided significant upfront benefits (3 months free, etc.)."
+            ],
+            "simple_explanation": "Gym contracts can have terms, but they should be reasonable. If you have genuine reason (relocation, medical issue), you should get refund for unused period. Unfair penalty clauses can be challenged.",
+            "detailed_explanation": "Consumer Protection Act regulates unfair trade practices. Absolute 'no refund' policies for services not received are often held invalid. Courts favor proportionate refund for genuine reasons.",
+            "examples": [
+                "You paid ₹20K for annual membership, relocating for job after 3 months, gym refuses any refund.",
+                "Doctor advises you can't exercise, gym says 'no medical cancellation'."
+            ],
+            "what_to_say": "I have a genuine reason [relocation/medical] for canceling membership. I request a proportionate refund for the unused period as per consumer rights.",
+            "next_steps": [
+                "📄 Review contract - Check what cancellation policy was mentioned in membership agreement.",
+                "📋 Gather proof - Medical certificate, job transfer letter, or other evidence for cancellation reason.",
+                "📧 Written cancellation request - Email gym management with formal cancellation notice and reason.",
+                "💬 Negotiate refund - Propose fair settlement (refund 50-70% of unused period amount).",
+                "📞 Call corporate office - If local gym doesn't cooperate, escalate to chain's head office.",
+                "⚖️ Consumer complaint - File at consumer forum citing unfair trade practice.",
+                "💳 Credit card dispute - If paid by card, can raise dispute with card issuer for services not received.",
+                "🗣️ Social media - Post review on Google/social media (factually) to pressure resolution."
+            ],
+            "source_category": "Consumer Protection Act / Contract Law"
+        },
+        {
+            "rule_id": "consumer_mobile_network_poor",
+            "domain": "Documents",
+            "topic": "Consumer",
+            "summary": "Telecom operators must provide quality service or allow termination without penalty.",
+            "verdict": "CONDITIONAL",
+            "conditions": [
+                "If service is consistently poor despite complaints, you can terminate without penalty.",
+                "Operator must investigate complaints within specified time (typically 7 days)."
+            ],
+            "exceptions": [
+                "Temporary service issues due to natural disasters, maintenance.",
+                "If you're in location with disclosed poor coverage."
+            ],
+            "simple_explanation": "If your mobile network is consistently poor and operator doesn't fix it despite complaints, you have right to switch without paying cancellation charges for balance contract period.",
+            "detailed_explanation": "TRAI Quality of Service standards mandate minimum performance. Persistent poor service allows customers to exit contract. Operators cannot charge penalty for their service failure.",
+            "examples": [
+                "Taking postpaid with 2-year contract, but network drops 10 times daily, company wants ₹5K to port out.",
+                "Broadband speed is 1/10th of promised speed consistently."
+            ],
+            "what_to_say": "I have registered multiple complaints about poor service which remains unresolved. As per TRAI regulations, I should be allowed to terminate without penalty due to this service deficiency.",
+            "next_steps": [
+                "📞 Register complaints - Call 198 (customer care) and register service complaint, note complaint numbers.",
+                "📧 Email complaints - Send written complaints to operator's nodal officer email.",
+                "📋 Document issues - Keep speed test screenshots, call drop records, complaint reference numbers.",
+                "⏰ Give resolution time - Allow 7 days for operator to resolve as per TRAI norms.",
+                "📱 Request termination - After repeated failures, request contract termination citing service deficiency.",
+                "⚖️ TRAI complaint - File complaint at consumerhelpline.trai.gov.in or call 1800-110-420.",
+                "💬 Escalate to Appellate Authority - If not resolved in 30 days, escalate within TRAI.",
+                "🏛️ Consumer forum - Can file case for deficiency of service + compensation."
+            ],
+            "source_category": "TRAI Regulations / Consumer Protection"
+        },
+        {
+            "rule_id": "consumer_electricity_bill_excessive",
+            "domain": "Documents",
+            "topic": "Consumer",
+            "summary": "Electricity companies must justify bill amounts and allow disputes.",
+            "verdict": "CONDITIONAL",
+            "conditions": [
+                "Bill should match actual meter reading.",
+                "Cannot charge estimated/average bill for more than 2 consecutive months.",
+                "Must investigate dispute within 7 days."
+            ],
+            "exceptions": [
+                "If you tampered with meter or stole electricity.",
+                "Bill adjustment for previous under-billing periods."
+            ],
+            "simple_explanation": "Your electricity bill should be based on actual meter reading, not random estimates. If bill is abnormally high, you can demand meter check and dispute resolution.",
+            "detailed_explanation": "Electricity Act and State Electricity Regulatory Commission rules mandate billing based on actual reading, dispute resolution mechanism, and limits on estimated billing.",
+            "examples": [
+                "Bill is ₹15,000 when your usage is typically ₹2,000.",
+                "Company sends estimated bills for 6 months straight without meter reading."
+            ],
+            "what_to_say": "This bill amount is abnormally high compared to my usual consumption. Please send technician to check meter and review the billing. I'm filing a dispute.",
+            "next_steps": [
+                "📊 Compare previous bills - Check last 6 months bills to see if current is anomaly.",
+                "📄 Check meter reading - Verify meter reading shown on bill matches your actual meter.",
+                "📞 Call customer care - Register complaint about high bill/wrong reading immediately.",
+                "📧 Email grievance cell - Send written complaint to electricity board's consumer grievance email.",
+                "👨‍🔧 Request meter inspection - Ask for meter testing (often free or refundable if meter is faulty).",
+                "⚖️ Know your rights - Most states allow payment of only average of last 6 months during dispute period.",
+                "🏛️ Approach Ombudsman - Each state has Electricity Ombudsman; file complaint after company response.",
+                "💡 Temporary relief - Request installment payment plan while dispute is being investigated."
+            ],
+            "source_category": "Electricity Act / State Regulatory Commission"
+        },
+        {
+            "rule_id": "consumer_restaurant_service_charge",
+            "domain": "Documents",
+            "topic": "Consumer",
+            "summary": "Service charge in restaurants is voluntary, not mandatory.",
+            "verdict": "CANNOT",
+            "conditions": [
+                "Restaurants cannot force you to pay service charge.",
+                "Must be clearly mentioned as optional/voluntary if added to bill.",
+                "Different from government taxes which are mandatory."
+            ],
+            "exceptions": [
+                "If menu/entrance clearly states 'Service charge applicable'.",
+                "For large groups/events, advance notice of service charge is acceptable."
+            ],
+            "simple_explanation": "Service charge (typically 5-10%) on restaurant bills is voluntary. You can refuse to pay it. Only government GST is mandatory. Restaurants cannot force or threaten you to pay service charge.",
+            "detailed_explanation": "As per CCPA (Central Consumer Protection Authority) guidelines 2017, service charge is voluntary. Restaurants collecting it forcibly are violating consumer rights. Only taxes are mandatory.",
+            "examples": [
+                "Bill has '10% service charge' added, waiter insists it's mandatory.",
+                "Restaurant manager threatens to not let you leave unless you pay service charge."
+            ],
+            "what_to_say": "As per government guidelines, service charge is voluntary. I will pay for the food and applicable GST, but I choose not to pay the service charge.",
+            "next_steps": [
+                "📋 Check bill carefully - Identify service charge vs government taxes (GST).",
+                "💬 Politely inform staff - Say 'I'd like the bill without service charge please'.",
+                "📱 Show guideline if needed - Can show CCPA notification on phone to manager.",
+                "💰 Pay for food + GST only - Refuse service charge; it's your legal right.",
+                "📸 Document if harassed - If restaurant threatens or misbehaves, record/take photo of bill.",
+                "📞 Call police if forced - Forceful retention is illegal confinement; dial 100.",
+                "⚖️ File consumer complaint - Report restaurant to National Consumer Helpline 1800-11-4000.",
+                "🗣️ Social media/review - Post about the experience to warn others (stick to facts)."
+            ],
+            "source_category": "CCPA Guidelines / Consumer Protection Act"
+        },
+        {
+            "rule_id": "consumer_hotel_booking_cancellation",
+            "domain": "Documents",
+            "topic": "Shopping",
+            "summary": "Hotel cancellation charges must be reasonable and declared upfront.",
+            "verdict": "CONDITIONAL",
+            "conditions": [
+                "Cancellation policy must be clearly shown before booking.",
+                "Charges should be proportionate (free cancellation up to 24-48 hours before check-in is standard).",
+                "Cannot charge 100% for cancellation made weeks in advance."
+            ],
+            "exceptions": [
+                "Peak season/events bookings may have stricter cancellation terms.",
+                "Non-refundable discount bookings clearly marked as such."
+            ],
+            "simple_explanation": "Hotels can have cancellation charges, but they must be reasonable and clearly stated when you book. Charging full amount for early cancellation or having hidden cancellation terms is unfair.",
+            "detailed_explanation": "Consumer Protection Act requires transparency in cancellation policies. Disproportionate penalties or policies not disclosed clearly can be challenged as unfair trade practice.",
+            "examples": [
+                "You cancel 2 weeks before check-in, hotel keeps 100% payment.",
+                "Cancellation policy was not shown during booking, hotel now says 'non-refundable'."
+            ],
+            "what_to_say": "The cancellation policy was not clearly disclosed/charges seem disproportionate. I should get reasonable refund as I canceled well in advance.",
+            "next_steps": [
+                "📧 Check confirmation email - Review booking confirmation for stated cancellation policy.",
+                "📱 Screenshot booking page - Capture what was shown at time of booking if policy wasn't clear.",
+                "📞 Call hotel directly - Sometimes booking platforms are stricter; calling hotel may allow more flexible cancellation.",
+                "💬 Request manager - Explain your situation (emergency, travel restrictions) and request waiver.",
+                "📄 Provide reason - Medical emergency, job loss, government restrictions often get sympathetic hearing.",
+                "⚖️ Booking platform support - If booked via OTA, raise dispute with MakeMyTrip/Goibibo/Booking.com.",
+                "🏛️ Consumer complaint - File complaint for unfair trade practice if policy was not disclosed or charges unreasonable.",
+                "💳 Credit card dispute - As last resort, can raise chargeback with card issuer for services not received."
+            ],
+            "source_category": "Consumer Protection Act / Hospitality Industry Standards"
         }
     ]
 }
