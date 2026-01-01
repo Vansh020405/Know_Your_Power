@@ -33,7 +33,10 @@ if (!db) {
     process.exit(1);
 }
 
-// Connect to Mongo
+// Routes
+app.use('/api/auth', authRoutes);
+app.use('/api/history', historyRoutes);
+
 // Connect to Mongo
 mongoose
     .connect(db)
