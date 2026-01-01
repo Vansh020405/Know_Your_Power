@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 import Layout from './components/Layout';
 import Home from './components/Home';
 import AuthorityChecker from './components/AuthorityChecker';
@@ -9,12 +9,14 @@ import ConversationScripts from './components/ConversationScripts';
 import About from './components/About';
 import Privacy from './components/Privacy';
 import Contacts from './components/Contacts.jsx';
+import SecureVault from './components/SecureVault';
+import ComplaintDrafter from './components/ComplaintDrafter';
 import Login from './components/Login';
 import Signup from './components/Signup';
 import Profile from './components/Profile';
 import SavedSituations from './components/SavedSituations';
 import Settings from './components/Settings';
-import { AuthProvider } from './context/AuthContext';
+import { AuthProvider, useAuth } from './context/AuthContext';
 import { PreferencesProvider } from './context/PreferencesContext';
 import { useState, useEffect } from 'react';
 
@@ -42,6 +44,24 @@ const PageWrapper = ({ children }) => {
   return <div className="fade-in-content">{children}</div>;
 };
 
+const ProtectedRoute = ({ children }) => {
+  const { user, loading } = useAuth();
+
+  if (loading) {
+    return (
+      <div className="page-loading-overlay">
+        <div className="skeleton-card shimmer"></div>
+      </div>
+    );
+  }
+
+  if (!user) {
+    return <Navigate to="/login" replace />;
+  }
+
+  return children;
+};
+
 function App() {
   return (
     <AuthProvider>
@@ -57,6 +77,16 @@ function App() {
               <Route path="about" element={<PageWrapper><About /></PageWrapper>} />
               <Route path="privacy" element={<PageWrapper><Privacy /></PageWrapper>} />
               <Route path="contacts" element={<PageWrapper><Contacts /></PageWrapper>} />
+              <Route path="vault" element={
+                <ProtectedRoute>
+                  <SecureVault />
+                </ProtectedRoute>
+              } />
+              <Route path="complaint" element={
+                <ProtectedRoute>
+                  <ComplaintDrafter />
+                </ProtectedRoute>
+              } />
 
               {/* Auth Routes */}
               <Route path="login" element={<PageWrapper><Login /></PageWrapper>} />

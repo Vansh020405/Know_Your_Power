@@ -274,90 +274,141 @@ const Layout = () => {
                         right: 0,
                         bottom: 0,
                         zIndex: 40,
-                        background: 'rgba(0, 0, 0, 0.2)',
-                        backdropFilter: 'blur(2px)',
+                        background: 'rgba(0, 0, 0, 0.4)',
+                        backdropFilter: 'blur(4px)',
                         animation: 'fadeIn 0.2s ease-out',
                       }}
                       onClick={() => setIsProfileOpen(false)}
                     />
                     <div style={{
                       position: 'absolute',
-                      top: 'calc(100% + 0.75rem)',
+                      top: 'calc(100% + 1rem)',
                       right: 0,
-                      background: 'rgba(20, 20, 20, 0.95)',
-                      backdropFilter: 'blur(20px)',
-                      border: '1px solid rgba(16, 185, 129, 0.2)',
-                      borderRadius: '12px',
-                      width: '220px',
-                      boxShadow: '0 8px 32px rgba(0, 0, 0, 0.6), 0 0 0 1px rgba(16, 185, 129, 0.1)',
+                      background: 'rgba(20, 20, 20, 0.85)',
+                      backdropFilter: 'blur(24px)',
+                      WebkitBackdropFilter: 'blur(24px)',
+                      border: '1px solid rgba(255, 255, 255, 0.1)',
+                      borderRadius: '16px',
+                      width: '240px',
+                      boxShadow: '0 15px 40px rgba(0, 0, 0, 0.7), 0 0 0 1px rgba(16, 185, 129, 0.1), inset 0 1px 0 rgba(255,255,255,0.1)',
                       zIndex: 50,
                       display: 'flex',
                       flexDirection: 'column',
                       overflow: 'hidden',
-                      animation: 'slideUp 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
+                      transformOrigin: 'top right',
+                      animation: 'scaleIn 0.25s cubic-bezier(0.2, 0.8, 0.2, 1)',
                     }}>
+                      {/* User Info Header */}
                       <div style={{
                         padding: '1.25rem',
-                        borderBottom: '1px solid rgba(255, 255, 255, 0.08)',
-                        background: 'rgba(16, 185, 129, 0.05)',
+                        borderBottom: '1px solid rgba(255, 255, 255, 0.06)',
+                        background: 'linear-gradient(to bottom, rgba(255,255,255,0.03), rgba(255,255,255,0))',
                       }}>
-                        <p style={{ fontWeight: 700, color: 'white', marginBottom: '0.25rem', fontSize: '1rem' }}>{user.name}</p>
-                        <p style={{ fontSize: '0.8rem', color: '#888', textOverflow: 'ellipsis', overflow: 'hidden', whiteSpace: 'nowrap' }}>{user.email}</p>
+                        <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', marginBottom: '0.5rem' }}>
+                          <div style={{
+                            width: 32, height: 32, borderRadius: '50%',
+                            background: 'linear-gradient(135deg, #10B981, #059669)',
+                            display: 'flex', alignItems: 'center', justifyContent: 'center',
+                            fontSize: '0.9rem', fontWeight: 700, color: '#fff'
+                          }}>
+                            {user.name ? user.name.charAt(0).toUpperCase() : 'U'}
+                          </div>
+                          <p style={{ fontWeight: 700, color: 'white', fontSize: '0.95rem' }}>{user.name}</p>
+                        </div>
+                        <p style={{
+                          fontSize: '0.75rem',
+                          color: 'rgba(255,255,255,0.5)',
+                          textOverflow: 'ellipsis',
+                          overflow: 'hidden',
+                          whiteSpace: 'nowrap',
+                          background: 'rgba(0,0,0,0.3)',
+                          padding: '4px 8px',
+                          borderRadius: '6px',
+                          display: 'inline-block'
+                        }}>{user.email}</p>
                       </div>
-                      <Link
-                        to="/profile"
-                        onClick={() => setIsProfileOpen(false)}
-                        style={{
-                          padding: '0.875rem 1.25rem',
-                          display: 'flex',
-                          alignItems: 'center',
-                          gap: '0.75rem',
-                          color: '#ccc',
-                          textDecoration: 'none',
-                          transition: 'all 0.2s ease',
-                          fontWeight: 500,
-                        }}
-                        onMouseEnter={(e) => {
-                          e.currentTarget.style.background = 'rgba(16, 185, 129, 0.1)';
-                          e.currentTarget.style.color = 'var(--primary)';
-                          e.currentTarget.style.paddingLeft = '1.5rem';
-                        }}
-                        onMouseLeave={(e) => {
-                          e.currentTarget.style.background = 'transparent';
-                          e.currentTarget.style.color = '#ccc';
-                          e.currentTarget.style.paddingLeft = '1.25rem';
-                        }}
-                      >
-                        <User size={18} /> Profile
-                      </Link>
-                      <button
-                        onClick={handleLogout}
-                        style={{
-                          padding: '0.875rem 1.25rem',
-                          display: 'flex',
-                          alignItems: 'center',
-                          gap: '0.75rem',
-                          color: '#EF4444',
-                          background: 'none',
-                          border: 'none',
-                          width: '100%',
-                          cursor: 'pointer',
-                          textAlign: 'left',
-                          transition: 'all 0.2s ease',
-                          fontWeight: 500,
-                          borderTop: '1px solid rgba(255, 255, 255, 0.05)',
-                        }}
-                        onMouseEnter={(e) => {
-                          e.currentTarget.style.background = 'rgba(239, 68, 68, 0.1)';
-                          e.currentTarget.style.paddingLeft = '1.5rem';
-                        }}
-                        onMouseLeave={(e) => {
-                          e.currentTarget.style.background = 'transparent';
-                          e.currentTarget.style.paddingLeft = '1.25rem';
-                        }}
-                      >
-                        <LogOut size={18} /> Logout
-                      </button>
+
+                      {/* Dropdown Items */}
+                      <div style={{ padding: '0.5rem' }}>
+                        <Link
+                          to="/profile"
+                          onClick={() => setIsProfileOpen(false)}
+                          className="dropdown-item"
+                        >
+                          <div className="icon-box"><User size={16} /></div>
+                          <span>My Profile</span>
+                        </Link>
+
+                        <Link
+                          to="/vault"
+                          onClick={() => setIsProfileOpen(false)}
+                          className="dropdown-item"
+                        >
+                          <div className="icon-box"><div style={{ width: 6, height: 6, background: '#EF4444', borderRadius: '50%', position: 'absolute', top: 6, right: 6 }}></div><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect width="18" height="11" x="3" y="11" rx="2" ry="2" /><path d="M7 11V7a5 5 0 0 1 10 0v4" /></svg></div>
+                          <span>Secure Vault</span>
+                        </Link>
+
+                        <button
+                          onClick={handleLogout}
+                          className="dropdown-item danger"
+                        >
+                          <div className="icon-box"><LogOut size={16} /></div>
+                          <span>Logout</span>
+                        </button>
+                      </div>
+
+                      <style>{`
+                        @keyframes scaleIn {
+                            from { opacity: 0; transform: scale(0.95) translateY(-10px); }
+                            to { opacity: 1; transform: scale(1) translateY(0); }
+                        }
+                        .dropdown-item {
+                            padding: 0.75rem 1rem;
+                            display: flex;
+                            align-items: center;
+                            gap: 0.75rem;
+                            color: #d1d5db;
+                            text-decoration: none;
+                            transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+                            font-weight: 500;
+                            font-size: 0.9rem;
+                            border-radius: 8px;
+                            cursor: pointer;
+                            background: transparent;
+                            border: none;
+                            width: 100%;
+                            text-align: left;
+                        }
+                        .dropdown-item:hover {
+                            background: rgba(255, 255, 255, 0.08);
+                            color: #fff;
+                            transform: translateX(4px);
+                        }
+                        .dropdown-item .icon-box {
+                            width: 28px;
+                            height: 28px;
+                            border-radius: 6px;
+                            background: rgba(255,255,255,0.05);
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+                            color: var(--text-muted);
+                            transition: all 0.2s;
+                            position: relative;
+                        }
+                        .dropdown-item:hover .icon-box {
+                            background: rgba(255,255,255,0.15);
+                            color: var(--primary);
+                        }
+                        .dropdown-item.danger:hover {
+                            background: rgba(239, 68, 68, 0.15);
+                            color: #EF4444;
+                        }
+                        .dropdown-item.danger:hover .icon-box {
+                            background: rgba(239, 68, 68, 0.2);
+                            color: #EF4444;
+                        }
+                      `}</style>
                     </div>
                   </>
                 )}

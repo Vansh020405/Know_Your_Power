@@ -279,6 +279,33 @@ const Home = () => {
                     </div>
                     <div className="feature-arrow"><MoveRight size={20} /></div>
                 </div>
+                <div className="feature-card" onClick={() => navigate('/vault')}>
+                    <div className="feature-icon icon-red">
+                        <Lock size={28} />
+                    </div>
+                    <div className="feature-info">
+                        <h3>Secure Vault</h3>
+                        <p>Encrypted storage for emergency docs.</p>
+                    </div>
+                    <div className="feature-arrow"><MoveRight size={20} /></div>
+                </div>
+            </section>
+
+            {/* VAULT PROMO BANNER */}
+            <section className="vault-banner-section" onClick={() => navigate('/vault')}>
+                <div className="vault-banner-overlay"></div>
+                <div className="vault-banner-content">
+                    <div className="vault-icon-circle">
+                        <Lock size={24} />
+                    </div>
+                    <div className="vault-banner-text">
+                        <h3>Secure Personal Vault</h3>
+                        <p>Keep incidents, evidence, and ID proofs safe. Local encryption & PIN protection.</p>
+                    </div>
+                    <div className="vault-arrow">
+                        <ArrowRight size={20} />
+                    </div>
+                </div>
             </section>
 
             {/* AI ASSISTANT SECTION */}
@@ -707,6 +734,7 @@ const Home = () => {
                 .icon-blue { background: rgba(59, 130, 246, 0.1); color: #60A5FA; }
                 .icon-purple { background: rgba(168, 85, 247, 0.1); color: #C084FC; }
                 .icon-orange { background: rgba(249, 115, 22, 0.1); color: #FB923C; }
+                .icon-red { background: rgba(239, 68, 68, 0.1); color: #EF4444; }
                 
                 .feature-info h3 { font-size: 1.1rem; font-weight: 700; margin-bottom: 0.25rem; }
                 .feature-info p { font-size: 0.9rem; color: var(--text-muted); }
@@ -719,6 +747,66 @@ const Home = () => {
                     transition: all 0.3s;
                 }
                 .feature-card:hover .feature-arrow { opacity: 1; transform: translateX(0); color: var(--text); }
+
+                .feature-card:hover .feature-arrow { opacity: 1; transform: translateX(0); color: var(--text); }
+
+                /* VAULT BANNER */
+                .vault-banner-section {
+                    margin-top: 1.5rem;
+                    border-radius: 20px;
+                    overflow: hidden;
+                    position: relative;
+                    cursor: pointer;
+                    border: 1px solid rgba(239, 68, 68, 0.2);
+                    background: linear-gradient(90deg, rgba(20,20,20,1) 0%, rgba(30,15,15,1) 100%);
+                    transition: all 0.3s;
+                }
+                .vault-banner-section:hover {
+                    border-color: rgba(239, 68, 68, 0.4);
+                    transform: translateY(-2px);
+                    box-shadow: 0 10px 30px rgba(239, 68, 68, 0.1);
+                }
+                .vault-banner-content {
+                    position: relative;
+                    z-index: 2;
+                    display: flex;
+                    align-items: center;
+                    padding: 1.5rem 2rem;
+                    gap: 1.5rem;
+                }
+                .vault-icon-circle {
+                    width: 48px;
+                    height: 48px;
+                    border-radius: 50%;
+                    background: #EF4444;
+                    color: white;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    flex-shrink: 0;
+                    box-shadow: 0 0 20px rgba(239, 68, 68, 0.4);
+                }
+                .vault-banner-text {
+                    flex: 1;
+                }
+                .vault-banner-text h3 {
+                    font-size: 1.2rem;
+                    font-weight: 700;
+                    margin-bottom: 0.25rem;
+                    color: #fff;
+                }
+                .vault-banner-text p {
+                    font-size: 0.95rem;
+                    color: rgba(255,255,255,0.7);
+                    margin: 0;
+                }
+                .vault-arrow {
+                    color: #EF4444;
+                    transition: transform 0.2s;
+                }
+                .vault-banner-section:hover .vault-arrow {
+                    transform: translateX(4px);
+                }
 
                 /* AI CHAT */
                 .ai-section {

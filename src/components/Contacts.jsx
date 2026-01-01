@@ -11,7 +11,10 @@ import {
     Shield,
     AlertTriangle,
     Building,
-    User
+    User,
+    Globe,
+    MessageCircle,
+    Share2
 } from 'lucide-react';
 import '../styles/Contacts.css';
 
@@ -21,6 +24,7 @@ const Contacts = () => {
     const [userContacts, setUserContacts] = useState([]);
     const [showAddModal, setShowAddModal] = useState(false);
     const [newContact, setNewContact] = useState({ name: '', phone: '', category: 'Personal', description: '' });
+    const [selectedContact, setSelectedContact] = useState(null);
 
     // Load from LocalStorage
     useEffect(() => {
@@ -80,10 +84,11 @@ const Contacts = () => {
             {/* iOS Header */}
             <div className="ios-header">
                 <div className="ios-top-bar">
-                    <button className="ios-edit-btn" onClick={() => setShowAddModal(true)}>Add</button>
-                    {/* Segmented Control could go here if we want strictly "Recents" look, but title fits better */}
+                    <button className="ios-edit-btn" onClick={() => setShowAddModal(true)}>
+                        <Plus size={22} strokeWidth={2.5} />
+                    </button>
                 </div>
-                <h1 className="ios-title">Detailed Contacts</h1>
+                <h1 className="ios-title">Emergency Contacts</h1>
 
                 {/* Search Bar */}
                 <div className="ios-search-container">
@@ -137,7 +142,7 @@ const Contacts = () => {
 
                         <div className="ios-item-right">
                             <span className="ios-time">24/7</span>
-                            <button className="ios-info-btn">
+                            <button className="ios-info-btn" onClick={() => setSelectedContact(contact)}>
                                 <Info size={22} />
                             </button>
                             {contact.isUserAdded && (
@@ -155,6 +160,84 @@ const Contacts = () => {
                     </div>
                 )}
             </div>
+
+            {/* Detail Modal */}
+            {selectedContact && (
+                <div className="ios-modal-overlay" onClick={() => setSelectedContact(null)}>
+                    <div className="ios-modal" onClick={e => e.stopPropagation()}>
+                        <div className="ios-modal-header">
+                            <button onClick={() => setSelectedContact(null)}>Close</button>
+                            <h3>Info</h3>
+                            <button className="bold-btn" style={{ opacity: 0 }}>Edit</button>
+                        </div>
+
+                        <div style={{ paddingBottom: '2rem', overflowY: 'auto', maxHeight: '80vh' }}>
+                            {/* Hero Section */}
+                            <div className="contact-detail-hero">
+                                <div className="contact-hero-avatar">
+                                    {React.cloneElement(getAvatar(selectedContact), {
+                                        style: { width: '100%', height: '100%', borderRadius: '50%', background: 'transparent', fontSize: '3.5rem' }
+                                    })}
+                                </div>
+                                <h2 className="contact-hero-name">{selectedContact.name}</h2>
+                                <p className="contact-hero-category">{selectedContact.category}</p>
+                            </div>
+
+                            {/* Quick Actions Row */}
+                            <div className="contact-actions-row">
+                                {selectedContact.phone && (
+                                    <>
+                                        <a href={`tel:${selectedContact.phone}`} className="action-btn">
+                                            <div className="action-icon-circle">
+                                                <Phone size={20} fill="currentColor" />
+                                            </div>
+                                            <span>call</span>
+                                        </a>
+                                        <a href={`sms:${selectedContact.phone}`} className="action-btn">
+                                            <div className="action-icon-circle">
+                                                <MessageCircle size={20} fill="currentColor" />
+                                            </div>
+                                            <span>message</span>
+                                        </a>
+                                    </>
+                                )}
+                                <button className="action-btn" onClick={() => alert('Share feature coming soon')}>
+                                    <div className="action-icon-circle">
+                                        <Share2 size={20} />
+                                    </div>
+                                    <span>share</span>
+                                </button>
+                            </div>
+
+                            {/* Info Group */}
+                            <div className="contact-info-group">
+                                {selectedContact.phone && (
+                                    <div className="info-row">
+                                        <span className="info-label">mobile</span>
+                                        <a href={`tel:${selectedContact.phone}`} className="info-value">{selectedContact.phone}</a>
+                                    </div>
+                                )}
+
+                                {selectedContact.description && (
+                                    <div className="info-row">
+                                        <span className="info-label">about</span>
+                                        <span className="info-value text">{selectedContact.description}</span>
+                                    </div>
+                                )}
+
+                                {selectedContact.website && (
+                                    <div className="info-row">
+                                        <span className="info-label">website</span>
+                                        <a href={selectedContact.website} target="_blank" rel="noopener noreferrer" className="info-value">
+                                            {selectedContact.website.replace(/^https?:\/\//, '')}
+                                        </a>
+                                    </div>
+                                )}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            )}
 
             {/* Add Contact Modal (iOS Sheet Style) */}
             {showAddModal && (
@@ -188,6 +271,13 @@ const Contacts = () => {
                                     <option value="Legal Help">Legal Help</option>
                                     <option value="Emergency">Emergency</option>
                                 </select>
+                            </div>
+                            <div className="ios-input-group" style={{ marginTop: '1.5rem' }}>
+                                <input
+                                    placeholder="Description (optional)"
+                                    value={newContact.description}
+                                    onChange={e => setNewContact({ ...newContact, description: e.target.value })}
+                                />
                             </div>
                         </div>
                     </div>

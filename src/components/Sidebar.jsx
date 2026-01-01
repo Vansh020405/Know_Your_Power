@@ -49,17 +49,43 @@ const Sidebar = ({ isOpen, close }) => {
                     </NavLink>
 
                     {user && (
-                        <NavLink
-                            to="/saved"
-                            className={({ isActive }) => `nav-link ${isActive ? 'active' : ''}`}
-                            onClick={close}
-                        >
-                            <Bookmark size={20} className="nav-link-icon" />
-                            <div style={{ display: 'flex', flexDirection: 'column' }}>
-                                <span style={{ fontWeight: 500 }}>Saved Situations</span>
-                                <span style={{ fontSize: '0.75rem', opacity: 0.7 }}>My Personal History</span>
-                            </div>
-                        </NavLink>
+                        <>
+                            <NavLink
+                                to="/saved"
+                                className={({ isActive }) => `nav-link ${isActive ? 'active' : ''}`}
+                                onClick={close}
+                            >
+                                <Bookmark size={20} className="nav-link-icon" />
+                                <div style={{ display: 'flex', flexDirection: 'column' }}>
+                                    <span style={{ fontWeight: 500 }}>Saved Situations</span>
+                                    <span style={{ fontSize: '0.75rem', opacity: 0.7 }}>My Personal History</span>
+                                </div>
+                            </NavLink>
+
+                            <NavLink
+                                to="/vault"
+                                className={({ isActive }) => `nav-link ${isActive ? 'active' : ''}`}
+                                onClick={close}
+                            >
+                                <Lock size={20} className="nav-link-icon" />
+                                <div style={{ display: 'flex', flexDirection: 'column' }}>
+                                    <span style={{ fontWeight: 500 }}>Secure Vault</span>
+                                    <span style={{ fontSize: '0.75rem', opacity: 0.7 }}>Encrypted Docs</span>
+                                </div>
+                            </NavLink>
+
+                            <NavLink
+                                to="/complaint"
+                                className={({ isActive }) => `nav-link ${isActive ? 'active' : ''}`}
+                                onClick={close}
+                            >
+                                <FileText size={20} className="nav-link-icon" />
+                                <div style={{ display: 'flex', flexDirection: 'column' }}>
+                                    <span style={{ fontWeight: 500 }}>Complaint Drafter</span>
+                                    <span style={{ fontSize: '0.75rem', opacity: 0.7 }}>Draft & guidance</span>
+                                </div>
+                            </NavLink>
+                        </>
                     )}
 
                     <NavLink
