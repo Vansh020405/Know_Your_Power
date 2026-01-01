@@ -1,435 +1,335 @@
-.contacts-page {
-    padding-bottom: 5rem;
-    animation: fadeIn 0.6s ease-out;
+/* IOS STYLE CONTACTS */
+.ios-contacts-page {
+    background-color: #000;
+    min-height: 100vh;
+    color: #fff;
+    padding-bottom: 80px;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
 }
 
-.contacts-hero {
-    padding: 3rem 1.5rem;
-    text-align: center;
-    position: relative;
-    overflow: hidden;
-    background: radial-gradient(circle at 50% 0%, rgba(16, 185, 129, 0.1) 0%, transparent 70%);
+.ios-header {
+    background: #000;
+    padding: 3rem 1rem 1rem;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: rgba(0, 0, 0, 0.85);
+    backdrop-filter: blur(20px);
 }
 
-.hero-badge-contacts {
-    display: inline-flex;
+.ios-top-bar {
+    display: flex;
+    justify-content: space-between;
     align-items: center;
-    gap: 0.5rem;
-    padding: 0.5rem 1rem;
-    background: rgba(16, 185, 129, 0.1);
-    border: 1px solid rgba(16, 185, 129, 0.2);
-    border-radius: 100px;
-    color: var(--primary);
-    font-size: 0.8rem;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    margin-bottom: 1rem;
-}
-
-.contacts-hero h1 {
-    font-size: 2.5rem;
-    font-weight: 800;
     margin-bottom: 0.5rem;
-    letter-spacing: -0.02em;
 }
 
-.contacts-hero p {
-    color: var(--text-muted);
+.ios-edit-btn {
+    background: none;
+    border: none;
+    color: var(--primary);
+    /* Uses app primary color for actions */
     font-size: 1.1rem;
-    max-width: 500px;
-    margin: 0 auto 2rem;
-}
-
-.contacts-header-actions {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0 1.5rem;
-    margin-bottom: 1.5rem;
-}
-
-/* SEARCH & FILTER */
-.contacts-search-container {
-    padding: 0 1.5rem;
-    margin-bottom: 1.5rem;
-}
-
-.search-input-wrapper {
-    position: relative;
-    max-width: 600px;
-    margin: 0 auto;
-}
-
-.search-icon-contacts {
-    position: absolute;
-    left: 1.25rem;
-    top: 50%;
-    transform: translateY(-50%);
-    color: var(--text-muted);
-}
-
-.contacts-search-input {
-    width: 100%;
-    padding: 1rem 3rem 1rem 3.5rem;
-    background: rgba(255, 255, 255, 0.05);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    border-radius: 100px;
-    color: var(--text);
-    font-size: 1rem;
-    transition: all 0.3s ease;
-}
-
-.contacts-search-input:focus {
-    outline: none;
-    background: rgba(255, 255, 255, 0.08);
-    border-color: var(--primary);
-    box-shadow: 0 0 0 4px rgba(16, 185, 129, 0.1);
-}
-
-.clear-search-contacts {
-    position: absolute;
-    right: 1.25rem;
-    top: 50%;
-    transform: translateY(-50%);
-    color: var(--text-muted);
     cursor: pointer;
-    padding: 0.25rem;
-    border-radius: 50%;
+    padding: 0;
 }
 
-.clear-search-contacts:hover {
-    color: var(--text);
-    background: rgba(255, 255, 255, 0.1);
+.ios-title {
+    font-size: 2.1rem;
+    font-weight: 700;
+    margin: 0.5rem 0 1rem;
+    letter-spacing: -0.5px;
 }
 
-/* CATEGORY TABS */
-.contacts-categories {
-    display: flex;
-    gap: 0.75rem;
-    padding: 0.5rem 1.5rem 1.5rem;
-    overflow-x: auto;
-    scrollbar-width: none;
-    -ms-overflow-style: none;
-}
-
-.contacts-categories::-webkit-scrollbar {
-    display: none;
-}
-
-.cat-tab {
-    padding: 0.6rem 1.25rem;
-    border-radius: 100px;
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    background: rgba(255, 255, 255, 0.03);
-    color: var(--text-muted);
-    font-size: 0.9rem;
-    font-weight: 600;
-    white-space: nowrap;
-    cursor: pointer;
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.cat-tab:hover {
-    background: rgba(255, 255, 255, 0.08);
-    border-color: rgba(255, 255, 255, 0.2);
-}
-
-.cat-tab.active {
-    background: var(--primary);
-    border-color: var(--primary);
-    color: #000;
-    box-shadow: 0 4px 12px rgba(16, 185, 129, 0.3);
-}
-
-/* GRID & CARDS */
-.contacts-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-    gap: 1.25rem;
-    padding: 0 1.5rem;
-}
-
-@media (max-width: 640px) {
-    .contacts-grid {
-        grid-template-columns: 1fr;
-    }
-}
-
-.contact-card {
-    background: var(--surface);
-    backdrop-filter: blur(10px);
-    border: 1px solid var(--border);
-    border-radius: 24px;
-    padding: 1.5rem;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    position: relative;
-    overflow: hidden;
-}
-
-.contact-card:hover {
-    transform: translateY(-4px);
-    border-color: rgba(255, 255, 255, 0.2);
-    box-shadow: var(--shadow-lg);
-    background: rgba(40, 40, 40, 0.6);
-}
-
-.contact-card.user-added-card {
-    border-color: rgba(16, 185, 129, 0.3);
-}
-
-.contact-card-top {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
+/* iOS Search Bar */
+.ios-search-container {
     margin-bottom: 1rem;
 }
 
-.contact-cat-badge {
+.ios-search-bar {
+    background: #1C1C1E;
+    border-radius: 10px;
+    padding: 0.5rem 0.8rem;
     display: flex;
     align-items: center;
     gap: 0.5rem;
-    font-size: 0.75rem;
-    font-weight: 800;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-    padding: 0.4rem 0.75rem;
-    border-radius: 8px;
-    background: rgba(255, 255, 255, 0.05);
 }
 
-.cat-emergency {
-    color: #f87171;
-    background: rgba(248, 113, 113, 0.1);
+.ios-search-icon {
+    color: #8E8E93;
 }
 
-.cat-legal {
-    color: #60a5fa;
-    background: rgba(96, 165, 250, 0.1);
-}
-
-.cat-gov {
-    color: #c084fc;
-    background: rgba(192, 132, 252, 0.1);
-}
-
-.cat-personal {
-    color: #34d399;
-    background: rgba(52, 211, 153, 0.1);
-}
-
-.delete-contact-btn {
+.ios-search-bar input {
     background: transparent;
     border: none;
-    color: var(--text-muted);
-    cursor: pointer;
-    padding: 0.5rem;
-    border-radius: 50%;
-    transition: all 0.2s;
-}
-
-.delete-contact-btn:hover {
-    color: #f87171;
-    background: rgba(248, 113, 113, 0.1);
-}
-
-.contact-info h3 {
-    font-size: 1.25rem;
-    font-weight: 700;
-    margin-bottom: 0.4rem;
-    color: var(--text);
-}
-
-.contact-desc {
-    font-size: 0.95rem;
-    color: var(--text-muted);
-    line-height: 1.5;
-    margin-bottom: 1.5rem;
-}
-
-.contact-actions {
-    display: flex;
-    gap: 0.75rem;
-    margin-top: auto;
-}
-
-.call-btn {
-    flex: 1;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 0.75rem;
-    height: 48px;
-    background: var(--primary);
-    color: #000;
-    border-radius: 14px;
-    font-weight: 700;
-    text-decoration: none;
-    transition: all 0.2s;
-}
-
-.call-btn:hover {
-    filter: brightness(1.1);
-    transform: scale(1.02);
-}
-
-.web-btn {
-    width: 48px;
-    height: 48px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: rgba(255, 255, 255, 0.05);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    border-radius: 14px;
-    color: var(--text);
-    text-decoration: none;
-    transition: all 0.2s;
-}
-
-.web-btn:hover {
-    background: rgba(255, 255, 255, 0.1);
-    border-color: rgba(255, 255, 255, 0.2);
-}
-
-/* MODAL */
-.modal-overlay {
-    position: fixed;
-    inset: 0;
-    background: rgba(0, 0, 0, 0.8);
-    backdrop-filter: blur(4px);
-    z-index: 1000;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 1.5rem;
-    animation: fadeIn 0.3s ease-out;
-}
-
-.modal-card {
+    color: #fff;
+    font-size: 1.05rem;
     width: 100%;
-    max-width: 450px;
-    background: #141414;
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    border-radius: 32px;
-    padding: 2rem;
-    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+    outline: none;
 }
 
-.modal-header {
+.ios-clear-icon {
+    background: #8E8E93;
+    color: #000;
+    border-radius: 50%;
+    width: 16px;
+    height: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Segmented Control */
+.ios-segmented-control {
+    background: #1C1C1E;
+    border-radius: 9px;
+    padding: 2px;
+    display: flex;
+}
+
+.segment-btn {
+    flex: 1;
+    background: transparent;
+    border: none;
+    color: #fff;
+    padding: 0.4rem 0;
+    font-size: 0.85rem;
+    font-weight: 500;
+    border-radius: 7px;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.segment-btn.active {
+    background: #636366;
+    /* or use var(--primary) for highlight */
+    background: rgba(255, 255, 255, 0.2);
+    font-weight: 600;
+}
+
+/* Contact List */
+.ios-list {
+    padding: 0 1rem 0 1rem;
+}
+
+.ios-list-item {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 2rem;
+    padding: 0.8rem 0;
+    border-bottom: 0.5px solid #2C2C2E;
+    position: relative;
 }
 
-.modal-header h3 {
-    font-size: 1.5rem;
-    font-weight: 800;
+.ios-list-item:hover {
+    background: #1C1C1E;
+    /* Subtle hover state */
+    margin: 0 -1rem;
+    padding: 0.8rem 1rem;
+    border-radius: 12px;
 }
 
-.close-modal-btn {
-    background: rgba(255, 255, 255, 0.05);
-    border: none;
-    color: var(--text-muted);
-    width: 36px;
-    height: 36px;
+.ios-item-left {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    flex: 1;
+}
+
+/* Avatars */
+.ios-avatar {
+    width: 40px;
+    height: 40px;
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
-    cursor: pointer;
-}
-
-.form-group {
-    margin-bottom: 1.25rem;
-}
-
-.form-group label {
-    display: block;
-    font-size: 0.85rem;
     font-weight: 600;
-    color: var(--text-muted);
-    margin-bottom: 0.5rem;
+    font-size: 1.1rem;
+    color: #fff;
+    flex-shrink: 0;
+}
+
+.ios-avatar.personal {
+    background: #98989D;
+}
+
+.ios-avatar.emergency {
+    background: #FF3B30;
+}
+
+/* iOS Red */
+.ios-avatar.legal {
+    background: #0A84FF;
+}
+
+/* iOS Blue */
+.ios-avatar.gov {
+    background: #AF52DE;
+}
+
+/* iOS Purple */
+
+.ios-text-content h3 {
+    font-size: 1.05rem;
+    font-weight: 600;
+    margin: 0;
+    color: #fff;
+}
+
+.text-danger {
+    color: #FF3B30 !important;
+}
+
+.ios-text-content p {
+    margin: 0.1rem 0 0;
+    font-size: 0.9rem;
+    color: #8E8E93;
+}
+
+.ios-label {
+    text-transform: capitalize;
+}
+
+.ios-click-target {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+}
+
+/* Right Side Actions */
+.ios-item-right {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    z-index: 2;
+    /* Above click target */
+}
+
+.ios-time {
+    color: #8E8E93;
+    font-size: 0.9rem;
+    margin-right: 0.5rem;
+}
+
+.ios-info-btn {
+    background: none;
+    border: none;
+    color: var(--primary);
+    cursor: pointer;
+    padding: 0.5rem;
+}
+
+.ios-delete-action {
+    background: none;
+    border: none;
+    color: #ff3b30;
+    cursor: pointer;
     margin-left: 0.5rem;
 }
 
-.form-input {
-    width: 100%;
-    padding: 1rem 1.25rem;
-    background: rgba(255, 255, 255, 0.05);
-    border: 1px solid rgba(255, 255, 255, 0.08);
-    border-radius: 16px;
-    color: var(--text);
-    font-size: 1rem;
-    transition: all 0.3s;
-}
-
-.form-input:focus {
-    outline: none;
-    border-color: var(--primary);
-    background: rgba(255, 255, 255, 0.08);
-}
-
-.modal-footer {
-    display: flex;
-    gap: 1rem;
-    margin-top: 2rem;
-}
-
-.modal-footer .btn {
-    flex: 1;
-    height: 52px;
-    border-radius: 16px;
-}
-
-/* EMPTY STATE */
-.no-results-contacts {
-    grid-column: 1 / -1;
-    text-align: center;
-    padding: 4rem 1.5rem;
-    color: var(--text-muted);
-}
-
-.no-results-contacts p {
-    font-size: 1.1rem;
-    margin-top: 1rem;
-}
-
-.floating-add-btn {
+/* Modals */
+.ios-modal-overlay {
     position: fixed;
-    bottom: 2rem;
-    right: 2rem;
-    width: 60px;
-    height: 60px;
-    background: var(--primary);
-    color: #000;
-    border-radius: 50%;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.6);
+    z-index: 2000;
     display: flex;
+    align-items: flex-end;
+    /* Sheet from bottom on mobile */
+}
+
+@media (min-width: 640px) {
+    .ios-modal-overlay {
+        align-items: center;
+        justify-content: center;
+    }
+}
+
+.ios-modal {
+    background: #1C1C1E;
+    width: 100%;
+    max-width: 600px;
+    border-radius: 14px 14px 0 0;
+    overflow: hidden;
+    padding-bottom: 2rem;
+    animation: slideUp 0.3s ease-out;
+}
+
+@media (min-width: 640px) {
+    .ios-modal {
+        border-radius: 14px;
+        height: auto;
+    }
+}
+
+.ios-modal-header {
+    background: #2C2C2E;
+    padding: 1rem;
+    display: flex;
+    justify-content: space-between;
     align-items: center;
-    justify-content: center;
-    box-shadow: 0 10px 25px rgba(16, 185, 129, 0.4);
+    border-bottom: 0.5px solid #3A3A3C;
+}
+
+.ios-modal-header h3 {
+    margin: 0;
+    font-size: 1.1rem;
+    font-weight: 600;
+}
+
+.ios-modal-header button {
+    background: none;
     border: none;
+    color: var(--primary);
+    font-size: 1rem;
     cursor: pointer;
-    z-index: 100;
-    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
-.floating-add-btn:hover {
-    transform: scale(1.1) rotate(90deg);
+.ios-modal-header button.bold-btn {
+    font-weight: 700;
 }
 
-@keyframes fadeIn {
+.ios-form {
+    padding: 2rem 1rem;
+}
+
+.ios-input-group {
+    background: #2C2C2E;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.ios-input-group input,
+.ios-input-group select {
+    width: 100%;
+    background: transparent;
+    border: none;
+    padding: 1rem;
+    color: #fff;
+    font-size: 1rem;
+    outline: none;
+}
+
+.ios-input-group .divider {
+    height: 0.5px;
+    background: #3A3A3C;
+    margin-left: 1rem;
+    /* Indented separator */
+}
+
+@keyframes slideUp {
     from {
-        opacity: 0;
-        transform: translateY(10px);
+        transform: translateY(100%);
     }
 
     to {
-        opacity: 1;
         transform: translateY(0);
     }
+}
+
+.ios-no-results {
+    text-align: center;
+    color: #8E8E93;
+    padding: 3rem;
 }
