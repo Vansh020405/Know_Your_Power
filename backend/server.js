@@ -34,17 +34,15 @@ if (!db) {
 }
 
 // Connect to Mongo
+// Connect to Mongo
 mongoose
     .connect(db)
-    .then(() => console.log('MongoDB Connected...'))
+    .then(() => {
+        console.log('MongoDB Connected...');
+        const PORT = process.env.PORT || 5000;
+        app.listen(PORT, () => console.log(`Server started on port ${PORT}`));
+    })
     .catch(err => {
         console.error('MongoDB Connection Error:', err);
+        process.exit(1);
     });
-
-// Routes
-app.use('/api/auth', authRoutes);
-app.use('/api/history', historyRoutes);
-
-const PORT = process.env.PORT || 5000;
-
-app.listen(PORT, () => console.log(`Server started on port ${PORT}`));
