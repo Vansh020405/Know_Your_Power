@@ -22,9 +22,9 @@ A mobile-first web app to help users understand their rights, eligibility for be
     npm install
     ```
 
-2.  Start the development server:
+2.  Start the application (Frontend + Backend):
     ```bash
-    npm run dev
+    npm start
     ```
 
 3.  Open the link shown in the terminal (usually `http://localhost:5173`) on your mobile or desktop (resize to mobile view for best experience).
