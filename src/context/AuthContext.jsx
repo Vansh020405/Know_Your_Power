@@ -1,4 +1,5 @@
 import React, { createContext, useState, useContext, useEffect } from 'react';
+import { API_URL as BASE_API_URL } from '../config/api';
 
 const AuthContext = createContext(null);
 
@@ -6,8 +7,8 @@ export const AuthProvider = ({ children }) => {
     const [user, setUser] = useState(null);
     const [loading, setLoading] = useState(true);
 
-    // Use relative path to leverage Vite Proxy (solves CORS & port issues)
-    const API_URL = '/api/auth';
+    // Use centralized API URL (auto-switches between dev and production)
+    const API_URL = `${BASE_API_URL}/auth`;
 
     // Helper to load user given a token
     const loadUser = async (token) => {

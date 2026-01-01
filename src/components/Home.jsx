@@ -23,6 +23,7 @@ import {
 } from 'lucide-react';
 import { analyzeSituation } from '../utils/aiLogic';
 import rulesData from '../data/rules.json';
+import { API_URL } from '../config/api';
 
 const Home = () => {
     const navigate = useNavigate();
@@ -49,7 +50,7 @@ const Home = () => {
 
         try {
             const token = localStorage.getItem('token');
-            const res = await fetch('/api/auth/saved-situations', {
+            const res = await fetch(`${API_URL}/auth/saved-situations`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',

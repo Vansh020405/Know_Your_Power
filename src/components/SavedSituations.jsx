@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useAuth } from '../context/AuthContext';
 import { useNavigate } from 'react-router-dom';
 import { Trash2, AlertCircle, CheckCircle, ChevronRight, Bookmark } from 'lucide-react';
+import { API_URL } from '../config/api';
 
 const SavedSituations = () => {
     const { user, loading } = useAuth();
@@ -20,7 +21,7 @@ const SavedSituations = () => {
                 // Since user.savedSituations might be stale if we relied on context only (unless we updated it),
                 // it's safer to fetch fresh from API.
                 const token = localStorage.getItem('token');
-                const res = await fetch('/api/auth/saved-situations', {
+                const res = await fetch(`${API_URL}/auth/saved-situations`, {
                     headers: { 'x-auth-token': token }
                 });
                 if (res.ok) {
@@ -44,7 +45,7 @@ const SavedSituations = () => {
         if (window.confirm("Remove this from your saved list?")) {
             try {
                 const token = localStorage.getItem('token');
-                const res = await fetch(`/api/auth/saved-situations/${ruleId}`, {
+                const res = await fetch(`${API_URL}/auth/saved-situations/${ruleId}`, {
                     method: 'DELETE',
                     headers: { 'x-auth-token': token }
                 });
