@@ -41,20 +41,25 @@ export const AuthProvider = ({ children }) => {
     }, []);
 
     const login = async (email, password) => {
-        const res = await fetch(`${API_URL}/login`, {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({ email, password })
-        });
+        try {
+            const res = await fetch(`${API_URL}/login`, {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ email, password })
+            });
 
-        const data = await res.json();
+            const data = await res.json();
 
-        if (res.ok) {
-            localStorage.setItem('token', data.token);
-            setUser(data.user);
-            return data.user;
-        } else {
-            throw data.msg || "Login failed";
+            if (res.ok) {
+                localStorage.setItem('token', data.token);
+                setUser(data.user);
+                return data.user;
+            } else {
+                throw data.msg || "Login failed";
+            }
+        } catch (error) {
+            console.error("AuthContext Login Error:", error);
+            throw typeof error === 'string' ? error : error.message || "Network error. Please check your connection.";
         }
     };
 
